@@ -15,20 +15,21 @@ Device* Environment::addDevice() {
     return d;
 }
 
-void Environment::broadcast(const std::string& msg, ADDR_TYPEDEF senderAddr, uint8_t channelIndex) {
-    TIME_TYPEDEF sendingTime = msg.length() + 16; // 16 is length of address
+void Environment::broadcast(const std::string& msg, ADDR_TYPEDEF senderAddr, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime) {
     if(channelIndex >= CHANNEL_COUNTS) {
         throw std::runtime_error("channelIndex too large");
     }
     this->channels[channelIndex].occupy(msg);
 
     this->delayEvent(sendingTime, [this, channelIndex](){
-        if(!this->channels[channelIndex].isMixed) {
+        if(!this->channels[channelIndex].isMixed()) {
             std::srand(std::time(0));
-            for(auto d : this->devices) {
+            const Channel& ch = this->channels[channelIndex];
+            const std::string& msg = ch.getMsg();
+            for(auto d : ch.getListeners()) {
                 // different signal propagation time
-                this->delayEvent(std::rand() % 10 + 1, [d, this, channelIndex](){
-                    d->getMsg(this->channels[channelIndex].msg, channelIndex);
+                this->delayEvent(std::rand() % 10 + 1, [d, msg, channelIndex](){
+                    d->detectMsg(msg, channelIndex);
                 });
             }
         }
@@ -73,4 +74,3 @@ void Environment::run() {
     }
     this->log("Stop successfully");
 }
-

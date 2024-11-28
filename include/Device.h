@@ -12,11 +12,15 @@ class Device {
 private:
     ADDR_TYPEDEF addr;
     Environment* en;
+    TIME_TYPEDEF txDelay;
+    bool busy;
+    CHANNEL_INDEX_TYPEDEF listeningIndex;
 public:
     explicit Device(ADDR_TYPEDEF addr, Environment* en);
     ADDR_TYPEDEF getId() const;
-    void getMsg(const std::string& msg, uint8_t channelIndex);
-    void sendMsg(const std::string& msg, uint8_t channelIndex);
+    void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex);
+    void detectMsg(const std::string& msg, CHANNEL_INDEX_TYPEDEF channelIndex);
+    void sendMsg(const std::string& msg, CHANNEL_INDEX_TYPEDEF channelIndex);
     void log(const std::string& log);
 };
 

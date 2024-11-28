@@ -15,15 +15,16 @@ public:
     explicit Environment();
     Device* getDeviceByIndex(ADDR_TYPEDEF addr);
     Device* addDevice();
-    void broadcast(const std::string& message, ADDR_TYPEDEF senderAddr, uint8_t channelIndex);
+    void broadcast(const std::string& message, ADDR_TYPEDEF senderAddr, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime);
     void update();
     void registerEvent(TIME_TYPEDEF happenTick, std::function<void()> event);
     inline void delayEvent(TIME_TYPEDEF delayTick, std::function<void()> event) { this->registerEvent(this->time + delayTick, event); };
     void log(const std::string& log);
-    inline TIME_TYPEDEF getTime() const { return time; }
+    inline TIME_TYPEDEF getTime() const { return time; };
     void endAt(TIME_TYPEDEF time);
     void stopRun();
     void run();
+    inline Channel* getChannels(){ return this->channels; };
 };
 
 #endif // __ENVIRONMENT_H

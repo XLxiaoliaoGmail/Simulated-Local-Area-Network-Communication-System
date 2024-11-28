@@ -3,7 +3,7 @@
 void Channel::occupy(const std::string& msg) {
     this->userNum ++;
     if(userNum > 1) {
-        this->isMixed = true;
+        this->mixed = true;
     }
     this->msg = msg;
 }
@@ -13,7 +13,14 @@ void Channel::release() {
         throw std::runtime_error("Cannot release when userNum = 0");
     }
     this->userNum --;
-    if(this->isMixed && userNum == 0) {
-        this->isMixed = false;
+    if(this->mixed && userNum == 0) {
+        this->mixed = false;
+    }
+}
+
+void Channel::removeListener(const Device* d) {
+    auto it = std::find(this->listeners.begin(), this->listeners.end(), d);
+    if (it != listeners.end()) {
+        listeners.erase(it);
     }
 }

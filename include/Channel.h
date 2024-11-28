@@ -4,14 +4,22 @@
 #include "_common.h"
 
 class Channel {
-public:
+private:
     uint8_t userNum;
-    bool isMixed;
+    bool mixed;
     std::string msg;
+    std::vector<Device*> listeners;
 
-    explicit Channel() : userNum(0), isMixed(false), msg("") {}
+public:
+    explicit Channel() : userNum(0), mixed(false), msg("") {}
     void occupy(const std::string& msg);
     void release();
+    inline void addListener(Device* d){ listeners.push_back(d); };
+    void removeListener(const Device* d);
+    inline bool isBusy() const { return this->userNum > 0; }
+    inline bool isMixed() const { return this->mixed; }
+    inline std::string getMsg() const { return this->msg; }
+    inline std::vector<Device*> getListeners() const { return this->listeners; }
 };
 
 #endif // __CHANNEL_H
