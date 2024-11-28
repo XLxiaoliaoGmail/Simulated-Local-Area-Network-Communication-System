@@ -50,6 +50,26 @@
         "xmemory": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "unordered_map": "cpp",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "functional": "cpp",
+        "list": "cpp",
+        "mutex": "cpp",
+        "optional": "cpp",
+        "queue": "cpp",
+        "random": "cpp",
+        "ranges": "cpp",
+        "ratio": "cpp",
+        "span": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "xhash": "cpp"
     }
 }
