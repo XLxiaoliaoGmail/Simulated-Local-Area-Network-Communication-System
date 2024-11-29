@@ -8,6 +8,7 @@ Device::Device(ADDR_TYPEDEF addr, Environment* en) :
     listeningIndex(0) 
     {
         this->log("listening to channel[0]");
+        this->en->getChannels()[0].addListener(this);
     }
 
 ADDR_TYPEDEF Device::getId() const {
@@ -15,17 +16,17 @@ ADDR_TYPEDEF Device::getId() const {
 }
 
 
-void Device::detectMsg(const std::string& msg, CHANNEL_INDEX_TYPEDEF channelIndex) {
-    log("rx <- " + msg);
+void Device::detectMsg(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex) {
+    log("rx[" + std::to_string(channelIndex) + "] <- " + msg->payload);
 }
 
-void Device::sendMsg(const std::string& msg, CHANNEL_INDEX_TYPEDEF channelIndex) {
+void Device::sendMsg(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex) {
     if(channelIndex >= CHANNEL_COUNTS) {
         throw std::runtime_error("channelIndex too large");
     }
     if(this->en->getChannels()[channelIndex].isBusy()) {
-        this->en->delayEvent(this->txDelay, [this, msg, channelIndex]() {
-            this->sendMsg(msg, channelIndex);
+        this->en->delayEvent(this->txDelay, [this, payload, channelIndex]() {
+            this->sendMsg(payload, channelIndex);
         });
         log("ch[" + std::to_string(channelIndex) + "] occupied, waiting for [" + std::to_string(this->txDelay) + "] ticks");
         this->txDelay += this->txDelay;
@@ -33,10 +34,10 @@ void Device::sendMsg(const std::string& msg, CHANNEL_INDEX_TYPEDEF channelIndex)
         if(this->txDelay != TX_DELAY_BASE) {
             this->txDelay = TX_DELAY_BASE;
         }
-        log("tx[" + std::to_string(channelIndex) + "] -> " + msg);
+        log("tx[" + std::to_string(channelIndex) + "] -> " + payload);
         this->busy = true;
-        const TIME_TYPEDEF sendingTime = msg.length() + 16;
-        this->en->broadcast(msg, this->addr, channelIndex, sendingTime);
+        const TIME_TYPEDEF sendingTime = payload.length() + 16;
+        this->en->broadcast(new Message(this->addr, payload), channelIndex, sendingTime);
         en->delayEvent(sendingTime, [this](){
             this->busy = false;
         });
@@ -58,7 +59,9 @@ void Device::listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
 void Device::log(const std::string& log) {
     std::cout << "[" 
               << std::setw(TIME_FORMAT_LENGTH) << std::setfill('0') << this->en->getTime()
-              << "][D]:"
+              << "][D"
+              << std::setw(DEVICE_INDEX_FORMAT_LENGTH) << std::setfill('0') << this->addr
+              << "]:"
               << log
               << std::endl;
 }

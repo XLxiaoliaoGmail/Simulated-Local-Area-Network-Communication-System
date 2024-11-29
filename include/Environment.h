@@ -8,17 +8,17 @@ private:
     bool running;
     std::vector<Device*> devices;
     TIME_TYPEDEF time;
-    std::unordered_map<TIME_TYPEDEF, std::vector<std::function<void()>>> eventsAtCertainTick;
+    std::unordered_map<TIME_TYPEDEF, std::vector<SimEvent*>> eventsAtCertainTick;
     Channel channels[CHANNEL_COUNTS];
 
 public:
     explicit Environment();
     Device* getDeviceByIndex(ADDR_TYPEDEF addr);
     Device* addDevice();
-    void broadcast(const std::string& message, ADDR_TYPEDEF senderAddr, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime);
+    void broadcast(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime);
     void update();
-    void registerEvent(TIME_TYPEDEF happenTick, std::function<void()> event);
-    inline void delayEvent(TIME_TYPEDEF delayTick, std::function<void()> event) { this->registerEvent(this->time + delayTick, event); };
+    SimEvent* registerEvent(TIME_TYPEDEF tick, std::function<void()> callback);
+    inline SimEvent* delayEvent(TIME_TYPEDEF delayTick, std::function<void()> callback){ return this->registerEvent(this->time + delayTick, callback); };
     void log(const std::string& log);
     inline TIME_TYPEDEF getTime() const { return time; };
     void endAt(TIME_TYPEDEF time);

@@ -1,6 +1,6 @@
 #include "../include/_common.h"
 
-void Channel::occupy(const std::string& msg) {
+void Channel::occupy(const Message* msg) {
     this->userNum ++;
     if(userNum > 1) {
         this->mixed = true;
@@ -15,12 +15,5 @@ void Channel::release() {
     this->userNum --;
     if(this->mixed && userNum == 0) {
         this->mixed = false;
-    }
-}
-
-void Channel::removeListener(const Device* d) {
-    auto it = std::find(this->listeners.begin(), this->listeners.end(), d);
-    if (it != listeners.end()) {
-        listeners.erase(it);
     }
 }

@@ -15,7 +15,7 @@ Device* Environment::addDevice() {
     return d;
 }
 
-void Environment::broadcast(const std::string& msg, ADDR_TYPEDEF senderAddr, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime) {
+void Environment::broadcast(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime) {
     if(channelIndex >= CHANNEL_COUNTS) {
         throw std::runtime_error("channelIndex too large");
     }
@@ -25,7 +25,7 @@ void Environment::broadcast(const std::string& msg, ADDR_TYPEDEF senderAddr, CHA
         if(!this->channels[channelIndex].isMixed()) {
             std::srand(std::time(0));
             const Channel& ch = this->channels[channelIndex];
-            const std::string& msg = ch.getMsg();
+            const Message* msg = ch.getMsg();
             for(auto d : ch.getListeners()) {
                 // different signal propagation time
                 this->delayEvent(std::rand() % 10 + 1, [d, msg, channelIndex](){
@@ -42,12 +42,19 @@ void Environment::update() {
     if(this->eventsAtCertainTick.count(this->time) == 0)
         return;
     for(auto event : this->eventsAtCertainTick.at(this->time)) {
-        event();
+        event->emit();
     }
 }
 
-void Environment::registerEvent(TIME_TYPEDEF happenTick, std::function<void()> event) {
-    this->eventsAtCertainTick[happenTick].push_back(event);
+SimEvent* Environment::registerEvent(TIME_TYPEDEF tick, std::function<void()> callback) {
+    SimEvent* event = new SimEvent(this, tick, callback);
+    this->eventsAtCertainTick[tick].push_back(event);
+}
+
+void Environment::endAt(TIME_TYPEDEF time) {
+    this->registerEvent(time, [this](){
+        this->stopRun();
+    });
 }
 
 void Environment::log(const std::string& log) {
@@ -58,17 +65,12 @@ void Environment::log(const std::string& log) {
               << std::endl;
 }
 
-void Environment::endAt(TIME_TYPEDEF time) {
-    this->registerEvent(time, [this](){
-        this->stopRun();
-    });
-}
-
 void Environment::stopRun() {
     this->running = false;
 }
 
 void Environment::run() {
+    this->log("Start simulating");
     while(this->running) {
         this->update();
     }
