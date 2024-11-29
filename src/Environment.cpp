@@ -49,6 +49,7 @@ void Environment::update() {
 SimEvent* Environment::registerEvent(TIME_TYPEDEF tick, std::function<void()> callback) {
     SimEvent* event = new SimEvent(this, tick, callback);
     this->eventsAtCertainTick[tick].push_back(event);
+    return event;
 }
 
 void Environment::endAt(TIME_TYPEDEF time) {
