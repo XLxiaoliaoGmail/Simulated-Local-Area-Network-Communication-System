@@ -1,20 +1,5 @@
 #include "../include/_common.h"
 
-Environment::Environment() {
-    this->time = 0;
-    this->running = true;
-}
-
-Device* Environment::getDeviceByIndex(ADDR_TYPEDEF addr) {
-    return devices[addr]; 
-}
-
-Device* Environment::addDevice() {
-    Device* d = new Device(devices.size(), this);
-    devices.push_back(d);
-    return d;
-}
-
 void Environment::broadcast(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime) {
     if(channelIndex >= CHANNEL_COUNTS) {
         throw std::runtime_error("channelIndex too large");
@@ -29,7 +14,7 @@ void Environment::broadcast(const Message* msg, CHANNEL_INDEX_TYPEDEF channelInd
             for(auto d : ch.getListeners()) {
                 // different signal propagation time
                 this->delayEvent(std::rand() % 10 + 1, [d, msg, channelIndex](){
-                    d->detectMsg(msg, channelIndex);
+                    d->recieve(msg, channelIndex);
                 });
             }
         }
@@ -71,6 +56,7 @@ void Environment::stopRun() {
 }
 
 void Environment::run() {
+    this->running = true;
     this->log("Start simulating");
     while(this->running) {
         this->update();

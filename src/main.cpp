@@ -3,25 +3,27 @@
 #define __DEBUG_MODE
 
 void run() {
-    Environment en;
-    std::vector<Device*> devices;
-    for (uint8_t i = 1; i <= 3; ++i) {
-        devices.push_back(en.addDevice());
-    }
-    
-    auto t1 = en.registerEvent(10, [devices](){
-        devices[2]->sendMsg("this is d2", 0);
+    auto en = new Environment();
+    en->registerEvent(10, [en](){
+        // simulation environment
+
+        // setup server
+        uint16_t addrCount = 0;
+        auto server = new Server(std::to_string(addrCount++), en);
+        server->setRobotLoginKey(ROBOT_LOGIN_KEY);
+        server->setStationLoginKey(STATION_LOGIN_KEY);
+
+        // setup robots
+        std::vector<Robot*> robots;
+        for(uint16_t i=0; i<10; i++) {
+            auto robot = new Robot(std::to_string(addrCount++), en);
+            robots.push_back(robot);
+            robot->sendServerLogin(ROBOT_LOGIN_KEY);
+        }
     });
-    t1->then(100, [devices](){
-        devices[0]->listenTo(3);
-    })->then(100, [devices](){
-        devices[1]->sendMsg("this is d1", 0);
-    })->then(1, [devices](){
-        devices[2]->sendMsg("this is d1", 0);
-    });
-    
-    en.endAt(1000);
-    en.run();
+
+    en->endAt(1000);
+    en->run();
 }
 
 int main() {

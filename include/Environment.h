@@ -12,9 +12,9 @@ private:
     Channel channels[CHANNEL_COUNTS];
 
 public:
-    explicit Environment();
-    Device* getDeviceByIndex(ADDR_TYPEDEF addr);
-    Device* addDevice();
+    explicit Environment() : running(false), time(0) {};
+
+    inline void addDevice(Device* d){ this->devices.push_back(d); };
     void broadcast(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime);
     void update();
     SimEvent* registerEvent(TIME_TYPEDEF tick, std::function<void()> callback);

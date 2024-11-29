@@ -70,6 +70,7 @@
         "sstream": "cpp",
         "stop_token": "cpp",
         "thread": "cpp",
-        "xhash": "cpp"
+        "xhash": "cpp",
+        "_common.h": "c"
     }
 }
