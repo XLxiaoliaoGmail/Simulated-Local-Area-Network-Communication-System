@@ -6,6 +6,7 @@ void Server::msgHandler(ADDR_TYPEDEF senderAddr, MsgType type, const std::string
         if(payload == ROBOT_LOGIN_KEY) {
             this->addRobotAddr(senderAddr);
             this->log("Robot login, addr:" + senderAddr);
+            this->send(MsgType::LOGIN_SUCCESS, senderAddr, DEFAULT_SERVER_CHANNEL);
             return;
         }
         if(payload == STATION_LOGIN_KEY) {

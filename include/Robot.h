@@ -9,7 +9,6 @@ private:
 
 public:
     explicit Robot(ADDR_TYPEDEF addr, Environment* en) : ProtocolDevice(addr, en), needCharging(false) {
-        this->log("Default listen to ch[" + std::to_string(DEFAULT_SERVER_CHANNEL) + "]");
         this->setOnWaitingChanged([this](bool waiting){
             if(waiting) {
                 this->log("Channel occupied, wiating ...");

@@ -8,7 +8,8 @@ Device::Device(ADDR_TYPEDEF addr, Environment* en) :
     waiting(false),
     listeningIndex(DEFAULT_SERVER_CHANNEL),
     onBusyChanged(nullptr),
-    onWaitingChanged(nullptr)
+    onWaitingChanged(nullptr),
+    logEnable(false)
     {
         // this->log("listening to channel[0]");
         en->getChannels()[DEFAULT_SERVER_CHANNEL].addListener(this);
@@ -50,7 +51,7 @@ void Device::send(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex
         this->en->delayEvent(this->txDelay, [this, payload, channelIndex]() {
             this->send(payload, channelIndex);
         });
-        this->txDelay += this->txDelay;
+        this->txDelay += TX_DELAY_BASE;
     } else {
         if(this->txDelay != TX_DELAY_BASE) {
             this->txDelay = TX_DELAY_BASE;
@@ -77,7 +78,19 @@ void Device::listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
     }
 }
 
+void Device::enqueue(std::string payload, CHANNEL_INDEX_TYPEDEF channelIndex) {
+    this->msgQueue.emplace(channelIndex, payload);
+    processQueue();
+}
+
+void Device::processQueue() {
+
+}
+
 void Device::log(const std::string& log) {
+    if(!this->logEnable) {
+        return;
+    }
     std::cout << "[" 
               << std::setw(TIME_FORMAT_LENGTH) << std::setfill('0') << this->en->getTime()
               << "][D]["

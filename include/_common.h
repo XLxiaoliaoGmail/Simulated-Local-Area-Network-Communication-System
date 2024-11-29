@@ -15,6 +15,7 @@
 #define STATION_LOGIN_KEY           "tZnUiIRRYogTv6PG"
 
 #include <cstdint>
+#include <queue>
 #include <functional>
 #include <vector>
 #include <unordered_map>
@@ -28,6 +29,7 @@
 
 enum MsgType : uint8_t {
     LOGIN,
+    LOGIN_SUCCESS,
     NEED_CHARGE,
     HANDSHAKE,
     KEEP_ALIVE,

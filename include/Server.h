@@ -15,7 +15,6 @@ public:
         ProtocolDevice(addr, en),
         robotLoginKey(16, 'x'),
         stationLoginKey(16, 'x') {
-            this->log("Default listen to ch[" + std::to_string(DEFAULT_SERVER_CHANNEL) + "]");
         }
     inline void setRobotLoginKey(const std::string& key){ 
         this->robotLoginKey = this->formatKeyStr(key);
@@ -27,7 +26,6 @@ public:
     }
     inline void addRobotAddr(ADDR_TYPEDEF addr){ this->robotsAddr.push_back(addr); }
     inline void addStationAddr(ADDR_TYPEDEF addr){ this->stationsAddr.push_back(addr); }
-    inline void sendProtocol(MsgType type, const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex) {}
     void msgHandler(ADDR_TYPEDEF senderAddr, MsgType type, const std::string& payload) override;
     inline void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
         Device::listenTo(channelIndex);

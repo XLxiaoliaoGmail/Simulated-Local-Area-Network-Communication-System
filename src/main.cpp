@@ -4,25 +4,35 @@
 
 void run() {
     auto en = new Environment();
-    en->registerEvent(10, [en](){
+    std::vector<Robot*> robots;
+    std::vector<Station*> stations;
+
+    en->registerEvent(10, [en, &robots, &stations](){
         // simulation environment
 
         // setup server
         uint16_t addrCount = 0;
         auto server = new Server(std::to_string(addrCount++), en);
+        server->setLogEnable(true);
         server->setRobotLoginKey(ROBOT_LOGIN_KEY);
         server->setStationLoginKey(STATION_LOGIN_KEY);
 
         // setup robots
-        std::vector<Robot*> robots;
         for(uint16_t i=0; i<10; i++) {
             auto robot = new Robot(std::to_string(addrCount++), en);
             robots.push_back(robot);
             robot->sendServerLogin(ROBOT_LOGIN_KEY);
         }
+
+        // setup stations
+        for(uint16_t i=0; i<10; i++) {
+            auto station = new Station(std::to_string(addrCount++), en);
+            stations.push_back(station);
+            station->sendServerLogin(STATION_LOGIN_KEY);
+        }
     });
 
-    en->endAt(1000);
+    en->endAt(10000);
     en->run();
 }
 
