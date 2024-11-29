@@ -10,9 +10,14 @@ private:
 public:
     explicit Robot(ADDR_TYPEDEF addr, Environment* en) : ProtocolDevice(addr, en), needCharging(false) {
         this->log("Default listen to ch[" + std::to_string(DEFAULT_SERVER_CHANNEL) + "]");
-        this->setOnBusyChanged([](bool busy){
-            if(busy) {
-                
+        this->setOnWaitingChanged([this](bool waiting){
+            if(waiting) {
+                this->log("Channel occupied, wiating ...");
+            }
+        });
+        this->setOnBusyChanged([this](bool busy){
+            if(!busy) {
+                this->log("Message sent");
             }
         });
     }
@@ -27,7 +32,7 @@ public:
     // to server
     inline void sendServerLogin(std::string loginKey) {
         this->send(MsgType::LOGIN, loginKey, 0);
-        this->log("Send login");
+        this->log("Try to send login");
     }
     inline void sendServerNeedCharge(){
         this->send(MsgType::NEED_CHARGE, 0);

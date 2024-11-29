@@ -7,7 +7,9 @@ Device::Device(ADDR_TYPEDEF addr, Environment* en) :
     busy(false),
     waiting(false),
     listeningIndex(DEFAULT_SERVER_CHANNEL),
-    onBusyChanged(nullptr) {
+    onBusyChanged(nullptr),
+    onWaitingChanged(nullptr)
+    {
         // this->log("listening to channel[0]");
         en->getChannels()[DEFAULT_SERVER_CHANNEL].addListener(this);
         en->addDevice(this);
@@ -17,7 +19,7 @@ void Device::setBusy(bool value) {
     if(this->busy != value) {
         this->busy = value;
         if(onBusyChanged) {
-            onBusyChanged(busy);
+            onBusyChanged(value);
         }
     }
 }
@@ -25,8 +27,8 @@ void Device::setBusy(bool value) {
 void Device::setWaiting(bool value) {
     if(this->waiting != value) {
         this->waiting = value;
-        if(onBusyChanged) {
-            onBusyChanged(busy);
+        if(onWaitingChanged) {
+            onWaitingChanged(value);
         }
     }
 }
@@ -44,6 +46,7 @@ void Device::send(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex
         throw std::runtime_error("channelIndex too large");
     }
     if(this->en->getChannels()[channelIndex].isBusy()) {
+        this->setWaiting(true);
         this->en->delayEvent(this->txDelay, [this, payload, channelIndex]() {
             this->send(payload, channelIndex);
         });
@@ -57,6 +60,7 @@ void Device::send(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex
         this->en->broadcast(new Message(this->addr, payload), channelIndex, sendingTime);
         en->delayEvent(sendingTime, [this](){
             this->setBusy(false);
+            this->setWaiting(false);
         });
     }
 }
