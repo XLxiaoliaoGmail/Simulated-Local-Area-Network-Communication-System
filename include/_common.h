@@ -7,8 +7,9 @@
 #define TX_DELAY_BASE               10
 #define PAYLOAD_MAX_LENGTH          128
 #define KEY_LENGTH                  16
-#define ADDR_LENGTH                 16
-#define DEFAULT_SERVER_CHANNEL      0
+#define ADDR_LENGTH_IN_MSG          4
+#define SERVER_CHANNEL              0
+#define SERVER_ADDR                 1
 #define MSGTYPE_LENGTH_IN_STR       2
 
 #define ROBOT_LOGIN_KEY             "nxqHmTMtnQs6Cr5X"
@@ -35,7 +36,7 @@ enum MsgType : uint8_t {
     KEEP_ALIVE,
 };
 
-typedef std::string     ADDR_TYPEDEF;
+typedef uint16_t        ADDR_TYPEDEF;
 typedef uint8_t         CHANNEL_INDEX_TYPEDEF;
 typedef uint64_t        TIME_TYPEDEF;
 typedef uint16_t        ROBOT_POWER_TYPEDEF;

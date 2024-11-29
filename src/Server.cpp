@@ -5,13 +5,13 @@ void Server::msgHandler(ADDR_TYPEDEF senderAddr, MsgType type, const std::string
     case MsgType::LOGIN :
         if(payload == ROBOT_LOGIN_KEY) {
             this->addRobotAddr(senderAddr);
-            this->log("Robot login, addr:" + senderAddr);
-            this->send(MsgType::LOGIN_SUCCESS, senderAddr, DEFAULT_SERVER_CHANNEL);
+            this->log("Robot login, addr:" + Message::formatAddr(senderAddr) + ", send back login success");
+            this->send(MsgType::LOGIN_SUCCESS, SERVER_CHANNEL, senderAddr);
             return;
         }
         if(payload == STATION_LOGIN_KEY) {
             this->addStationAddr(senderAddr);
-            this->log("Station login, addr:" + senderAddr);
+            this->log("Station login, addr:" + Message::formatAddr(senderAddr));
             return;
         }
         break;

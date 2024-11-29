@@ -30,18 +30,9 @@ public:
     inline void log(const std::string& log) { ProtocolDevice::log("Robot", log); }
     // to server
     inline void sendServerLogin(std::string loginKey) {
-        this->send(MsgType::LOGIN, loginKey, 0);
+        this->send(MsgType::LOGIN, loginKey, SERVER_CHANNEL, SERVER_ADDR);
         this->log("Try to send login");
     }
-    inline void sendServerNeedCharge(){
-        this->send(MsgType::NEED_CHARGE, 0);
-    };
-    inline void sendStationHandshake(CHANNEL_INDEX_TYPEDEF channelIndex, std::string handshakeKey) {
-        this->send(MsgType::HANDSHAKE, handshakeKey, channelIndex);
-    };
-    inline void sendStationKeepAlive(CHANNEL_INDEX_TYPEDEF channelIndex){
-        this->send(MsgType::KEEP_ALIVE, channelIndex);
-    };
 };
 
 #endif // __ROBOT_H

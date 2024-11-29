@@ -6,13 +6,13 @@ Device::Device(ADDR_TYPEDEF addr, Environment* en) :
     en(en), 
     busy(false),
     waiting(false),
-    listeningIndex(DEFAULT_SERVER_CHANNEL),
+    listeningIndex(SERVER_CHANNEL),
     onBusyChanged(nullptr),
     onWaitingChanged(nullptr),
     logEnable(false)
     {
         // this->log("listening to channel[0]");
-        en->getChannels()[DEFAULT_SERVER_CHANNEL].addListener(this);
+        en->getChannels()[SERVER_CHANNEL].addListener(this);
         en->addDevice(this);
     }
 
@@ -34,36 +34,8 @@ void Device::setWaiting(bool value) {
     }
 }
 
-ADDR_TYPEDEF Device::getId() const {
-    return this->addr;
-}
-
 void Device::recieve(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex) {
     log("rx[" + std::to_string(channelIndex) + "] <- " + msg->payload);
-}
-
-void Device::send(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex) {
-    if(channelIndex >= CHANNEL_COUNTS) {
-        throw std::runtime_error("channelIndex too large");
-    }
-    if(this->en->getChannels()[channelIndex].isBusy()) {
-        this->setWaiting(true);
-        this->en->delayEvent(this->txDelay, [this, payload, channelIndex]() {
-            this->send(payload, channelIndex);
-        });
-        this->txDelay += TX_DELAY_BASE;
-    } else {
-        if(this->txDelay != TX_DELAY_BASE) {
-            this->txDelay = TX_DELAY_BASE;
-        }
-        this->setBusy(true);
-        const TIME_TYPEDEF sendingTime = payload.length() + 16;
-        this->en->broadcast(new Message(this->addr, payload), channelIndex, sendingTime);
-        en->delayEvent(sendingTime, [this](){
-            this->setBusy(false);
-            this->setWaiting(false);
-        });
-    }
 }
 
 void Device::listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
@@ -78,13 +50,44 @@ void Device::listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
     }
 }
 
-void Device::enqueue(std::string payload, CHANNEL_INDEX_TYPEDEF channelIndex) {
-    this->msgQueue.emplace(channelIndex, payload);
+void Device::trueSend(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target) {
+    if(channelIndex >= CHANNEL_COUNTS) {
+        throw std::runtime_error("channelIndex too large");
+    }
+    if(this->en->getChannels()[channelIndex].isBusy()) {
+        this->setWaiting(true);
+        this->en->delayEvent(this->txDelay, [this, payload, channelIndex, target]() {
+            this->trueSend(payload, channelIndex, target);
+        });
+        this->txDelay += TX_DELAY_BASE;
+    } else {
+        if(this->txDelay != TX_DELAY_BASE) {
+            this->txDelay = TX_DELAY_BASE;
+        }
+        this->setBusy(true);
+        const TIME_TYPEDEF sendingTime = payload.length() + 16;
+        this->en->broadcast(new Message(this->addr, target, payload), channelIndex, sendingTime);
+        en->delayEvent(sendingTime, [this](){
+            this->setBusy(false);
+            this->setWaiting(false);
+        });
+        // send next
+        this->processQueue();
+    }
+}
+
+void Device::enqueue(std::string payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target) {
+    this->msgQueue.emplace(payload, channelIndex, target);
     processQueue();
 }
 
 void Device::processQueue() {
-
+    if(msgQueue.empty()) {
+        return;
+    }
+    auto [payload, channelIndex, target] = this->msgQueue.front();
+    this->msgQueue.pop();
+    this->trueSend(payload, channelIndex, target);
 }
 
 void Device::log(const std::string& log) {

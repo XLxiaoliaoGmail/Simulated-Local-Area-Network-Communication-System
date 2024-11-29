@@ -11,22 +11,24 @@ void run() {
         // simulation environment
 
         // setup server
-        uint16_t addrCount = 0;
-        auto server = new Server(std::to_string(addrCount++), en);
+        ADDR_TYPEDEF addrCount = SERVER_ADDR;
+        auto server = new Server(addrCount++, en);
         server->setLogEnable(true);
         server->setRobotLoginKey(ROBOT_LOGIN_KEY);
         server->setStationLoginKey(STATION_LOGIN_KEY);
 
         // setup robots
         for(uint16_t i=0; i<10; i++) {
-            auto robot = new Robot(std::to_string(addrCount++), en);
+            auto robot = new Robot(addrCount++, en);
+            robot->setLogEnable(true);
             robots.push_back(robot);
             robot->sendServerLogin(ROBOT_LOGIN_KEY);
         }
 
         // setup stations
         for(uint16_t i=0; i<10; i++) {
-            auto station = new Station(std::to_string(addrCount++), en);
+            auto station = new Station(addrCount++, en);
+            station->setLogEnable(true);
             stations.push_back(station);
             station->sendServerLogin(STATION_LOGIN_KEY);
         }
