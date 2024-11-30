@@ -35,6 +35,7 @@ void Station::login(std::string loginKey) {
                 [this, handshakeKey](ADDR_TYPEDEF senderAddr, const std::string & payload){
                     if(handshakeKey == payload){
                         this->log("Handshake successfully with bot:" + Message::addrToHexString(senderAddr));
+                        this->setOccupied(true);
                         this->send(
                             MsgType::BOT_STATION_CHARGE_HANDSHAKE,
                             MSG_STATUS_TRUE,
@@ -69,6 +70,7 @@ void Station::login(std::string loginKey) {
                 // stop charging
                 this->chargingBotAddr = NOWHERE_ADDR;
                 this->log("Recieve stop charging");
+                this->setOccupied(false);
             }
         });
     });

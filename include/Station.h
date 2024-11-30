@@ -32,6 +32,7 @@ public:
     void updatePositionToServer();
     inline POSITION_UNIT_TYPEDEF getX(){ return this->x; }
     inline POSITION_UNIT_TYPEDEF getY(){ return this->y; }
+    inline void setOccupied(bool v){ this->occupied = v; this->updateFreeToServer(!v); }
 };
 
 #endif // __STATION_H
