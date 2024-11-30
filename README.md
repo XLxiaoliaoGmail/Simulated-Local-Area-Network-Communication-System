@@ -20,7 +20,8 @@ It simulated the following events:
 7. The charging station returns to idle status.
 
 Below image shows the process of the handshake.
-![image](https://github.com/user-attachments/assets/24001d72-52f3-4ff1-afd2-05d2b768f8b0)
+![image](https://github.com/user-attachments/assets/924dc746-b255-4001-b5b0-860d7bb51769)
+
 
 ## Physical Simulation Layer
 
@@ -37,7 +38,8 @@ The `Channel` class simulates the behavior of various channels in the environmen
 The `Device` class simulates the physical implementation of devices, each with its own address. Devices can send messages to a `Channel` (sending messages consumes ticks, during which the device is busy and the channel is occupied). Devices also implement basic channel occupation-waiting mechanisms and message queue mechanisms (if multiple message sending requests occur in a short time, messages are stored in a queue and sent sequentially). Devices can listen to messages on a `Channel` (each device can only listen to one channel at a time).
 
 The following diagram illustrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
-![image](https://github.com/user-attachments/assets/69e5d94b-fe9e-406e-8da8-db6421e742c1)
+![image](https://github.com/user-attachments/assets/ebea5d4c-99fe-448e-8f04-83ef44eb6cd3)
+
 
 
 ## Protocol Implementation Layer
