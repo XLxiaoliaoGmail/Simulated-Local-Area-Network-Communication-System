@@ -13,7 +13,7 @@ The following diagram demonstrates how a device sends data to the channel, which
 ## protocol layer
 The protocol layer simulates the behavior of real devices. Users can easily use the protocol layer's API directly without needing to worry about the underlying implementation.
 
-The following diagram demonstrates the class relationship between the "communication protocol specialized device" and the underlying physical device.
+The following diagram demonstrates the class relationship between the "communication protocol specialized device" and the "underlying physical device".
 ![image](https://github.com/user-attachments/assets/dc4a513e-795a-40a1-a022-533d12ee1d00)
 
 
