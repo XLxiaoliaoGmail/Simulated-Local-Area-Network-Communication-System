@@ -19,7 +19,7 @@ It simulated the following events:
 6. Charging is completed, and the keep-alive connection is canceled.
 7. The charging station returns to idle status.
 
-Below image shows the process of the handshake.
+The following diagram shows the process of a robot requesting charging.
 ![image](https://github.com/user-attachments/assets/924dc746-b255-4001-b5b0-860d7bb51769)
 
 
