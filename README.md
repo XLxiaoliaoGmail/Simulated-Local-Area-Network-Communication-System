@@ -16,9 +16,8 @@ It simulated the following events:
 6. Charging is completed, and the keep-alive connection is canceled.
 7. The charging station returns to idle status.
 
+Below image shows the process of the handshake.
 ![image](https://github.com/user-attachments/assets/6a4de403-2e9a-4bcf-bc0c-787faea11230)
-The image shows the process of the handshake.
-
 
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
 
