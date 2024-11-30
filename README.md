@@ -1,7 +1,8 @@
 # Local Network Communication Simulation
 
-This project simulates a local network communication system, divided into two main layers: the **Physical Simulation Layer** and the **Protocol Implementation Layer**.
+This project simulates a physical environment and builds a local area network communication system on top of it. Users can easily design their own simulation experiments using the API. 
 
+In the main function, there is an experiment where a robot requests charging。
 
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
 
