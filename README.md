@@ -1,10 +1,13 @@
 # Local Network Communication Simulation
 
-This project simulates a physical environment and builds a local area network communication system on top of it. Users can easily design their own simulation experiments using the API. 
+This project is divided into a **physical simulation layer** and a **protocol layer**. The physical simulation layer simulates a physical environment, while the protocol layer simulates the behavior of real devices. Users can easily build a local network communication system in this simulated environment using SPI. 
 
-In the main function, there is an experiment where a robot requests charging。
+An example experiment of a robot requesting charging is provided in the main function. The following diagram shows the process of a robot requesting charging.
+![image](https://github.com/user-attachments/assets/c8efcc63-f11c-43ed-bdfc-7a4600651eed)
 
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
+
+
 
 ## Main Function
 
@@ -19,10 +22,6 @@ It simulated the following events:
 5. During charging, the robot and the charging station maintain a keep-alive connection.
 6. Charging is completed, and the keep-alive connection is canceled.
 7. The charging station returns to idle status.
-
-The following diagram shows the process of a robot requesting charging.
-![image](https://github.com/user-attachments/assets/924dc746-b255-4001-b5b0-860d7bb51769)
-
 
 ## Physical Simulation Layer
 
