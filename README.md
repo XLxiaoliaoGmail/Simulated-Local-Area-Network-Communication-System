@@ -17,8 +17,7 @@ It simulated the following events:
 7. The charging station returns to idle status.
 
 Below image shows the process of the handshake.
-![image](https://github.com/user-attachments/assets/1e5c7dc6-b7bb-4d8a-9c31-c16903b88ad9)
-
+![image](https://github.com/user-attachments/assets/df13b1db-8df5-4b8e-9de0-79c1ebff0b38)
 
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
 
