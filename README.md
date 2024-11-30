@@ -3,7 +3,8 @@
 This project is divided into a `physical simulation layer` and a `protocol layer`. The physical simulation layer simulates the key behaviors of the 802.15.4 lower-layer firmware, including message sending and listening, channel occupancy and waiting, and communication interference. It also creates a virtual experimental environment that allows these devices to operate in the time dimension. While the `protocol layer` simulates the behavior of real devices. Users can easily use the `protocol layer`'s API directly without needing to worry about the underlying implementation.
 
 An example experiment of a robot requesting charging is provided in the main function. The following diagram shows the process of a robot requesting charging.
-![image](https://github.com/user-attachments/assets/c8efcc63-f11c-43ed-bdfc-7a4600651eed)
+![image](https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6)
+
 
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
 
