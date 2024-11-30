@@ -13,7 +13,12 @@ The following diagram demonstrates how a device sends data to the channel, which
 ## protocol layer
 The protocol layer simulates the behavior of real devices. Users can easily use the protocol layer's API directly without needing to worry about the underlying implementation.
 
-## Main Function
+The following diagram demonstrates the class relationship between the "communication protocol specialized device" and the underlying physical device.
+![image](https://github.com/user-attachments/assets/dc4a513e-795a-40a1-a022-533d12ee1d00)
+
+
+
+## demo (main function)
 
 The main function demonstrates an instance of this system. In this experiment, a server, 10 robots, and 10 charging stations are started at the 10th tick. Robots and charging stations log in to the server using keys after startup. At the 5000th tick, a "robot requests charging" event occurs. Each device's behavior is logged in detail to the console, allowing the operator to see what happens and make further optimizations and adjustments. The output\main.exe is the compiled file. You can open it if you trust it.
 
