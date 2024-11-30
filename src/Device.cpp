@@ -97,7 +97,7 @@ void Device::log(const std::string& log) {
     std::cout << "[" 
               << std::setw(TIME_FORMAT_LENGTH) << std::setfill('0') << this->en->getTime()
               << "][D]["
-              << std::setw(DEVICE_INDEX_FORMAT_LENGTH) << std::setfill('0') << this->addr
+              << std::setw(ADDR_FORMAT_LENGTH) << std::setfill('0') << this->addr
               << "]:"
               << log
               << std::endl;

@@ -6,32 +6,31 @@
 class Robot : public ProtocolDevice {
 private:
     bool needCharging;
+    bool loginSuccess;
 
 public:
-    explicit Robot(ADDR_TYPEDEF addr, Environment* en) : ProtocolDevice(addr, en), needCharging(false) {
-        this->setOnWaitingChanged([this](bool waiting){
-            if(waiting) {
-                this->log("Channel occupied, wiating ...");
-            }
-        });
-        this->setOnBusyChanged([this](bool busy){
-            if(!busy) {
-                this->log("Message sent");
-            }
-        });
-    }
+    explicit Robot(ADDR_TYPEDEF addr, Environment* en);
     inline void powerOn(){}
     inline void moveToStation(){}
-    void msgHandler(ADDR_TYPEDEF senderAddr, MsgType type, const std::string& payload);
     inline void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
         Device::listenTo(channelIndex);
         this->log("Listen to Channel[" + std::to_string(channelIndex) + "]");
     }
     inline void log(const std::string& log) { ProtocolDevice::log("Robot", log); }
     // to server
-    inline void sendServerLogin(std::string loginKey) {
-        this->send(MsgType::LOGIN, loginKey, SERVER_CHANNEL, SERVER_ADDR);
-        this->log("Try to send login");
+    void login(std::string loginKey);
+    void needCharge();
+    inline void sendToServer(MsgType type, const std::string payload) {
+        ProtocolDevice::send(type, payload, SERVER_CHANNEL, SERVER_ADDR);
+    }
+    inline void sendToServer(MsgType type){
+        ProtocolDevice::send(type, SERVER_CHANNEL, SERVER_ADDR);
+    }
+    inline void sendToServer(MsgType type, const std::string payload, std::function<void(ADDR_TYPEDEF, const std::string&)> callback) {
+        ProtocolDevice::send(type, payload, SERVER_CHANNEL, SERVER_ADDR, callback);
+    }
+    inline void sendToServer(MsgType type, std::function<void(ADDR_TYPEDEF, const std::string&)> callback){
+        ProtocolDevice::send(type, SERVER_CHANNEL, SERVER_ADDR, callback);
     }
 };
 

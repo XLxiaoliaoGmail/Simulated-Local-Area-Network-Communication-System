@@ -22,7 +22,7 @@ void run() {
             auto robot = new Robot(addrCount++, en);
             robot->setLogEnable(true);
             robots.push_back(robot);
-            robot->sendServerLogin(ROBOT_LOGIN_KEY);
+            robot->login(ROBOT_LOGIN_KEY);
         }
 
         // setup stations
@@ -30,7 +30,7 @@ void run() {
             auto station = new Station(addrCount++, en);
             station->setLogEnable(true);
             stations.push_back(station);
-            station->sendServerLogin(STATION_LOGIN_KEY);
+            station->login(STATION_LOGIN_KEY);
         }
     });
 
