@@ -56,3 +56,5 @@ The `Robot` class is a specific implementation of `ProtocolDevice`, representing
 
 ### Station
 The `Station` class is a specific implementation of `ProtocolDevice`, representing a charging station device. It implements behaviors related to charging stations, such as logging in and handling charging requests.
+
+For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
