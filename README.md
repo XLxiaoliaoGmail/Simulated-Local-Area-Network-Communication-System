@@ -8,16 +8,15 @@ For detailed information, please refer to the [API documentation](https://github
 The physical simulation layer simulates the key behaviors of lower-layer firmware of the 802.15.4, which is a widely used protocol for low-rate wireless personal area networks (LR-WPANs) , including message sending and listening, channel occupancy and waiting, and communication interference. It also creates a virtual experimental environment that allows these devices to operate in the time dimension. 
 
 The following diagram demonstrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
-![image](https://github.com/user-attachments/assets/e6367711-5d83-47f0-8371-5ba8fea9627c)
 
+<img src="https://github.com/user-attachments/assets/e6367711-5d83-47f0-8371-5ba8fea9627c" width="70%">
 
 ## protocol layer
 The protocol layer simulates the behavior of real devices. Users can easily use the protocol layer's API directly without needing to worry about the underlying implementation.
 
 The following diagram demonstrates the class relationship between the "communication protocol specialized device" and the "underlying physical device".
-![image](https://github.com/user-attachments/assets/dc4a513e-795a-40a1-a022-533d12ee1d00)
 
-
+<img src="https://github.com/user-attachments/assets/dc4a513e-795a-40a1-a022-533d12ee1d00" width="70%">
 
 ## demo (main function)
 
@@ -34,7 +33,8 @@ It simulated the following events:
 7. The charging station returns to idle status.
 
 The following diagram delays the process of this experiment.
-![image](https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6)
+
+<img src="https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6" width="70%">
 
 ## Physical Simulation Layer
 
