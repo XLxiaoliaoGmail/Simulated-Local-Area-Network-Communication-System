@@ -1,14 +1,17 @@
-# Local Network Communication Simulation
+# Local Network Communication Simulation System
 
-This project is divided into a `physical simulation layer` and a `protocol layer`. The physical simulation layer simulates the key behaviors of the 802.15.4 lower-layer firmware, including message sending and listening, channel occupancy and waiting, and communication interference. It also creates a virtual experimental environment that allows these devices to operate in the time dimension. While the `protocol layer` simulates the behavior of real devices. Users can easily use the `protocol layer`'s API directly without needing to worry about the underlying implementation.
-
-An example experiment of a robot requesting charging is provided in the main function. The following diagram shows the process of a robot requesting charging.
-![image](https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6)
-
+This project is divided into `physical simulation layer` and `protocol layer`. 
 
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
 
+## physical simulation layer
+The physical simulation layer simulates the key behaviors of lower-layer firmware of the 802.15.4, which is a widely used protocol for low-rate wireless personal area networks (LR-WPANs) , including message sending and listening, channel occupancy and waiting, and communication interference. It also creates a virtual experimental environment that allows these devices to operate in the time dimension. 
 
+The following diagram demonstrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
+![image](https://github.com/user-attachments/assets/ebea5d4c-99fe-448e-8f04-83ef44eb6cd3)
+
+## protocol layer
+The protocol layer simulates the behavior of real devices. Users can easily use the protocol layer's API directly without needing to worry about the underlying implementation.
 
 ## Main Function
 
@@ -24,6 +27,9 @@ It simulated the following events:
 6. Charging is completed, and the keep-alive connection is canceled.
 7. The charging station returns to idle status.
 
+The following diagram delays the process of this experiment.
+![image](https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6)
+
 ## Physical Simulation Layer
 
 ### Environment
@@ -37,9 +43,6 @@ The `Channel` class simulates the behavior of various channels in the environmen
 
 ### Device
 The `Device` class simulates the physical implementation of devices, each with its own address. Devices can send messages to a `Channel` (sending messages consumes ticks, during which the device is busy and the channel is occupied). Devices also implement basic channel occupation-waiting mechanisms and message queue mechanisms (if multiple message sending requests occur in a short time, messages are stored in a queue and sent sequentially). Devices can listen to messages on a `Channel` (each device can only listen to one channel at a time).
-
-The following diagram illustrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
-![image](https://github.com/user-attachments/assets/ebea5d4c-99fe-448e-8f04-83ef44eb6cd3)
 
 
 
