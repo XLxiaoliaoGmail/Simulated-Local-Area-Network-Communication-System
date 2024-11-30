@@ -7,9 +7,9 @@ For detailed information, please refer to the [API documentation](https://github
 ## physical simulation layer
 The physical simulation layer simulates the key behaviors of lower-layer firmware of the 802.15.4, which is a widely used protocol for low-rate wireless personal area networks (LR-WPANs) , including message sending and listening, channel occupancy and waiting, and communication interference. It also creates a virtual experimental environment that allows these devices to operate in the time dimension. 
 
-The following diagram demonstrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
+The following diagram shows how the simulation environment operates.
 
-<img src="https://github.com/user-attachments/assets/e6367711-5d83-47f0-8371-5ba8fea9627c" width="70%">
+<img src="https://github.com/user-attachments/assets/054032d2-3df9-44ad-b0d3-0c4a3676767f" width="70%">
 
 ## protocol layer
 The protocol layer simulates the behavior of real devices. Users can easily use the protocol layer's API directly without needing to worry about the underlying implementation.
@@ -49,6 +49,10 @@ The `Channel` class simulates the behavior of various channels in the environmen
 
 ### Device
 The `Device` class simulates the physical implementation of devices, each with its own address. Devices can send messages to a `Channel` (sending messages consumes ticks, during which the device is busy and the channel is occupied). Devices also implement basic channel occupation-waiting mechanisms and message queue mechanisms (if multiple message sending requests occur in a short time, messages are stored in a queue and sent sequentially). Devices can listen to messages on a `Channel` (each device can only listen to one channel at a time).
+
+The following diagram demonstrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
+
+<img src="https://github.com/user-attachments/assets/e6367711-5d83-47f0-8371-5ba8fea9627c" width="70%">
 
 
 
