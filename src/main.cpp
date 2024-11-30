@@ -56,6 +56,6 @@ int main() {
     #else
         run();
     #endif
-    
+    system("pause");
     return 0;
 }
