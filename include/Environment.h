@@ -25,6 +25,7 @@ public:
     void stopRun();
     void run();
     inline Channel* getChannels(){ return this->channels; };
+    inline void error(std::string s){ throw std::runtime_error(s); }
 };
 
 #endif // __ENVIRONMENT_H

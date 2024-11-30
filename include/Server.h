@@ -9,10 +9,11 @@ struct RobotData {
 };
 
 struct StationData {
+    ADDR_TYPEDEF addr;
     bool free;
-    LOCATION_UNIT_TYPEDEF x;
-    LOCATION_UNIT_TYPEDEF y;
-    explicit StationData() : free(false) {}
+    POSITION_UNIT_TYPEDEF x;
+    POSITION_UNIT_TYPEDEF y;
+    explicit StationData(ADDR_TYPEDEF addr) : addr(addr), free(false) {}
 };
 
 class Server : public ProtocolDevice {
@@ -49,7 +50,7 @@ public:
         this->robotsInfo[addr] = new RobotData(); 
     }
     inline void addStationAddr(ADDR_TYPEDEF addr){ 
-        this->stationsInfo[addr] = new StationData(); 
+        this->stationsInfo[addr] = new StationData(addr); 
     }
     inline void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
         Device::listenTo(channelIndex);

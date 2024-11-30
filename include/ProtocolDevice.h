@@ -50,6 +50,7 @@ public:
     inline void msgHandler(ADDR_TYPEDEF senderAddr, MsgType type, const std::string& payload) {
         if(this->onceCallbacks.count(type) != 0) {
             this->onceCallbacks.at(type)(senderAddr, payload);
+            this->onceCallbacks.erase(type);
         }
         if(this->callbacks.count(type) != 0) {
             this->callbacks.at(type)(senderAddr, payload);

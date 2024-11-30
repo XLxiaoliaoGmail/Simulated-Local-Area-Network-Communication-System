@@ -2,7 +2,7 @@
 
 void Environment::broadcast(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime) {
     if(channelIndex >= CHANNEL_COUNTS) {
-        throw std::runtime_error("channelIndex too large");
+        this->error("channelIndex too large");
     }
     this->channels[channelIndex].occupy(msg);
 

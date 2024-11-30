@@ -6,13 +6,13 @@ Device::Device(ADDR_TYPEDEF addr, Environment* en) :
     en(en), 
     busy(false),
     waiting(false),
-    listeningIndex(SERVER_CHANNEL),
+    listeningIndex(MAIN_CHANNEL),
     onBusyChanged(nullptr),
     onWaitingChanged(nullptr),
     logEnable(false)
     {
         // this->log("listening to channel[0]");
-        en->getChannels()[SERVER_CHANNEL].addListener(this);
+        en->getChannels()[MAIN_CHANNEL].addListener(this);
         en->addDevice(this);
     }
 
@@ -40,7 +40,7 @@ void Device::recieve(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex) {
 
 void Device::listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
     if(channelIndex >= CHANNEL_COUNTS) {
-        throw std::runtime_error("channelIndex too large");
+        this->error("channelIndex too large");
     }
     if(channelIndex != this->listeningIndex) {
         this->en->getChannels()[this->listeningIndex].removeListener(this);
@@ -52,7 +52,7 @@ void Device::listenTo(CHANNEL_INDEX_TYPEDEF channelIndex) {
 
 void Device::trueSend(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target) {
     if(channelIndex >= CHANNEL_COUNTS) {
-        throw std::runtime_error("channelIndex too large");
+        this->error("channelIndex too large");
     }
     if(this->en->getChannels()[channelIndex].isBusy()) {
         this->setWaiting(true);
@@ -97,7 +97,7 @@ void Device::log(const std::string& log) {
     std::cout << "[" 
               << std::setw(TIME_FORMAT_LENGTH) << std::setfill('0') << this->en->getTime()
               << "][D]["
-              << std::setw(ADDR_FORMAT_LENGTH) << std::setfill('0') << this->addr
+              << Message::addrToHexString(this->addr)
               << "]:"
               << log
               << std::endl;

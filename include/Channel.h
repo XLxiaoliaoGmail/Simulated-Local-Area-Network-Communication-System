@@ -20,6 +20,7 @@ public:
     inline bool isMixed() const { return this->mixed; }
     inline const Message* getMsg() const { return this->msg; }
     inline std::list<Device*> getListeners() const { return this->listeners; }
+    inline void error(std::string s){ throw std::runtime_error(s); }
 };
 
 #endif // __CHANNEL_H

@@ -71,6 +71,9 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "xhash": "cpp",
-        "_common.h": "c"
+        "_common.h": "c",
+        "message.h": "c",
+        "server.h": "c",
+        "protocoldevice.h": "c"
     }
 }

@@ -38,6 +38,8 @@ public:
     inline void setOnBusyChanged(std::function<void(bool)> callback) { this->onBusyChanged = callback; }
     inline void setOnWaitingChanged(std::function<void(bool)> callback) { this->onWaitingChanged = callback; }
     inline void setLogEnable(bool v){ this->logEnable = v; }
+    inline void error(std::string s){ throw std::runtime_error(s); }
+
 };
 
 #endif // __DEVICE_H
