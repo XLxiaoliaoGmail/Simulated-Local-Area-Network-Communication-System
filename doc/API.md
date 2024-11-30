@@ -120,49 +120,547 @@ The `SimEvent` class represents an event scheduled to occur at a specific time d
   - **Returns:** The event's `emitTick` as a `TIME_TYPEDEF`.
 
 
-### Channel
-The `Channel` class simulates the behavior of various channels in the environment, including channel occupation and signal interference. An `Environment` instance may contain multiple `Channels`. When a `Device` sends a message to a `Channel` and the message is not interfered with, it will be broadcast to all `Devices` listening to that `Channel`.
+## Channel Class
 
-**Description:**
-<!-- Write a description of the class here -->
+The `Channel` class simulates a communication channel in the local network, supporting message transmission and device listening mechanisms.
 
-### Device
-The `Device` class simulates the physical implementation of devices, each with its own address. Devices can send messages to a `Channel` (sending messages consumes ticks, during which the device is busy and the channel is occupied). Devices also implement basic channel occupation-waiting mechanisms and message queue mechanisms (if multiple message sending requests occur in a short time, messages are stored in a queue and sent sequentially). Devices can listen to messages on a `Channel` (each device can only listen to one channel at a time).
+### Attributes
 
-**Description:**
-<!-- Write a description of the class here -->
+- **`userNum`** (`uint8_t`): Tracks the number of users currently occupying the channel.
+- **`mixed`** (`bool`): Indicates whether signal interference has occurred on the channel.
+- **`msg`** (`const Message*`): A pointer to the message currently being transmitted on the channel.
+- **`listeners`** (`std::list<Device*>`): A list of devices currently listening to the channel.
 
-## Protocol Implementation Layer
+### Methods
 
-### ProtocolDevice
-`ProtocolDevice` extends `Device` by adding basic protocol functionalities. Each message includes a type and payload, and received broadcast messages can be processed, such as filtering out messages not intended for the device, registering message handlers, sending messages, and listening for callbacks.
+#### Constructor
 
-**Description:**
-<!-- Write a description of the class here -->
+- **`explicit Channel()`**
+  - Initializes a `Channel` object with no users (`userNum = 0`), no signal interference (`mixed = false`), and no active message.
 
-### Server
-The `Server` class is a specific implementation of `ProtocolDevice`, representing a central server device. It handles server-related behaviors, such as listening for login requests and handling robot charging requests. The server can manage all devices, which prioritize communication with the server unless authorized otherwise. The server does not manage any devices at startup; devices must log in to the server to be managed. Each device has a login key, and only devices with valid keys are added to the specific device pool.
+#### Public Methods
 
-**Description:**
-<!-- Write a description of the class here -->
+- **`void occupy(const Message* msg)`**
+  - Occupies the channel with a message for transmission.
+  - **Parameters:**
+    - `msg`: A pointer to the `Message` to be transmitted.
 
-### Robot
-The `Robot` class is a specific implementation of `ProtocolDevice`, representing a robot device. It implements behaviors related to robots, such as logging in and requesting charging.
+- **`void release()`**
+  - Releases the channel, making it available for new transmissions.
 
-**Description:**
-<!-- Write a description of the class here -->
+- **`void addListener(Device* d)`**
+  - Adds a device to the channel's list of listeners.
+  - **Parameters:**
+    - `d`: A pointer to the `Device` to be added as a listener.
 
-### Station
-The `Station` class is a specific implementation of `ProtocolDevice`, representing a charging station device. It implements behaviors related to charging stations, such as logging in and handling charging requests.
+- **`void removeListener(Device* d)`**
+  - Removes a device from the channel's list of listeners.
+  - **Parameters:**
+    - `d`: A pointer to the `Device` to be removed.
 
-**Description:**
-<!-- Write a description of the class here -->
+- **`bool isBusy() const`**
+  - Checks if the channel is currently occupied.
+  - **Returns:** `true` if the channel is occupied, `false` otherwise.
 
-## Main Function
+- **`bool isMixed() const`**
+  - Checks if signal interference has occurred on the channel.
+  - **Returns:** `true` if interference is present, `false` otherwise.
 
-The main function demonstrates an instance of this system. In this experiment, a server, 10 robots, and 10 charging stations are started at the 10th tick. Robots and charging stations log in to the server using keys after startup. At the 5000th tick, a "robot requests charging" event occurs. Each device's behavior is logged in detail to the console, allowing the operator to see what happens and make further optimizations and adjustments.
+- **`const Message* getMsg() const`**
+  - Retrieves the message currently being transmitted on the channel.
+  - **Returns:** A pointer to the `Message`.
 
-The output\main.exe is the compiled file. You can open it if you trust it.
+- **`std::list<Device*> getListeners() const`**
+  - Retrieves the list of devices currently listening to the channel.
+  - **Returns:** A list of pointers to `Device` objects.
 
-**Description:**
-<!-- Write a description of the main function here -->
+- **`void error(std::string s)`**
+  - Throws a runtime error with a specified message.
+  - **Parameters:**
+    - `s`: A string containing the error message.
+
+
+## Device Class
+
+The `Device` class represents a physical device in the simulated network. It can send and receive messages, listen to channels, and manage its busy or waiting states.
+
+### Attributes
+
+- **`addr`** (`ADDR_TYPEDEF`): The address of the device.
+- **`en`** (`Environment*`): A pointer to the environment where the device operates.
+- **`txDelay`** (`TIME_TYPEDEF`): The time delay required for the device to transmit a message.
+- **`busy`** (`bool`): Indicates whether the device is currently busy sending messages.
+- **`waiting`** (`bool`): Indicates whether the device is in a waiting state to access a channel.
+- **`onBusyChanged`** (`std::function<void(bool)>`): A callback function triggered when the device's busy state changes.
+- **`onWaitingChanged`** (`std::function<void(bool)>`): A callback function triggered when the device's waiting state changes.
+- **`listeningIndex`** (`CHANNEL_INDEX_TYPEDEF`): The index of the channel the device is currently listening to.
+- **`logEnable`** (`bool`): Controls whether the device's actions are logged.
+- **`msgQueue`** (`std::queue<std::tuple<std::string, CHANNEL_INDEX_TYPEDEF, ADDR_TYPEDEF>>`): A queue storing messages to be sent, with each message containing a payload, target channel, and target address.
+
+### Methods
+
+#### Constructor
+
+- **`explicit Device(ADDR_TYPEDEF addr, Environment* en)`**
+  - Initializes a `Device` object with a specific address and environment.
+  - **Parameters:**
+    - `addr`: The address of the device.
+    - `en`: A pointer to the `Environment` where the device operates.
+
+#### Protected Methods
+
+- **`void send(const std::string& payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target)`**
+  - Enqueues a message to be sent.
+  - **Parameters:**
+    - `payload`: The message content.
+    - `channelIndex`: The target channel index.
+    - `target`: The target address.
+
+- **`void log(const std::string& log)`**
+  - Logs the specified message if logging is enabled.
+  - **Parameters:**
+    - `log`: The message to log.
+
+#### Public Methods
+
+- **`void recieve(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex)`**
+  - Handles receiving a message on a specific channel.
+  - **Parameters:**
+    - `msg`: A pointer to the received `Message`.
+    - `channelIndex`: The index of the channel where the message was received.
+
+- **`ADDR_TYPEDEF getAddr() const`**
+  - Retrieves the device's address.
+  - **Returns:** The device's `ADDR_TYPEDEF`.
+
+- **`void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex)`**
+  - Sets the device to listen to a specific channel.
+  - **Parameters:**
+    - `channelIndex`: The index of the channel to listen to.
+
+- **`void setBusy(bool v)`**
+  - Updates the device's busy state and triggers the `onBusyChanged` callback if defined.
+  - **Parameters:**
+    - `v`: The new busy state (`true` or `false`).
+
+- **`void setWaiting(bool v)`**
+  - Updates the device's waiting state and triggers the `onWaitingChanged` callback if defined.
+  - **Parameters:**
+    - `v`: The new waiting state (`true` or `false`).
+
+- **`void setOnBusyChanged(std::function<void(bool)> callback)`**
+  - Sets the callback function for busy state changes.
+  - **Parameters:**
+    - `callback`: A function to execute when the busy state changes.
+
+- **`void setOnWaitingChanged(std::function<void(bool)> callback)`**
+  - Sets the callback function for waiting state changes.
+  - **Parameters:**
+    - `callback`: A function to execute when the waiting state changes.
+
+- **`void setLogEnable(bool v)`**
+  - Enables or disables logging for the device.
+  - **Parameters:**
+    - `v`: `true` to enable logging, `false` to disable.
+
+- **`void error(std::string s)`**
+  - Throws a runtime error with the specified message.
+  - **Parameters:**
+    - `s`: A string containing the error message.
+
+## ProtocolDevice Class
+
+The `ProtocolDevice` class extends the `Device` class and provides functionality for handling protocol-specific communication with other devices. It supports message sending, receiving, and callback management.
+
+
+
+### Attributes
+
+- **`callbacks`** (`std::unordered_map<MsgType, std::function<void(ADDR_TYPEDEF, const std::string&)>>`): A map of registered callbacks for specific message types.
+- **`onceCallbacks`** (`std::unordered_map<MsgType, std::function<void(ADDR_TYPEDEF, const std::string&)>>`): A map of one-time callbacks for specific message types.
+
+
+
+### Methods
+
+#### Constructor
+
+- **`explicit ProtocolDevice(ADDR_TYPEDEF addr, Environment* en)`**
+  - Initializes the `ProtocolDevice` object with the provided address and environment.
+  - **Parameters:**
+    - `addr`: The address of the device.
+    - `en`: A pointer to the environment.
+
+
+
+#### Utility Methods
+
+- **`std::string formatKeyStr(const std::string& key)`**
+  - Formats the given key string to a specific length, adding 'x' at the beginning or truncating if necessary.
+  - **Parameters:**
+    - `key`: The key string to format.
+  - **Returns:** A formatted key string.
+
+- **`std::string MsgTypeToHexString(MsgType num)`**
+  - Converts a `MsgType` value to its hexadecimal string representation.
+  - **Parameters:**
+    - `num`: The message type to convert.
+  - **Returns:** A hexadecimal string representing the message type.
+
+- **`MsgType hexStringToMsgType(const std::string& hexStr)`**
+  - Converts a hexadecimal string to a `MsgType` value.
+  - **Parameters:**
+    - `hexStr`: The hexadecimal string to convert.
+  - **Returns:** The corresponding `MsgType` value.
+
+
+
+#### Sending Messages
+
+- **`void send(MsgType type, const std::string payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target)`**
+  - Sends a message with a `MsgType` and payload to a specific target.
+  - **Parameters:**
+    - `type`: The message type.
+    - `payload`: The message content.
+    - `channelIndex`: The target channel.
+    - `target`: The target address.
+
+- **`void send(MsgType type, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target)`**
+  - Sends a message with a `MsgType` to a specific target without a payload.
+  - **Parameters:**
+    - `type`: The message type.
+    - `channelIndex`: The target channel.
+    - `target`: The target address.
+
+- **`void send(MsgType type, const std::string payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Sends a message with a `MsgType` and payload to a specific target and registers a one-time callback for the response.
+  - **Parameters:**
+    - `type`: The message type.
+    - `payload`: The message content.
+    - `channelIndex`: The target channel.
+    - `target`: The target address.
+    - `callback`: A callback function to execute when a response is received.
+
+- **`void send(MsgType type, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Sends a message with a `MsgType` to a specific target and registers a one-time callback for the response.
+  - **Parameters:**
+    - `type`: The message type.
+    - `channelIndex`: The target channel.
+    - `target`: The target address.
+    - `callback`: A callback function to execute when a response is received.
+
+
+
+#### Callback Management
+
+- **`void on(MsgType type, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Registers a callback function to be executed when a message of the specified type is received.
+  - **Parameters:**
+    - `type`: The message type.
+    - `callback`: The callback function to execute.
+
+- **`void once(MsgType type, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Registers a one-time callback function to be executed once when a message of the specified type is received.
+  - **Parameters:**
+    - `type`: The message type.
+    - `callback`: The callback function to execute.
+
+- **`void msgHandler(ADDR_TYPEDEF senderAddr, MsgType type, const std::string& payload)`**
+  - Handles the received message by executing the appropriate callback.
+  - If the message has a one-time callback, it is executed and removed from the `onceCallbacks`.
+  - **Parameters:**
+    - `senderAddr`: The address of the sender.
+    - `type`: The message type.
+    - `payload`: The message content.
+
+
+#### Receiving Messages
+
+- **`void recieve(const Message* msg, CHANNEL_INDEX_TYPEDEF channelIndex) override`**
+  - Receives a message and processes it if the message's target is the current device.
+  - **Parameters:**
+    - `msg`: The message to receive.
+    - `channelIndex`: The channel index the message was received on.
+
+
+#### Logging
+
+- **`void log(const std::string& who, const std::string& log)`**
+  - Logs a message with a specific prefix indicating the origin of the message.
+  - **Parameters:**
+    - `who`: The source of the log (e.g., "ProtocolDevice").
+    - `log`: The message content to log.
+
+
+## Server Class
+
+The `Server` class extends the `ProtocolDevice` class to manage and coordinate `RobotData` and `StationData`. It provides functionalities to handle robot and station information, login key management, and channel listening.
+
+
+### Attributes
+
+- **`robotsInfo`** (`std::unordered_map<ADDR_TYPEDEF, RobotData*>`): A mapping of robot addresses to their corresponding `RobotData` objects.
+- **`stationsInfo`** (`std::unordered_map<ADDR_TYPEDEF, StationData*>`): A mapping of station addresses to their corresponding `StationData` objects.
+- **`robotLoginKey`** (`std::string`): The formatted key for robot login.
+- **`stationLoginKey`** (`std::string`): The formatted key for station login.
+
+
+### Methods
+
+#### Constructor
+
+- **`explicit Server(ADDR_TYPEDEF addr, Environment* en)`**
+  - Initializes the `Server` object with a specific address and environment.
+  - **Parameters:**
+    - `addr`: The server's address.
+    - `en`: A pointer to the `Environment`.
+
+
+#### Public Methods
+
+- **`bool isRobot(ADDR_TYPEDEF addr)`**
+  - Checks if a given address belongs to a robot.
+  - **Parameters:**
+    - `addr`: The address to check.
+  - **Returns:** `true` if the address belongs to a robot, `false` otherwise.
+
+- **`bool isStation(ADDR_TYPEDEF addr)`**
+  - Checks if a given address belongs to a station.
+  - **Parameters:**
+    - `addr`: The address to check.
+  - **Returns:** `true` if the address belongs to a station, `false` otherwise.
+
+- **`StationData* getFreeStation()`**
+  - Retrieves a pointer to a free station.
+  - **Returns:** A pointer to a `StationData` object, or `nullptr` if no free station is available.
+
+- **`void setStationStatus(ADDR_TYPEDEF addr, bool free)`**
+  - Updates the status of a station (free or busy).
+  - **Parameters:**
+    - `addr`: The station address.
+    - `free`: The new status (`true` for free, `false` for busy).
+
+- **`void setRobotLoginKey(const std::string& key)`**
+  - Sets the robot login key.
+  - **Parameters:**
+    - `key`: The login key string.
+
+- **`void setStationLoginKey(const std::string& key)`**
+  - Sets the station login key.
+  - **Parameters:**
+    - `key`: The login key string.
+
+- **`void addRobotAddr(ADDR_TYPEDEF addr)`**
+  - Adds a robot address to the `robotsInfo` map.
+  - **Parameters:**
+    - `addr`: The robot address.
+
+- **`void addStationAddr(ADDR_TYPEDEF addr)`**
+  - Adds a station address to the `stationsInfo` map.
+  - **Parameters:**
+    - `addr`: The station address.
+
+- **`void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex)`**
+  - Listens to a specific channel and logs the action.
+  - **Parameters:**
+    - `channelIndex`: The index of the channel to listen to.
+
+- **`void log(const std::string& log)`**
+  - Logs a message with the prefix "Server."
+  - **Parameters:**
+    - `log`: The message to log.
+
+
+
+
+
+## Robot Class
+
+The `Robot` class extends the `ProtocolDevice` class and represents a robotic device that can interact with a server and charging stations. It handles communication, navigation, charging, and login operations.
+
+
+### Attributes
+
+- **`needCharging`** (`bool`): Indicates if the robot requires charging.
+- **`loginSuccess`** (`bool`): Indicates if the robot has successfully logged in.
+- **`power`** (`POWER_TYPEDEF`): The robot's current power level.
+- **`chargingStationAddr`** (`ADDR_TYPEDEF`): The address of the charging station the robot is associated with.
+
+
+### Methods
+
+#### Constructor
+
+- **`explicit Robot(ADDR_TYPEDEF addr, Environment* en)`**
+  - Initializes the `Robot` object with a specific address and environment.
+  - **Parameters:**
+    - `addr`: The robot's address.
+    - `en`: A pointer to the `Environment`.
+
+
+#### Public Methods
+
+- **`void listenTo(CHANNEL_INDEX_TYPEDEF channelIndex)`**
+  - Listens to a specific channel and logs the action.
+  - **Parameters:**
+    - `channelIndex`: The index of the channel to listen to.
+
+- **`void log(const std::string& log)`**
+  - Logs a message with the prefix "Robot."
+  - **Parameters:**
+    - `log`: The message to log.
+
+- **`void gotoPosition(Position pos)`**
+  - Logs the action of moving to a specific position.
+  - **Parameters:**
+    - `pos`: The target position, with `x` and `y` coordinates.
+
+- **`void chagingUp()`**
+  - Increases the robot's power level by 20 units.
+
+- **`POWER_TYPEDEF getPower() const`**
+  - Retrieves the robot's current power level.
+  - **Returns:** The power level as a `POWER_TYPEDEF`.
+
+
+#### Communication with Server
+
+- **`void login(std::string loginKey)`**
+  - Logs in to the server using a specific key.
+  - **Parameters:**
+    - `loginKey`: The login key as a string.
+
+- **`void needCharge()`**
+  - Sends a request to the server indicating the need for charging.
+
+- **`void sendToServer(MsgType type, const std::string payload)`**
+  - Sends a message with a payload to the server.
+  - **Parameters:**
+    - `type`: The message type.
+    - `payload`: The message payload.
+
+- **`void sendToServer(MsgType type)`**
+  - Sends a message to the server without a payload.
+  - **Parameters:**
+    - `type`: The message type.
+
+- **`void sendToServer(MsgType type, const std::string payload, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Sends a message with a payload to the server and registers a callback for the response.
+  - **Parameters:**
+    - `type`: The message type.
+    - `payload`: The message payload.
+    - `callback`: A function to handle the server's response.
+
+- **`void sendToServer(MsgType type, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Sends a message to the server without a payload and registers a callback for the response.
+  - **Parameters:**
+    - `type`: The message type.
+    - `callback`: A function to handle the server's response.
+
+
+
+#### Communication with Station
+
+- **`void sendHandshakeToStation(std::string handShakey, ADDR_TYPEDEF stationAddr, CHANNEL_INDEX_TYPEDEF channelIndex)`**
+  - Sends a handshake message to a charging station.
+  - **Parameters:**
+    - `handShakey`: The handshake key.
+    - `stationAddr`: The address of the station.
+    - `channelIndex`: The channel index for communication.
+
+- **`void keepAliveWhenCharging()`**
+  - Sends periodic signals to indicate the robot is active while charging.
+
+- **`void sendPowerFinish(ADDR_TYPEDEF stationAddr)`**
+  - Sends a message to the station indicating the charging process is complete.
+  - **Parameters:**
+    - `stationAddr`: The address of the charging station.
+
+
+## Station Class
+
+The `Station` class extends the `ProtocolDevice` class and represents a station that can be used by robots for various operations, such as charging. It handles communication with the server, state management, and position updates.
+
+
+
+### Attributes
+
+- **`occupied`** (`bool`): Indicates whether the station is occupied by a robot.
+- **`loginSuccess`** (`bool`): A flag indicating whether the login process was successful.
+- **`x`** (`POSITION_UNIT_TYPEDEF`): The x-coordinate of the station's position.
+- **`y`** (`POSITION_UNIT_TYPEDEF`): The y-coordinate of the station's position.
+- **`chargingBotAddr`** (`ADDR_TYPEDEF`): The address of the robot that is currently charging at the station.
+
+
+
+### Methods
+
+#### Constructor
+
+- **`explicit Station(ADDR_TYPEDEF addr, Environment* en, POSITION_UNIT_TYPEDEF x, POSITION_UNIT_TYPEDEF y)`**
+  - Initializes the `Station` object with the provided address, environment, and position.
+  - **Parameters:**
+    - `addr`: The station's address.
+    - `en`: A pointer to the `Environment`.
+    - `x`: The x-coordinate of the station's position.
+    - `y`: The y-coordinate of the station's position.
+
+
+
+#### Public Methods
+
+- **`void log(const std::string& log)`**
+  - Logs a message with the prefix "Station."
+  - **Parameters:**
+    - `log`: The message to log.
+
+- **`void sendToServer(MsgType type, const std::string payload)`**
+  - Sends a message with a payload to the server.
+  - **Parameters:**
+    - `type`: The type of the message.
+    - `payload`: The message content.
+
+- **`void sendToServer(MsgType type)`**
+  - Sends a message to the server without a payload.
+  - **Parameters:**
+    - `type`: The type of the message.
+
+- **`void sendToServer(MsgType type, const std::string payload, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Sends a message with a payload to the server and provides a callback for a response.
+  - **Parameters:**
+    - `type`: The type of the message.
+    - `payload`: The message content.
+    - `callback`: The callback function to handle the response.
+
+- **`void sendToServer(MsgType type, std::function<void(ADDR_TYPEDEF, const std::string&)> callback)`**
+  - Sends a message to the server and provides a callback for a response.
+  - **Parameters:**
+    - `type`: The type of the message.
+    - `callback`: The callback function to handle the response.
+
+- **`void login(std::string loginKey)`**
+  - Logs the station into the server using the provided login key.
+  - **Parameters:**
+    - `loginKey`: The login key for authentication.
+
+- **`void updateFreeToServer(bool free)`**
+  - Updates the station's status (free or occupied) to the server.
+  - **Parameters:**
+    - `free`: `true` if the station is free, `false` if occupied.
+
+- **`void updatePositionToServer()`**
+  - Updates the station's position to the server.
+
+- **`POSITION_UNIT_TYPEDEF getX()`**
+  - Returns the x-coordinate of the station's position.
+  - **Returns:** The x-coordinate of the station.
+
+- **`POSITION_UNIT_TYPEDEF getY()`**
+  - Returns the y-coordinate of the station's position.
+  - **Returns:** The y-coordinate of the station.
+
+- **`void setOccupied(bool v)`**
+  - Sets the station's occupancy status and updates its status to the server.
+  - **Parameters:**
+    - `v`: `true` to mark the station as occupied, `false` to mark it as free.
+
