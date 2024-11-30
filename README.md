@@ -6,6 +6,20 @@ This project simulates a local network communication system, divided into two ma
 
 The main function demonstrates an instance of this system. In this experiment, a server, 10 robots, and 10 charging stations are started at the 10th tick. Robots and charging stations log in to the server using keys after startup. At the 5000th tick, a "robot requests charging" event occurs. Each device's behavior is logged in detail to the console, allowing the operator to see what happens and make further optimizations and adjustments. The output\main.exe is the compiled file. You can open it if you trust it.
 
+It simulated the following events:
+
+1. Due to some reasons, the robot needs to charge and sends a request to the server.
+2. The server finds an available charging station and sends the communication address, location, and handshake key to the robot, then sends the handshake key to the charging station.
+3. The robot uses the key to handshake with the charging station.
+4. The robot starts charging.
+5. During charging, the robot and the charging station maintain a keep-alive connection.
+6. Charging is completed, and the keep-alive connection is canceled.
+7. The charging station returns to idle status.
+
+![image](https://github.com/user-attachments/assets/6a4de403-2e9a-4bcf-bc0c-787faea11230)
+The image shows the process of the handshake.
+
+
 For detailed information, please refer to the [API documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).
 
 ## Physical Simulation Layer
