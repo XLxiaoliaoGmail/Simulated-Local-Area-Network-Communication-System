@@ -122,11 +122,14 @@ The `SimEvent` class represents an event scheduled to occur at a specific time d
 
 ## Channel Class
 
-The `Channel` class simulates a communication channel in the local network, supporting message transmission and device listening mechanisms.
+The `Channel` class simulates a communication channel in the local network, supporting message transmission and device listening mechanisms. It emulates real-world wireless local network characteristics, including:
+
+1. **Message Broadcast**: When a device sends a message to the channel, all devices listening to the channel will receive the message.
+2. **Message Collision**: If multiple devices send messages simultaneously, the messages will collide, resulting in a garbled signal that cannot be interpreted.
 
 ### Attributes
 
-- **`userNum`** (`uint8_t`): Tracks the number of users currently occupying the channel.
+- **`userNum`** (`uint8_t`): Tracks the number of devices currently sending messages to the channel.
 - **`mixed`** (`bool`): Indicates whether signal interference has occurred on the channel.
 - **`msg`** (`const Message*`): A pointer to the message currently being transmitted on the channel.
 - **`listeners`** (`std::list<Device*>`): A list of devices currently listening to the channel.
