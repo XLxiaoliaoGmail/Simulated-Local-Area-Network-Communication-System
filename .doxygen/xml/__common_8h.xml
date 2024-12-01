@@ -1,0 +1,734 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="__common_8h" kind="file" language="C++">
+    <compoundname>_common.h</compoundname>
+    <includes local="no">random</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">format</includes>
+    <includes local="no">list</includes>
+    <includes local="no">sstream</includes>
+    <includes refid="_message_8h" local="yes">Message.h</includes>
+    <includes refid="_sim_event_8h" local="yes">SimEvent.h</includes>
+    <includes refid="_channel_8h" local="yes">Channel.h</includes>
+    <includes refid="_device_8h" local="yes">Device.h</includes>
+    <includes refid="_environment_8h" local="yes">Environment.h</includes>
+    <includes refid="_protocol_device_8h" local="yes">ProtocolDevice.h</includes>
+    <includes refid="_robot_8h" local="yes">Robot.h</includes>
+    <includes refid="_station_8h" local="yes">Station.h</includes>
+    <includes refid="_server_8h" local="yes">Server.h</includes>
+    <includedby refid="_channel_8h" local="yes">include/Channel.h</includedby>
+    <includedby refid="_device_8h" local="yes">include/Device.h</includedby>
+    <includedby refid="_environment_8h" local="yes">include/Environment.h</includedby>
+    <includedby refid="_message_8h" local="yes">include/Message.h</includedby>
+    <includedby refid="_protocol_device_8h" local="yes">include/ProtocolDevice.h</includedby>
+    <includedby refid="_robot_8h" local="yes">include/Robot.h</includedby>
+    <includedby refid="_server_8h" local="yes">include/Server.h</includedby>
+    <includedby refid="_sim_event_8h" local="yes">include/SimEvent.h</includedby>
+    <includedby refid="_station_8h" local="yes">include/Station.h</includedby>
+    <includedby refid="_channel_8cpp" local="yes">src/Channel.cpp</includedby>
+    <includedby refid="_device_8cpp" local="yes">src/Device.cpp</includedby>
+    <includedby refid="_environment_8cpp" local="yes">src/Environment.cpp</includedby>
+    <includedby refid="_robot_8cpp" local="yes">src/Robot.cpp</includedby>
+    <includedby refid="_server_8cpp" local="yes">src/Server.cpp</includedby>
+    <includedby refid="_sim_event_8cpp" local="yes">src/SimEvent.cpp</includedby>
+    <includedby refid="_station_8cpp" local="yes">src/Station.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="16">
+        <label>Channel.h</label>
+        <link refid="_channel_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Device.h</label>
+        <link refid="_device_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Environment.h</label>
+        <link refid="_environment_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Message.h</label>
+        <link refid="_message_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ProtocolDevice.h</label>
+        <link refid="_protocol_device_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Robot.h</label>
+        <link refid="_robot_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Server.h</label>
+        <link refid="_server_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>SimEvent.h</label>
+        <link refid="_sim_event_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Station.h</label>
+        <link refid="_station_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/_common.h</label>
+        <link refid="__common_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstdint</label>
+      </node>
+      <node id="11">
+        <label>format</label>
+      </node>
+      <node id="5">
+        <label>functional</label>
+      </node>
+      <node id="10">
+        <label>iomanip</label>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="12">
+        <label>list</label>
+      </node>
+      <node id="4">
+        <label>queue</label>
+      </node>
+      <node id="2">
+        <label>random</label>
+      </node>
+      <node id="13">
+        <label>sstream</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/Channel.h</label>
+        <link refid="_channel_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/Device.h</label>
+        <link refid="_device_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/Environment.h</label>
+        <link refid="_environment_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/Message.h</label>
+        <link refid="_message_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/ProtocolDevice.h</label>
+        <link refid="_protocol_device_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/Robot.h</label>
+        <link refid="_robot_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/Server.h</label>
+        <link refid="_server_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/SimEvent.h</label>
+        <link refid="_sim_event_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/Station.h</label>
+        <link refid="_station_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/_common.h</label>
+        <link refid="__common_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/Channel.cpp</label>
+        <link refid="_channel_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/Device.cpp</label>
+        <link refid="_device_8cpp"/>
+      </node>
+      <node id="13">
+        <label>src/Environment.cpp</label>
+        <link refid="_environment_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/Robot.cpp</label>
+        <link refid="_robot_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/Server.cpp</label>
+        <link refid="_server_8cpp"/>
+      </node>
+      <node id="16">
+        <label>src/SimEvent.cpp</label>
+        <link refid="_sim_event_8cpp"/>
+      </node>
+      <node id="17">
+        <label>src/Station.cpp</label>
+        <link refid="_station_8cpp"/>
+      </node>
+      <node id="18">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_position" prot="public">Position</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="__common_8h_1a152fc5203b90b1cff03b7b78579b8f52" prot="public" static="no">
+        <name>_DEBUG</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="4" column="9" bodyfile="include/_common.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a2240564d76b4fbea174a855d04dd3193" prot="public" static="no">
+        <name>CHANNEL_COUNTS</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="6" column="9" bodyfile="include/_common.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1af0503195ff2120ada205603689973056" prot="public" static="no">
+        <name>TX_DELAY_BASE</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="7" column="9" bodyfile="include/_common.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a86ad4b99571bdf3dd12f6659ec99c195" prot="public" static="no">
+        <name>PAYLOAD_MAX_LENGTH</name>
+        <initializer>128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="8" column="9" bodyfile="include/_common.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a3531730f37f00b8e472dd4db217a7f6c" prot="public" static="no">
+        <name>KEY_FORMAT_LENGTH</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="10" column="9" bodyfile="include/_common.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1aeafbb61911fb29d2d5879294cfca18d2" prot="public" static="no">
+        <name>TIME_FORMAT_LENGTH</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="11" column="9" bodyfile="include/_common.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a886d14af89ed4914313c5fd343b6b4a9" prot="public" static="no">
+        <name>ADDR_FORMAT_LENGTH</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="12" column="9" bodyfile="include/_common.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1ade6ddc39f62a688999ddb3a8009e0903" prot="public" static="no">
+        <name>POSITION_UNIT_FORMAT_LENGTH</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="13" column="9" bodyfile="include/_common.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a7e9301f35cffea4603cecc03f955f92a" prot="public" static="no">
+        <name>HANDSHAKE_KEY_LENGTH</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="14" column="9" bodyfile="include/_common.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" prot="public" static="no">
+        <name>MAIN_CHANNEL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="16" column="9" bodyfile="include/_common.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a165bf20bde62d8f191b040f639b6c646" prot="public" static="no">
+        <name>NOWHERE_ADDR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="18" column="9" bodyfile="include/_common.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1aca1da29b9fc52e8a6b8ab5007ea96094" prot="public" static="no">
+        <name>SERVER_ADDR</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="19" column="9" bodyfile="include/_common.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a9413e78fff8e04bcedceab04fee2c59d" prot="public" static="no">
+        <name>MSGTYPE_LENGTH_IN_STR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="21" column="9" bodyfile="include/_common.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1af553378ec3e58d0ef5f3655bdb7d76c5" prot="public" static="no">
+        <name>ROBOT_X_SERVER_LOGIN_KEY</name>
+        <initializer>&quot;nxqHmTMtnQs6Cr5X&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="23" column="9" bodyfile="include/_common.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a4b942347e7bc35de9ba4e890f38bbfa5" prot="public" static="no">
+        <name>STATION_X_SERVER_LOGIN_KEY</name>
+        <initializer>&quot;tZnUiIRRYogTv6PG&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="24" column="9" bodyfile="include/_common.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a2613ee6d05b5cba11f09e606795cd290" prot="public" static="no">
+        <name>MSG_STATUS_TRUE</name>
+        <initializer>&quot;1&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="26" column="9" bodyfile="include/_common.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a45b255f514efd9fd05884bd9846d38c0" prot="public" static="no">
+        <name>MSG_STATUS_FALSE</name>
+        <initializer>&quot;0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="27" column="9" bodyfile="include/_common.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="__common_8h_1a6e7044a775a6b052a0b7f3236dcbab8d" prot="public" static="no">
+        <name>CHARGING_KEEP_ALIVE_PERIOD</name>
+        <initializer>500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="29" column="9" bodyfile="include/_common.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" prot="public" static="no" strong="no">
+        <type>uint8_t</type>
+        <name>MsgType</name>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ad7c30a6308907c98724172a40af8aa28" prot="public">
+          <name>X_SERVER_LOGIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a44987ab78a6e74a402c16ec3d24954d6" prot="public">
+          <name>BOT_SERVER_NEED_CHARGE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2abbaf8b8150872302b1af366bc73de72d" prot="public">
+          <name>BOT_STATION_CHARGE_HANDSHAKE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ae78c27ecc3248e0d1545895c60be4e33" prot="public">
+          <name>BOT_STATION_CHARGE_KEEPALIVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2afd2266159d735cfec3feb60feff8c7a0" prot="public">
+          <name>STATION_SERVER_FREE_UPDATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2aabf3d31dcc16a157b60b20431f9e0d57" prot="public">
+          <name>STATION_SERVER_POSITION_UPDATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a1276d6b711d193551618ce871208ff7b" prot="public">
+          <name>SERVER_X_CHARGE_HANDSHAKE_INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="45" column="1" bodyfile="include/_common.h" bodystart="45" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="__common_8h_1ace694e2135c52226445db7abe85136b5" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t ADDR_TYPEDEF</definition>
+        <argsstring></argsstring>
+        <name>ADDR_TYPEDEF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="58" column="25" bodyfile="include/_common.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="__common_8h_1a9635220f023976d87c59d9234b98f11f" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t CHANNEL_INDEX_TYPEDEF</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_INDEX_TYPEDEF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="59" column="25" bodyfile="include/_common.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" prot="public" static="no">
+        <type>uint64_t</type>
+        <definition>typedef uint64_t TIME_TYPEDEF</definition>
+        <argsstring></argsstring>
+        <name>TIME_TYPEDEF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="60" column="25" bodyfile="include/_common.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t POSITION_UNIT_TYPEDEF</definition>
+        <argsstring></argsstring>
+        <name>POSITION_UNIT_TYPEDEF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="61" column="25" bodyfile="include/_common.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="__common_8h_1ac90ccc37e41cdc297ad40132bdde4bdf" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t POWER_TYPEDEF</definition>
+        <argsstring></argsstring>
+        <name>POWER_TYPEDEF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="62" column="25" bodyfile="include/_common.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#if<sp/>!defined(__COMMON_H)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__COMMON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="__common_8h_1a152fc5203b90b1cff03b7b78579b8f52" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="__common_8h_1a2240564d76b4fbea174a855d04dd3193" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHANNEL_COUNTS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="__common_8h_1af0503195ff2120ada205603689973056" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TX_DELAY_BASE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="__common_8h_1a86ad4b99571bdf3dd12f6659ec99c195" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PAYLOAD_MAX_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>128</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="__common_8h_1a3531730f37f00b8e472dd4db217a7f6c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KEY_FORMAT_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="__common_8h_1aeafbb61911fb29d2d5879294cfca18d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIME_FORMAT_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="__common_8h_1a886d14af89ed4914313c5fd343b6b4a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADDR_FORMAT_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="__common_8h_1ade6ddc39f62a688999ddb3a8009e0903" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>POSITION_UNIT_FORMAT_LENGTH<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="__common_8h_1a7e9301f35cffea4603cecc03f955f92a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HANDSHAKE_KEY_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAIN_CHANNEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="__common_8h_1a165bf20bde62d8f191b040f639b6c646" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NOWHERE_ADDR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="__common_8h_1aca1da29b9fc52e8a6b8ab5007ea96094" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERVER_ADDR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="__common_8h_1a9413e78fff8e04bcedceab04fee2c59d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MSGTYPE_LENGTH_IN_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="__common_8h_1af553378ec3e58d0ef5f3655bdb7d76c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ROBOT_X_SERVER_LOGIN_KEY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;nxqHmTMtnQs6Cr5X&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="__common_8h_1a4b942347e7bc35de9ba4e890f38bbfa5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATION_X_SERVER_LOGIN_KEY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;tZnUiIRRYogTv6PG&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="__common_8h_1a2613ee6d05b5cba11f09e606795cd290" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MSG_STATUS_TRUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;1&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="__common_8h_1a45b255f514efd9fd05884bd9846d38c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MSG_STATUS_FALSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="__common_8h_1a6e7044a775a6b052a0b7f3236dcbab8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CHARGING_KEEP_ALIVE_PERIOD<sp/><sp/>500</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;format&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
+<codeline lineno="46" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ad7c30a6308907c98724172a40af8aa28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ad7c30a6308907c98724172a40af8aa28" kindref="member">X_SERVER_LOGIN</ref>,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a44987ab78a6e74a402c16ec3d24954d6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a44987ab78a6e74a402c16ec3d24954d6" kindref="member">BOT_SERVER_NEED_CHARGE</ref>,</highlight></codeline>
+<codeline lineno="49" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2abbaf8b8150872302b1af366bc73de72d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2abbaf8b8150872302b1af366bc73de72d" kindref="member">BOT_STATION_CHARGE_HANDSHAKE</ref>,</highlight></codeline>
+<codeline lineno="50" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ae78c27ecc3248e0d1545895c60be4e33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ae78c27ecc3248e0d1545895c60be4e33" kindref="member">BOT_STATION_CHARGE_KEEPALIVE</ref>,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2afd2266159d735cfec3feb60feff8c7a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2afd2266159d735cfec3feb60feff8c7a0" kindref="member">STATION_SERVER_FREE_UPDATE</ref>,</highlight></codeline>
+<codeline lineno="53" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2aabf3d31dcc16a157b60b20431f9e0d57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2aabf3d31dcc16a157b60b20431f9e0d57" kindref="member">STATION_SERVER_POSITION_UPDATE</ref>,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a1276d6b711d193551618ce871208ff7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a1276d6b711d193551618ce871208ff7b" kindref="member">SERVER_X_CHARGE_HANDSHAKE_INFO</ref>,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="__common_8h_1ace694e2135c52226445db7abe85136b5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>;</highlight></codeline>
+<codeline lineno="59" refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref>;</highlight></codeline>
+<codeline lineno="60" refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint64_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref>;</highlight></codeline>
+<codeline lineno="61" refid="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" kindref="member">POSITION_UNIT_TYPEDEF</ref>;</highlight></codeline>
+<codeline lineno="62" refid="__common_8h_1ac90ccc37e41cdc297ad40132bdde4bdf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1ac90ccc37e41cdc297ad40132bdde4bdf" kindref="member">POWER_TYPEDEF</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_message" kindref="compound">Message</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_device" kindref="compound">Device</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_environment" kindref="compound">Environment</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_channel" kindref="compound">Channel</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_sim_event" kindref="compound">SimEvent</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_protocol_device" kindref="compound">ProtocolDevice</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_robot" kindref="compound">Robot</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_station" kindref="compound">Station</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_server" kindref="compound">Server</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="struct_position" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_position" kindref="compound">Position</ref><sp/>{</highlight></codeline>
+<codeline lineno="75" refid="struct_position_1ab9dc827ef4eb6bc0baa0bf7fbb952216" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" kindref="member">POSITION_UNIT_TYPEDEF</ref><sp/><ref refid="struct_position_1ab9dc827ef4eb6bc0baa0bf7fbb952216" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="76" refid="struct_position_1a75d8f39a70a68518d5c8d0d8086fa100" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" kindref="member">POSITION_UNIT_TYPEDEF</ref><sp/><ref refid="struct_position_1a75d8f39a70a68518d5c8d0d8086fa100" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_message_8h" kindref="compound">Message.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sim_event_8h" kindref="compound">SimEvent.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_channel_8h" kindref="compound">Channel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_device_8h" kindref="compound">Device.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_environment_8h" kindref="compound">Environment.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_protocol_device_8h" kindref="compound">ProtocolDevice.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_robot_8h" kindref="compound">Robot.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_station_8h" kindref="compound">Station.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_server_8h" kindref="compound">Server.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__COMMON_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/_common.h"/>
+  </compounddef>
+</doxygen>

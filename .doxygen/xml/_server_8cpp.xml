@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_server_8cpp" kind="file" language="C++">
+    <compoundname>Server.cpp</compoundname>
+    <includes refid="__common_8h" local="yes">../include/_common.h</includes>
+    <incdepgraph>
+      <node id="17">
+        <label>Channel.h</label>
+        <link refid="_channel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Device.h</label>
+        <link refid="_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Environment.h</label>
+        <link refid="_environment_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Message.h</label>
+        <link refid="_message_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>ProtocolDevice.h</label>
+        <link refid="_protocol_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Robot.h</label>
+        <link refid="_robot_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Server.h</label>
+        <link refid="_server_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>SimEvent.h</label>
+        <link refid="_sim_event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Station.h</label>
+        <link refid="_station_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>../include/_common.h</label>
+        <link refid="__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/Server.cpp</label>
+        <link refid="_server_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>format</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>list</label>
+      </node>
+      <node id="5">
+        <label>queue</label>
+      </node>
+      <node id="3">
+        <label>random</label>
+      </node>
+      <node id="14">
+        <label>sstream</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="__common_8h" kindref="compound">../include/_common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="struct_station_data" kindref="compound">StationData</ref>*<sp/><ref refid="class_server_1a629a67198cf2a17f0d59131312eb7e26" kindref="member">Server::getFreeStation</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>[addr,<sp/>stationData]<sp/>:<sp/>this-&gt;stationsInfo){</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(stationData-&gt;free<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>stationData;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="class_server_1a7f8fbb3f78926eba5ca1552bf3481830" kindref="member">Server::Server</ref>(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>addr,<sp/><ref refid="class_environment" kindref="compound">Environment</ref>*<sp/>en)<sp/>:<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_device" kindref="compound">ProtocolDevice</ref>(addr,<sp/>en),</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>robotLoginKey(16,<sp/></highlight><highlight class="stringliteral">&apos;x&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>stationLoginKey(16,<sp/></highlight><highlight class="stringliteral">&apos;x&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;setOnWaitingChanged([</highlight><highlight class="keyword">this</highlight><highlight class="normal">](</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>waiting){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(waiting)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;log(</highlight><highlight class="stringliteral">&quot;Channel<sp/>occupied,<sp/>wiating<sp/>...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;log(</highlight><highlight class="stringliteral">&quot;Message<sp/>sent&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;on(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ad7c30a6308907c98724172a40af8aa28" kindref="member">MsgType::X_SERVER_LOGIN</ref>,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>payload){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload<sp/>==<sp/><ref refid="__common_8h_1af553378ec3e58d0ef5f3655bdb7d76c5" kindref="member">ROBOT_X_SERVER_LOGIN_KEY</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;addRobotAddr(senderAddr);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;log(</highlight><highlight class="stringliteral">&quot;Robot<sp/>login,<sp/>addr:&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_message_1a9d268d0b21202ac751c9b4306890465e" kindref="member">Message::uintToHexString</ref>(senderAddr,<sp/><ref refid="__common_8h_1a886d14af89ed4914313c5fd343b6b4a9" kindref="member">ADDR_FORMAT_LENGTH</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>send<sp/>back<sp/>login<sp/>success&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ad7c30a6308907c98724172a40af8aa28" kindref="member">MsgType::X_SERVER_LOGIN</ref>,<sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/>senderAddr);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload<sp/>==<sp/><ref refid="__common_8h_1a4b942347e7bc35de9ba4e890f38bbfa5" kindref="member">STATION_X_SERVER_LOGIN_KEY</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;addStationAddr(senderAddr);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;log(</highlight><highlight class="stringliteral">&quot;Station<sp/>login,<sp/>addr:&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_message_1a9d268d0b21202ac751c9b4306890465e" kindref="member">Message::uintToHexString</ref>(senderAddr,<sp/><ref refid="__common_8h_1a886d14af89ed4914313c5fd343b6b4a9" kindref="member">ADDR_FORMAT_LENGTH</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>send<sp/>back<sp/>login<sp/>success&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2ad7c30a6308907c98724172a40af8aa28" kindref="member">MsgType::X_SERVER_LOGIN</ref>,<sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/>senderAddr);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;on(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2afd2266159d735cfec3feb60feff8c7a0" kindref="member">MsgType::STATION_SERVER_FREE_UPDATE</ref>,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>payload){</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!isStation(senderAddr)){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload<sp/>==<sp/><ref refid="__common_8h_1a2613ee6d05b5cba11f09e606795cd290" kindref="member">MSG_STATUS_TRUE</ref>){</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;setStationStatus(senderAddr,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload<sp/>==<sp/><ref refid="__common_8h_1a45b255f514efd9fd05884bd9846d38c0" kindref="member">MSG_STATUS_FALSE</ref>){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;setStationStatus(senderAddr,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2afd2266159d735cfec3feb60feff8c7a0" kindref="member">MsgType::STATION_SERVER_FREE_UPDATE</ref>,<sp/><ref refid="__common_8h_1a2613ee6d05b5cba11f09e606795cd290" kindref="member">MSG_STATUS_TRUE</ref>,<sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/>senderAddr);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;on(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a44987ab78a6e74a402c16ec3d24954d6" kindref="member">MsgType::BOT_SERVER_NEED_CHARGE</ref>,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>payload){</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!isRobot(senderAddr)){</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_station_data" kindref="compound">StationData</ref>*<sp/>freeStation<sp/>=<sp/>this-&gt;getFreeStation();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!freeStation){</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>no<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a44987ab78a6e74a402c16ec3d24954d6" kindref="member">MsgType::BOT_SERVER_NEED_CHARGE</ref>,<sp/><ref refid="__common_8h_1a45b255f514efd9fd05884bd9846d38c0" kindref="member">MSG_STATUS_FALSE</ref>,<sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/>senderAddr);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a44987ab78a6e74a402c16ec3d24954d6" kindref="member">MsgType::BOT_SERVER_NEED_CHARGE</ref>,<sp/><ref refid="class_message_1a8c47dd59151ba19519761672702380a3" kindref="member">Message::positionToHexString</ref>(freeStation-&gt;<ref refid="struct_station_data_1a578b66c3a3d771447a5553ba4ed7bfc6" kindref="member">x</ref>,<sp/>freeStation-&gt;<ref refid="struct_station_data_1a33a06bfb92e429730c71b4bc89299205" kindref="member">y</ref>),<sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/>senderAddr);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>handshakeKey<sp/>=<sp/><ref refid="class_message_1a1918957f6c7d9b85bdf07d0fc75bf61c" kindref="member">Message::generateRandomString</ref>(<ref refid="__common_8h_1a7e9301f35cffea4603cecc03f955f92a" kindref="member">HANDSHAKE_KEY_LENGTH</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>send<sp/>key<sp/>to<sp/>station</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>must<sp/>send<sp/>to<sp/>listener<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a1276d6b711d193551618ce871208ff7b" kindref="member">MsgType::SERVER_X_CHARGE_HANDSHAKE_INFO</ref>,<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handshakeKey,<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>freeStation-&gt;<ref refid="struct_station_data_1a0a2865baaeb6b7e48d5cfd6f1ba78f58" kindref="member">addr</ref>,<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>payload){</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>back<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;log(</highlight><highlight class="stringliteral">&quot;Send<sp/>station<sp/>handshake<sp/>key&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>send<sp/>key<sp/>and<sp/>addr<sp/>to<sp/>bot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2a1276d6b711d193551618ce871208ff7b" kindref="member">MsgType::SERVER_X_CHARGE_HANDSHAKE_INFO</ref>,<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handshakeKey<sp/>+<sp/><ref refid="class_message_1acef8afa3edec9aeb7a0b6db49a982b09" kindref="member">Message::addrToHexString</ref>(freeStation-&gt;<ref refid="struct_station_data_1a0a2865baaeb6b7e48d5cfd6f1ba78f58" kindref="member">addr</ref>),<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>senderAddr,<sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>payload){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>call<sp/>back<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;log(</highlight><highlight class="stringliteral">&quot;Send<sp/>bot<sp/>handshake<sp/>key&quot;</highlight><highlight class="normal"><sp/>+<sp/>handshakeKey);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;on(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2aabf3d31dcc16a157b60b20431f9e0d57" kindref="member">MsgType::STATION_SERVER_POSITION_UPDATE</ref>,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>payload){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!isStation(senderAddr)){</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(payload.length()<sp/>!=<sp/><ref refid="__common_8h_1ade6ddc39f62a688999ddb3a8009e0903" kindref="member">POSITION_UNIT_FORMAT_LENGTH</ref><sp/>+<sp/><ref refid="__common_8h_1ade6ddc39f62a688999ddb3a8009e0903" kindref="member">POSITION_UNIT_FORMAT_LENGTH</ref>){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;error(</highlight><highlight class="stringliteral">&quot;Position<sp/>length<sp/>cannot<sp/>match&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;stationsInfo[senderAddr]-&gt;x<sp/>=<sp/><ref refid="class_message_1a6ff3145d2b7cbd589f34afc1400d7789" kindref="member">Message::hexStringToUint</ref>(payload.substr(0,8));</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;stationsInfo[senderAddr]-&gt;y<sp/>=<sp/><ref refid="class_message_1a6ff3145d2b7cbd589f34afc1400d7789" kindref="member">Message::hexStringToUint</ref>(payload.substr(8,8));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;send(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2aabf3d31dcc16a157b60b20431f9e0d57" kindref="member">MsgType::STATION_SERVER_POSITION_UPDATE</ref>,<sp/><ref refid="__common_8h_1a2613ee6d05b5cba11f09e606795cd290" kindref="member">MSG_STATUS_TRUE</ref>,<sp/><ref refid="__common_8h_1a8b1944035d810f3f3cf017c396d47f36" kindref="member">MAIN_CHANNEL</ref>,<sp/>senderAddr);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/Server.cpp"/>
+  </compounddef>
+</doxygen>

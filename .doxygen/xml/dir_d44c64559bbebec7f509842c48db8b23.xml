@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerfile refid="__common_8h">_common.h</innerfile>
+    <innerfile refid="_channel_8h">Channel.h</innerfile>
+    <innerfile refid="_device_8h">Device.h</innerfile>
+    <innerfile refid="_environment_8h">Environment.h</innerfile>
+    <innerfile refid="_message_8h">Message.h</innerfile>
+    <innerfile refid="_protocol_device_8h">ProtocolDevice.h</innerfile>
+    <innerfile refid="_robot_8h">Robot.h</innerfile>
+    <innerfile refid="_server_8h">Server.h</innerfile>
+    <innerfile refid="_sim_event_8h">SimEvent.h</innerfile>
+    <innerfile refid="_station_8h">Station.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/"/>
+  </compounddef>
+</doxygen>

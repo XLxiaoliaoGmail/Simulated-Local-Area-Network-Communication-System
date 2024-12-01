@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_position" kind="struct" language="C++" prot="public">
+    <compoundname>Position</compoundname>
+    <includes refid="__common_8h" local="no">_common.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_position_1ab9dc827ef4eb6bc0baa0bf7fbb952216" prot="public" static="no" mutable="no">
+        <type><ref refid="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" kindref="member">POSITION_UNIT_TYPEDEF</ref></type>
+        <definition>POSITION_UNIT_TYPEDEF Position::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>Position::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="75" column="27" bodyfile="include/_common.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_position_1a75d8f39a70a68518d5c8d0d8086fa100" prot="public" static="no" mutable="no">
+        <type><ref refid="__common_8h_1affbae0dfdb59a8bb112e3b264b61e612" kindref="member">POSITION_UNIT_TYPEDEF</ref></type>
+        <definition>POSITION_UNIT_TYPEDEF Position::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>Position::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/_common.h" line="76" column="27" bodyfile="include/_common.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/_common.h" line="74" column="1" bodyfile="include/_common.h" bodystart="74" bodyend="77"/>
+    <listofallmembers>
+      <member refid="struct_position_1ab9dc827ef4eb6bc0baa0bf7fbb952216" prot="public" virt="non-virtual"><scope>Position</scope><name>x</name></member>
+      <member refid="struct_position_1a75d8f39a70a68518d5c8d0d8086fa100" prot="public" virt="non-virtual"><scope>Position</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="class_device" kind="class" language="C++" prot="public">
+    <compoundname>Device</compoundname>
+    <derivedcompoundref refid="class_protocol_device" prot="public" virt="non-virtual">ProtocolDevice</derivedcompoundref>
+    <includes refid="_device_8h" local="no">Device.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_device_1ad5d9d76e33099b4f33f8278594cc004e" prot="private" static="no" mutable="no">
+        <type><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref></type>
+        <definition>ADDR_TYPEDEF Device::addr</definition>
+        <argsstring></argsstring>
+        <name>addr</name>
+        <qualifiedname>Device::addr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="11" column="18" bodyfile="include/Device.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1aee3517678248af75cf1fdc5970e47d19" prot="private" static="no" mutable="no">
+        <type><ref refid="class_environment" kindref="compound">Environment</ref> *</type>
+        <definition>Environment* Device::en</definition>
+        <argsstring></argsstring>
+        <name>en</name>
+        <qualifiedname>Device::en</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="12" column="17" bodyfile="include/Device.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1aef9188a44528a0d8a0e055bd038742a5" prot="private" static="no" mutable="no">
+        <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+        <definition>TIME_TYPEDEF Device::txDelay</definition>
+        <argsstring></argsstring>
+        <name>txDelay</name>
+        <qualifiedname>Device::txDelay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="13" column="18" bodyfile="include/Device.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1a9400d5644c13e0fe711c74a385714dd2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Device::busy</definition>
+        <argsstring></argsstring>
+        <name>busy</name>
+        <qualifiedname>Device::busy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="14" column="10" bodyfile="include/Device.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1accf081dacd452bd564d2b84a94ed5a02" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Device::waiting</definition>
+        <argsstring></argsstring>
+        <name>waiting</name>
+        <qualifiedname>Device::waiting</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="15" column="10" bodyfile="include/Device.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1ab09a2112ff25e51e5bc23d2277b34b0a" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(bool)&gt;</type>
+        <definition>std::function&lt;void(bool)&gt; Device::onBusyChanged</definition>
+        <argsstring></argsstring>
+        <name>onBusyChanged</name>
+        <qualifiedname>Device::onBusyChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="16" column="19" bodyfile="include/Device.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1a34383dbcdc438df30ec3d0cc626dc971" prot="private" static="no" mutable="no">
+        <type>std::function&lt; void(bool)&gt;</type>
+        <definition>std::function&lt;void(bool)&gt; Device::onWaitingChanged</definition>
+        <argsstring></argsstring>
+        <name>onWaitingChanged</name>
+        <qualifiedname>Device::onWaitingChanged</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="17" column="19" bodyfile="include/Device.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1ab2bb06191ac6859a9e88f91491ac23dd" prot="private" static="no" mutable="no">
+        <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+        <definition>CHANNEL_INDEX_TYPEDEF Device::listeningIndex</definition>
+        <argsstring></argsstring>
+        <name>listeningIndex</name>
+        <qualifiedname>Device::listeningIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="18" column="27" bodyfile="include/Device.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1abd7367e587f6c4278a43278f1e6e0d2e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Device::logEnable</definition>
+        <argsstring></argsstring>
+        <name>logEnable</name>
+        <qualifiedname>Device::logEnable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="19" column="10" bodyfile="include/Device.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_device_1a1c0c6c3f5996e3807b8920cc22da011b" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::tuple&lt; std::string, <ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref>, <ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref> &gt; &gt;</type>
+        <definition>std::queue&lt;std::tuple&lt;std::string, CHANNEL_INDEX_TYPEDEF, ADDR_TYPEDEF&gt; &gt; Device::msgQueue</definition>
+        <argsstring></argsstring>
+        <name>msgQueue</name>
+        <qualifiedname>Device::msgQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="20" column="16" bodyfile="include/Device.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_device_1ac4bf08858aaa56e5b876889faa137b41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::trueSend</definition>
+        <argsstring>(const std::string &amp;payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target)</argsstring>
+        <name>trueSend</name>
+        <qualifiedname>Device::trueSend</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>payload</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+          <declname>channelIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref></type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="21" column="10" bodyfile="src/Device.cpp" bodystart="53" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a43983f34c5fc20cce7de3b78ef388007" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::enqueue</definition>
+        <argsstring>(std::string payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target)</argsstring>
+        <name>enqueue</name>
+        <qualifiedname>Device::enqueue</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>payload</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+          <declname>channelIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref></type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="22" column="10" bodyfile="src/Device.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a04e18750757002cf9bb5457e4a4abbba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::processQueue</definition>
+        <argsstring>()</argsstring>
+        <name>processQueue</name>
+        <qualifiedname>Device::processQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="23" column="10" bodyfile="src/Device.cpp" bodystart="84" bodyend="91"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_device_1a00e1d363811ad74a7267211440045246" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::send</definition>
+        <argsstring>(const std::string &amp;payload, CHANNEL_INDEX_TYPEDEF channelIndex, ADDR_TYPEDEF target)</argsstring>
+        <name>send</name>
+        <qualifiedname>Device::send</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>payload</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+          <declname>channelIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref></type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="26" column="17" bodyfile="include/Device.h" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a02a4dcfb2be69394026033da9c0e0614" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::log</definition>
+        <argsstring>(const std::string &amp;log)</argsstring>
+        <name>log</name>
+        <qualifiedname>Device::log</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>log</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="29" column="10" bodyfile="src/Device.cpp" bodystart="93" bodyend="104"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_device_1a534415da35664d5a9ff6fcf043029e84" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Device::Device</definition>
+        <argsstring>(ADDR_TYPEDEF addr, Environment *en)</argsstring>
+        <name>Device</name>
+        <qualifiedname>Device::Device</qualifiedname>
+        <param>
+          <type><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref></type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type><ref refid="class_environment" kindref="compound">Environment</ref> *</type>
+          <declname>en</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="32" column="14" bodyfile="src/Device.cpp" bodystart="3" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1adb6173df7a804fef6dc7a8254927defa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Device::recieve</definition>
+        <argsstring>(const Message *msg, CHANNEL_INDEX_TYPEDEF channelIndex)</argsstring>
+        <name>recieve</name>
+        <qualifiedname>Device::recieve</qualifiedname>
+        <reimplementedby refid="class_protocol_device_1a1f54fd7c5d99d865446e670080838fba">recieve</reimplementedby>
+        <param>
+          <type>const <ref refid="class_message" kindref="compound">Message</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+          <declname>channelIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="33" column="18" bodyfile="src/Device.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a9e924a4fac8366d76f2aa661bf8d3dac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref></type>
+        <definition>ADDR_TYPEDEF Device::getAddr</definition>
+        <argsstring>() const</argsstring>
+        <name>getAddr</name>
+        <qualifiedname>Device::getAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="34" column="25" bodyfile="include/Device.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a996cfa9dad7ff28bcd6ca50ce41b1f53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::listenTo</definition>
+        <argsstring>(CHANNEL_INDEX_TYPEDEF channelIndex)</argsstring>
+        <name>listenTo</name>
+        <qualifiedname>Device::listenTo</qualifiedname>
+        <param>
+          <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+          <declname>channelIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="35" column="10" bodyfile="src/Device.cpp" bodystart="41" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1aa77235051cbb8db5bdeb55acbf92c439" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::setBusy</definition>
+        <argsstring>(bool v)</argsstring>
+        <name>setBusy</name>
+        <qualifiedname>Device::setBusy</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="36" column="10" bodyfile="src/Device.cpp" bodystart="19" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a68a3860b803cff4e2c46fbdda9577428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::setWaiting</definition>
+        <argsstring>(bool v)</argsstring>
+        <name>setWaiting</name>
+        <qualifiedname>Device::setWaiting</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="37" column="10" bodyfile="src/Device.cpp" bodystart="28" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a2c7928822cfb7b6f85980a51b8f94b12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::setOnBusyChanged</definition>
+        <argsstring>(std::function&lt; void(bool)&gt; callback)</argsstring>
+        <name>setOnBusyChanged</name>
+        <qualifiedname>Device::setOnBusyChanged</qualifiedname>
+        <param>
+          <type>std::function&lt; void(bool)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="38" column="17" bodyfile="include/Device.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1aed2179d42305c3053d3f99bfe1af92b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::setOnWaitingChanged</definition>
+        <argsstring>(std::function&lt; void(bool)&gt; callback)</argsstring>
+        <name>setOnWaitingChanged</name>
+        <qualifiedname>Device::setOnWaitingChanged</qualifiedname>
+        <param>
+          <type>std::function&lt; void(bool)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="39" column="17" bodyfile="include/Device.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a10a65f15883b944469d65cb775d35a7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::setLogEnable</definition>
+        <argsstring>(bool v)</argsstring>
+        <name>setLogEnable</name>
+        <qualifiedname>Device::setLogEnable</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="40" column="17" bodyfile="include/Device.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_device_1a25112960d14acd64e7f1b8388af1e132" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Device::error</definition>
+        <argsstring>(std::string s)</argsstring>
+        <name>error</name>
+        <qualifiedname>Device::error</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Device.h" line="41" column="17" bodyfile="include/Device.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Device</label>
+        <link refid="class_device"/>
+      </node>
+      <node id="2">
+        <label>ProtocolDevice</label>
+        <link refid="class_protocol_device"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Robot</label>
+        <link refid="class_robot"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Server</label>
+        <link refid="class_server"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Station</label>
+        <link refid="class_station"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/Device.h" line="9" column="1" bodyfile="include/Device.h" bodystart="9" bodyend="43"/>
+    <listofallmembers>
+      <member refid="class_device_1ad5d9d76e33099b4f33f8278594cc004e" prot="private" virt="non-virtual"><scope>Device</scope><name>addr</name></member>
+      <member refid="class_device_1a9400d5644c13e0fe711c74a385714dd2" prot="private" virt="non-virtual"><scope>Device</scope><name>busy</name></member>
+      <member refid="class_device_1a534415da35664d5a9ff6fcf043029e84" prot="public" virt="non-virtual"><scope>Device</scope><name>Device</name></member>
+      <member refid="class_device_1aee3517678248af75cf1fdc5970e47d19" prot="private" virt="non-virtual"><scope>Device</scope><name>en</name></member>
+      <member refid="class_device_1a43983f34c5fc20cce7de3b78ef388007" prot="private" virt="non-virtual"><scope>Device</scope><name>enqueue</name></member>
+      <member refid="class_device_1a25112960d14acd64e7f1b8388af1e132" prot="public" virt="non-virtual"><scope>Device</scope><name>error</name></member>
+      <member refid="class_device_1a9e924a4fac8366d76f2aa661bf8d3dac" prot="public" virt="non-virtual"><scope>Device</scope><name>getAddr</name></member>
+      <member refid="class_device_1ab2bb06191ac6859a9e88f91491ac23dd" prot="private" virt="non-virtual"><scope>Device</scope><name>listeningIndex</name></member>
+      <member refid="class_device_1a996cfa9dad7ff28bcd6ca50ce41b1f53" prot="public" virt="non-virtual"><scope>Device</scope><name>listenTo</name></member>
+      <member refid="class_device_1a02a4dcfb2be69394026033da9c0e0614" prot="protected" virt="non-virtual"><scope>Device</scope><name>log</name></member>
+      <member refid="class_device_1abd7367e587f6c4278a43278f1e6e0d2e" prot="private" virt="non-virtual"><scope>Device</scope><name>logEnable</name></member>
+      <member refid="class_device_1a1c0c6c3f5996e3807b8920cc22da011b" prot="private" virt="non-virtual"><scope>Device</scope><name>msgQueue</name></member>
+      <member refid="class_device_1ab09a2112ff25e51e5bc23d2277b34b0a" prot="private" virt="non-virtual"><scope>Device</scope><name>onBusyChanged</name></member>
+      <member refid="class_device_1a34383dbcdc438df30ec3d0cc626dc971" prot="private" virt="non-virtual"><scope>Device</scope><name>onWaitingChanged</name></member>
+      <member refid="class_device_1a04e18750757002cf9bb5457e4a4abbba" prot="private" virt="non-virtual"><scope>Device</scope><name>processQueue</name></member>
+      <member refid="class_device_1adb6173df7a804fef6dc7a8254927defa" prot="public" virt="virtual"><scope>Device</scope><name>recieve</name></member>
+      <member refid="class_device_1a00e1d363811ad74a7267211440045246" prot="protected" virt="non-virtual"><scope>Device</scope><name>send</name></member>
+      <member refid="class_device_1aa77235051cbb8db5bdeb55acbf92c439" prot="public" virt="non-virtual"><scope>Device</scope><name>setBusy</name></member>
+      <member refid="class_device_1a10a65f15883b944469d65cb775d35a7e" prot="public" virt="non-virtual"><scope>Device</scope><name>setLogEnable</name></member>
+      <member refid="class_device_1a2c7928822cfb7b6f85980a51b8f94b12" prot="public" virt="non-virtual"><scope>Device</scope><name>setOnBusyChanged</name></member>
+      <member refid="class_device_1aed2179d42305c3053d3f99bfe1af92b4" prot="public" virt="non-virtual"><scope>Device</scope><name>setOnWaitingChanged</name></member>
+      <member refid="class_device_1a68a3860b803cff4e2c46fbdda9577428" prot="public" virt="non-virtual"><scope>Device</scope><name>setWaiting</name></member>
+      <member refid="class_device_1ac4bf08858aaa56e5b876889faa137b41" prot="private" virt="non-virtual"><scope>Device</scope><name>trueSend</name></member>
+      <member refid="class_device_1aef9188a44528a0d8a0e055bd038742a5" prot="private" virt="non-virtual"><scope>Device</scope><name>txDelay</name></member>
+      <member refid="class_device_1accf081dacd452bd564d2b84a94ed5a02" prot="private" virt="non-virtual"><scope>Device</scope><name>waiting</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

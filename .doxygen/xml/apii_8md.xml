@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="apii_8md" kind="file" language="Markdown">
+    <compoundname>apii.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Channel`](#class_channel)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Device`](#class_device)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Environment`](#class_environment)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Message`](#class_message)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`ProtocolDevice`](#class_protocol_device)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Robot`](#class_robot)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Server`](#class_server)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`SimEvent`](#class_sim_event)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`class<sp/>`[`Station`](#class_station)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`struct<sp/>`[`Position`](#struct_position)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`struct<sp/>`[`RobotData`](#struct_robot_data)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`struct<sp/>`[`StationData`](#struct_station_data)<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Channel`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/><sp/>explicit<sp/>`[`Channel`](#class_channel_1af2b4b16288cbb2c592b1e0f6486c2430)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`occupy`](#class_channel_1a733b7b41797a067390f6872131c3448a)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`release`](#class_channel_1a5c59db70405be66123e0b22fb35cddb5)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`addListener`](#class_channel_1ab57ee24162df76536876d508c2c4e552)`(`[`Device`](#class_device)`<sp/>*<sp/>d)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`removeListener`](#class_channel_1ac80e93a8ed9f15eda394225d4510c61d)`(`[`Device`](#class_device)`<sp/>*<sp/>d)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>bool<sp/>`[`isBusy`](#class_channel_1a5a1f020188da7b6abc82a588a16802fc)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>bool<sp/>`[`isMixed`](#class_channel_1a1a105f4b40be364d318beea3957f49b6)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>`[`getMsg`](#class_channel_1afe08fe719287ea3677c445199bd0c13a)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>std::list&lt;<sp/>`[`Device`](#class_device)`<sp/>*<sp/>&gt;<sp/>`[`getListeners`](#class_channel_1a926a93a5aa40892cf763c7589ff840fc)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`error`](#class_channel_1adeb1a392a6f4756c02eb3eb32e3567f3)`(std::string<sp/>s)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/><sp/>explicit<sp/>`[`Channel`](#class_channel_1af2b4b16288cbb2c592b1e0f6486c2430)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`occupy`](#class_channel_1a733b7b41797a067390f6872131c3448a)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`release`](#class_channel_1a5c59db70405be66123e0b22fb35cddb5)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`addListener`](#class_channel_1ab57ee24162df76536876d508c2c4e552)`(`[`Device`](#class_device)`<sp/>*<sp/>d)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`removeListener`](#class_channel_1ac80e93a8ed9f15eda394225d4510c61d)`(`[`Device`](#class_device)`<sp/>*<sp/>d)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>bool<sp/>`[`isBusy`](#class_channel_1a5a1f020188da7b6abc82a588a16802fc)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>bool<sp/>`[`isMixed`](#class_channel_1a1a105f4b40be364d318beea3957f49b6)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>`[`getMsg`](#class_channel_1afe08fe719287ea3677c445199bd0c13a)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>std::list&lt;<sp/>`[`Device`](#class_device)`<sp/>*<sp/>&gt;<sp/>`[`getListeners`](#class_channel_1a926a93a5aa40892cf763c7589ff840fc)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`error`](#class_channel_1adeb1a392a6f4756c02eb3eb32e3567f3)`(std::string<sp/>s)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Device`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/><sp/>explicit<sp/>`[`Device`](#class_device_1a534415da35664d5a9ff6fcf043029e84)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>virtual<sp/>void<sp/>`[`recieve`](#class_device_1adb6173df7a804fef6dc7a8254927defa)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>`[`getAddr`](#class_device_1a9e924a4fac8366d76f2aa661bf8d3dac)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`listenTo`](#class_device_1a996cfa9dad7ff28bcd6ca50ce41b1f53)`(`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`setBusy`](#class_device_1aa77235051cbb8db5bdeb55acbf92c439)`(bool<sp/>v)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`setWaiting`](#class_device_1a68a3860b803cff4e2c46fbdda9577428)`(bool<sp/>v)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setOnBusyChanged`](#class_device_1a2c7928822cfb7b6f85980a51b8f94b12)`(std::function&lt;<sp/>void(bool)&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setOnWaitingChanged`](#class_device_1aed2179d42305c3053d3f99bfe1af92b4)`(std::function&lt;<sp/>void(bool)&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setLogEnable`](#class_device_1a10a65f15883b944469d65cb775d35a7e)`(bool<sp/>v)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`error`](#class_device_1a25112960d14acd64e7f1b8388af1e132)`(std::string<sp/>s)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`protected<sp/>inline<sp/>void<sp/>`[`send`](#class_device_1a00e1d363811ad74a7267211440045246)`(const<sp/>std::string<sp/>&amp;<sp/>payload,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`protected<sp/>void<sp/>`[`log`](#class_device_1a02a4dcfb2be69394026033da9c0e0614)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/><sp/>explicit<sp/>`[`Device`](#class_device_1a534415da35664d5a9ff6fcf043029e84)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>virtual<sp/>void<sp/>`[`recieve`](#class_device_1adb6173df7a804fef6dc7a8254927defa)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>`[`getAddr`](#class_device_1a9e924a4fac8366d76f2aa661bf8d3dac)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`listenTo`](#class_device_1a996cfa9dad7ff28bcd6ca50ce41b1f53)`(`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`setBusy`](#class_device_1aa77235051cbb8db5bdeb55acbf92c439)`(bool<sp/>v)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`setWaiting`](#class_device_1a68a3860b803cff4e2c46fbdda9577428)`(bool<sp/>v)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setOnBusyChanged`](#class_device_1a2c7928822cfb7b6f85980a51b8f94b12)`(std::function&lt;<sp/>void(bool)&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setOnWaitingChanged`](#class_device_1aed2179d42305c3053d3f99bfe1af92b4)`(std::function&lt;<sp/>void(bool)&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setLogEnable`](#class_device_1a10a65f15883b944469d65cb775d35a7e)`(bool<sp/>v)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`error`](#class_device_1a25112960d14acd64e7f1b8388af1e132)`(std::string<sp/>s)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`protected<sp/>inline<sp/>void<sp/>`[`send`](#class_device_1a00e1d363811ad74a7267211440045246)`(const<sp/>std::string<sp/>&amp;<sp/>payload,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`protected<sp/>void<sp/>`[`log`](#class_device_1a02a4dcfb2be69394026033da9c0e0614)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Environment`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/><sp/>explicit<sp/>`[`Environment`](#class_environment_1a8b427c4448d8b7536666837521b9e83d)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`addDevice`](#class_environment_1ac1a4674ff36b23837ff896ff444acaed)`(`[`Device`](#class_device)`<sp/>*<sp/>d)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`broadcast`](#class_environment_1ab2ffb01d897494de982ba47995664a66)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>sendingTime)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`update`](#class_environment_1a879586e4021854ef00fd17cb0fd9d15b)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`SimEvent`](#class_sim_event)`<sp/>*<sp/>`[`registerEvent`](#class_environment_1abbe8d27b056f87ee58682f24debbbe7f)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>tick,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`SimEvent`](#class_sim_event)`<sp/>*<sp/>`[`delayEvent`](#class_environment_1a3cbe818a3649fe4f67fff09eda16acdc)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>delayTick,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`log`](#class_environment_1a556221f2bc3959f05e43b366456ad8fa)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>`[`getTime`](#class_environment_1a27723957d844c1823b3582f106fcd47e)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`endAt`](#class_environment_1a36e11b20457079823571426f49467083)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>time)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`stopRun`](#class_environment_1ad78876e4438b3943eeb04229c03ff412)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`run`](#class_environment_1a41a43b88702fff5df95e98d10e49f541)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`Channel`](#class_channel)`<sp/>*<sp/>`[`getChannels`](#class_environment_1a1f14697142a2a1997451806c42b6c91b)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`error`](#class_environment_1a8c2f99c71bcdee586346c2a61efbb884)`(std::string<sp/>s)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/><sp/>explicit<sp/>`[`Environment`](#class_environment_1a8b427c4448d8b7536666837521b9e83d)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`addDevice`](#class_environment_1ac1a4674ff36b23837ff896ff444acaed)`(`[`Device`](#class_device)`<sp/>*<sp/>d)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`broadcast`](#class_environment_1ab2ffb01d897494de982ba47995664a66)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>sendingTime)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`update`](#class_environment_1a879586e4021854ef00fd17cb0fd9d15b)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`SimEvent`](#class_sim_event)`<sp/>*<sp/>`[`registerEvent`](#class_environment_1abbe8d27b056f87ee58682f24debbbe7f)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>tick,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`SimEvent`](#class_sim_event)`<sp/>*<sp/>`[`delayEvent`](#class_environment_1a3cbe818a3649fe4f67fff09eda16acdc)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>delayTick,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`log`](#class_environment_1a556221f2bc3959f05e43b366456ad8fa)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>`[`getTime`](#class_environment_1a27723957d844c1823b3582f106fcd47e)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`endAt`](#class_environment_1a36e11b20457079823571426f49467083)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>time)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`stopRun`](#class_environment_1ad78876e4438b3943eeb04229c03ff412)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`run`](#class_environment_1a41a43b88702fff5df95e98d10e49f541)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`Channel`](#class_channel)`<sp/>*<sp/>`[`getChannels`](#class_environment_1a1f14697142a2a1997451806c42b6c91b)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`error`](#class_environment_1a8c2f99c71bcdee586346c2a61efbb884)`(std::string<sp/>s)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Message`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>std::string<sp/>`[`sender`](#class_message_1ab5549d9090edf543845ee21135c65bab)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>std::string<sp/>`[`target`](#class_message_1ad0489c1c0b8cecca393cd22f38757f0e)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>std::string<sp/>`[`payload`](#class_message_1a3c356102b83f3a77406a8d39bdeb0b18)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/><sp/>explicit<sp/>`[`Message`](#class_message_1a6fb6e5ae781217870dcd1d99fea59e07)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>sender,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target,std::string<sp/>payload)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>std::string<sp/>`[`sender`](#class_message_1ab5549d9090edf543845ee21135c65bab)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>std::string<sp/>`[`target`](#class_message_1ad0489c1c0b8cecca393cd22f38757f0e)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>std::string<sp/>`[`payload`](#class_message_1a3c356102b83f3a77406a8d39bdeb0b18)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/><sp/>explicit<sp/>`[`Message`](#class_message_1a6fb6e5ae781217870dcd1d99fea59e07)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>sender,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target,std::string<sp/>payload)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`ProtocolDevice`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>ProtocolDevice</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:<sp/>public<sp/>Device</highlight></codeline>
+<codeline><highlight class="normal">```<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/><sp/>explicit<sp/>`[`ProtocolDevice`](#class_protocol_device_1a86fe6dd895e9d31cb02f25aedeec4517)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>std::string<sp/>`[`formatKeyStr`](#class_protocol_device_1ad4878a8e00eb38999144ea75b28b5015)`(const<sp/>std::string<sp/>&amp;<sp/>key)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>std::string<sp/>`[`MsgTypeToHexString`](#class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>num)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>`[`hexStringToMsgType`](#class_protocol_device_1a7716806817011df76d855f30cf3f2b23)`(const<sp/>std::string<sp/>&amp;<sp/>hexStr)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1ac8e76689b597199de9732533a9e18f0d)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1af611022232cd75f5a381a3249680c073)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1ae7a3396842456d09c8d99adcbbb8b33f)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1a6b00e2e8334f0184b9930a388de9ce0e)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`on`](#class_protocol_device_1a1ac42bba860be61ca6867ff7f9978b1a)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`once`](#class_protocol_device_1a201e9643176a39facc54e6e00bc8cd44)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`msgHandler`](#class_protocol_device_1ab499901dbec84769ab86d6eb99d418ea)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>senderAddr,`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>&amp;<sp/>payload)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>virtual<sp/>void<sp/>`[`recieve`](#class_protocol_device_1a1f54fd7c5d99d865446e670080838fba)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`log`](#class_protocol_device_1a54848a94b7290bc42b846be899758e41)`(const<sp/>std::string<sp/>&amp;<sp/>who,const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/><sp/>explicit<sp/>`[`ProtocolDevice`](#class_protocol_device_1a86fe6dd895e9d31cb02f25aedeec4517)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>std::string<sp/>`[`formatKeyStr`](#class_protocol_device_1ad4878a8e00eb38999144ea75b28b5015)`(const<sp/>std::string<sp/>&amp;<sp/>key)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>std::string<sp/>`[`MsgTypeToHexString`](#class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>num)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>`[`hexStringToMsgType`](#class_protocol_device_1a7716806817011df76d855f30cf3f2b23)`(const<sp/>std::string<sp/>&amp;<sp/>hexStr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1ac8e76689b597199de9732533a9e18f0d)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1af611022232cd75f5a381a3249680c073)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1ae7a3396842456d09c8d99adcbbb8b33f)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`send`](#class_protocol_device_1a6b00e2e8334f0184b9930a388de9ce0e)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>target,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`on`](#class_protocol_device_1a1ac42bba860be61ca6867ff7f9978b1a)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`once`](#class_protocol_device_1a201e9643176a39facc54e6e00bc8cd44)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`msgHandler`](#class_protocol_device_1ab499901dbec84769ab86d6eb99d418ea)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>senderAddr,`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>&amp;<sp/>payload)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>virtual<sp/>void<sp/>`[`recieve`](#class_protocol_device_1a1f54fd7c5d99d865446e670080838fba)`(const<sp/>`[`Message`](#class_message)`<sp/>*<sp/>msg,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`log`](#class_protocol_device_1a54848a94b7290bc42b846be899758e41)`(const<sp/>std::string<sp/>&amp;<sp/>who,const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Robot`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Robot</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:<sp/>public<sp/>ProtocolDevice</highlight></codeline>
+<codeline><highlight class="normal">```<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/><sp/>explicit<sp/>`[`Robot`](#class_robot_1a5b96001154c6eeca6c7e546da8d1a009)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`listenTo`](#class_robot_1a9f9a68752b98bc25226f82414fc175b9)`(`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`log`](#class_robot_1a2760106a796c73b8e228858a459a35ae)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`gotoPosition`](#class_robot_1a3c20a96cd27f849c2f9de4732529a07f)`(`[`Position`](#struct_position)`<sp/>pos)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`chagingUp`](#class_robot_1a121dc12f848b37b9d446ec5a981b7428)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`POWER_TYPEDEF`](#__common_8h_1ac90ccc37e41cdc297ad40132bdde4bdf)`<sp/>`[`getPower`](#class_robot_1a5e30da99242282a7b48a3ee2717d440b)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`login`](#class_robot_1acd8deb1e7ac139808adf1a451e8129ac)`(std::string<sp/>loginKey)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`needCharge`](#class_robot_1ac1ec0b09fbaf4e34963210f85f94e70e)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a226257e1f1a395ff3b679a94ff0c617a)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a68d609ae8ef5f328eb06e00f8e6aee5a)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a516db19bce370845c445bed8a6af19e0)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a2bd9a5a79fd59b6772e6dbb6582d26ef)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`sendHandshakeToStation`](#class_robot_1a88731bc2d8090b7574ebe64e2452a9f6)`(std::string<sp/>handShakey,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>stationAddr,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`keepAliveWhenCharging`](#class_robot_1a90a91424068bd658ed431162d929049c)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendPowerFinish`](#class_robot_1ac437a1d7ac2c8ec686ab0df30fcf95e5)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>stationAddr)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/><sp/>explicit<sp/>`[`Robot`](#class_robot_1a5b96001154c6eeca6c7e546da8d1a009)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`listenTo`](#class_robot_1a9f9a68752b98bc25226f82414fc175b9)`(`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`log`](#class_robot_1a2760106a796c73b8e228858a459a35ae)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`gotoPosition`](#class_robot_1a3c20a96cd27f849c2f9de4732529a07f)`(`[`Position`](#struct_position)`<sp/>pos)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`chagingUp`](#class_robot_1a121dc12f848b37b9d446ec5a981b7428)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`POWER_TYPEDEF`](#__common_8h_1ac90ccc37e41cdc297ad40132bdde4bdf)`<sp/>`[`getPower`](#class_robot_1a5e30da99242282a7b48a3ee2717d440b)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`login`](#class_robot_1acd8deb1e7ac139808adf1a451e8129ac)`(std::string<sp/>loginKey)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`needCharge`](#class_robot_1ac1ec0b09fbaf4e34963210f85f94e70e)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a226257e1f1a395ff3b679a94ff0c617a)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a68d609ae8ef5f328eb06e00f8e6aee5a)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a516db19bce370845c445bed8a6af19e0)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_robot_1a2bd9a5a79fd59b6772e6dbb6582d26ef)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`sendHandshakeToStation`](#class_robot_1a88731bc2d8090b7574ebe64e2452a9f6)`(std::string<sp/>handShakey,`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>stationAddr,`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`keepAliveWhenCharging`](#class_robot_1a90a91424068bd658ed431162d929049c)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendPowerFinish`](#class_robot_1ac437a1d7ac2c8ec686ab0df30fcf95e5)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>stationAddr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Server`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Server</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:<sp/>public<sp/>ProtocolDevice</highlight></codeline>
+<codeline><highlight class="normal">```<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/><sp/>explicit<sp/>`[`Server`](#class_server_1a7f8fbb3f78926eba5ca1552bf3481830)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>bool<sp/>`[`isRobot`](#class_server_1a2acad211a3a98c6c08db2a4f3df9c184)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>bool<sp/>`[`isStation`](#class_server_1a0b51c982917606fcdf3dfa620fcd3247)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`StationData`](#struct_station_data)`<sp/>*<sp/>`[`getFreeStation`](#class_server_1a629a67198cf2a17f0d59131312eb7e26)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setStationStatus`](#class_server_1aec2c8a08fe665a31d1ac62d502a73d7f)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,bool<sp/>free)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setRobotLoginKey`](#class_server_1a67c294d571d4c0fc45a797606940e2c3)`(const<sp/>std::string<sp/>&amp;<sp/>key)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setStationLoginKey`](#class_server_1a04646e818326caa845257aeaa6a2b127)`(const<sp/>std::string<sp/>&amp;<sp/>key)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`addRobotAddr`](#class_server_1a6ea296e311b8156d4dcbded0807484db)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`addStationAddr`](#class_server_1a9bf195783d3c2a70c5b92fdb7ea4339d)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`listenTo`](#class_server_1a33bd24089bb8edb7edba8119a2377d35)`(`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`log`](#class_server_1a766d13d11edb006fdf256928a3d7aa3b)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/><sp/>explicit<sp/>`[`Server`](#class_server_1a7f8fbb3f78926eba5ca1552bf3481830)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>bool<sp/>`[`isRobot`](#class_server_1a2acad211a3a98c6c08db2a4f3df9c184)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>bool<sp/>`[`isStation`](#class_server_1a0b51c982917606fcdf3dfa620fcd3247)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`StationData`](#struct_station_data)`<sp/>*<sp/>`[`getFreeStation`](#class_server_1a629a67198cf2a17f0d59131312eb7e26)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setStationStatus`](#class_server_1aec2c8a08fe665a31d1ac62d502a73d7f)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,bool<sp/>free)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setRobotLoginKey`](#class_server_1a67c294d571d4c0fc45a797606940e2c3)`(const<sp/>std::string<sp/>&amp;<sp/>key)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setStationLoginKey`](#class_server_1a04646e818326caa845257aeaa6a2b127)`(const<sp/>std::string<sp/>&amp;<sp/>key)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`addRobotAddr`](#class_server_1a6ea296e311b8156d4dcbded0807484db)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`addStationAddr`](#class_server_1a9bf195783d3c2a70c5b92fdb7ea4339d)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`listenTo`](#class_server_1a33bd24089bb8edb7edba8119a2377d35)`(`[`CHANNEL_INDEX_TYPEDEF`](#__common_8h_1a9635220f023976d87c59d9234b98f11f)`<sp/>channelIndex)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`log`](#class_server_1a766d13d11edb006fdf256928a3d7aa3b)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`SimEvent`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/><sp/>explicit<sp/>`[`SimEvent`](#class_sim_event_1a7e14a8f9726c5d4369cdc1fd4e11770c)`(`[`Environment`](#class_environment)`<sp/>*<sp/>en,`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>emitTick,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`SimEvent`](#class_sim_event)`<sp/>*<sp/>`[`then`](#class_sim_event_1a931ac60ebd300eae7ad05f2b40197ee3)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>delayTime,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`emit`](#class_sim_event_1a7e49f244ab65e1eedc879cc8ee130c3c)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>`[`getEmitTick`](#class_sim_event_1a24c6ed79591db033b7e6ca11582df889)`()<sp/>const`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/><sp/>explicit<sp/>`[`SimEvent`](#class_sim_event_1a7e14a8f9726c5d4369cdc1fd4e11770c)`(`[`Environment`](#class_environment)`<sp/>*<sp/>en,`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>emitTick,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`SimEvent`](#class_sim_event)`<sp/>*<sp/>`[`then`](#class_sim_event_1a931ac60ebd300eae7ad05f2b40197ee3)`(`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>delayTime,std::function&lt;<sp/>void()&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`emit`](#class_sim_event_1a7e49f244ab65e1eedc879cc8ee130c3c)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`TIME_TYPEDEF`](#__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2)`<sp/>`[`getEmitTick`](#class_sim_event_1a24c6ed79591db033b7e6ca11582df889)`()<sp/>const`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>class<sp/>`Station`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Station</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>:<sp/>public<sp/>ProtocolDevice</highlight></codeline>
+<codeline><highlight class="normal">```<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/><sp/>explicit<sp/>`[`Station`](#class_station_1a9781dc4c4717fa7f3880c6e8051bd68f)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en,`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>x,`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>y)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`log`](#class_station_1a5e9e7306431b60b151ce7a3ee8d5dd0c)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1ad61f3530485792bb90ede98fd3468df0)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1a843dd06e85f20ff0cc392afcd71bab12)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1a5aa24240e29adab6f3ba0c7da8e8e6bb)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1a2c2787a64c2e4780bcb49b1547bc2513)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`login`](#class_station_1a2898b77556eb45cc99a69802a25ffb4c)`(std::string<sp/>loginKey)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`updateFreeToServer`](#class_station_1aae013d77b9ddc54d2291327cc85cc6b2)`(bool<sp/>free)`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>void<sp/>`[`updatePositionToServer`](#class_station_1aef4881fbd46e090ff84bc58984bf906b)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`getX`](#class_station_1aa171db72c2471720b3d1fe30dfec5a36)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`getY`](#class_station_1a4a6eefeff825559f5ef8310446170b90)`()`<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/>void<sp/>`[`setOccupied`](#class_station_1af3c6a6095fa84a46aa7549a82d1932ad)`(bool<sp/>v)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/><sp/>explicit<sp/>`[`Station`](#class_station_1a9781dc4c4717fa7f3880c6e8051bd68f)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr,`[`Environment`](#class_environment)`<sp/>*<sp/>en,`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>x,`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>y)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`log`](#class_station_1a5e9e7306431b60b151ce7a3ee8d5dd0c)`(const<sp/>std::string<sp/>&amp;<sp/>log)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1ad61f3530485792bb90ede98fd3468df0)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1a843dd06e85f20ff0cc392afcd71bab12)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1a5aa24240e29adab6f3ba0c7da8e8e6bb)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,const<sp/>std::string<sp/>payload,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`sendToServer`](#class_station_1a2c2787a64c2e4780bcb49b1547bc2513)`(`[`MsgType`](#__common_8h_1a4d47dc9870566f2f294eaab1426094a2)`<sp/>type,std::function&lt;<sp/>void(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5),<sp/>const<sp/>std::string<sp/>&amp;)`&gt;<sp/>callback)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`login`](#class_station_1a2898b77556eb45cc99a69802a25ffb4c)`(std::string<sp/>loginKey)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`updateFreeToServer`](#class_station_1aae013d77b9ddc54d2291327cc85cc6b2)`(bool<sp/>free)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>void<sp/>`[`updatePositionToServer`](#class_station_1aef4881fbd46e090ff84bc58984bf906b)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`getX`](#class_station_1aa171db72c2471720b3d1fe30dfec5a36)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`getY`](#class_station_1a4a6eefeff825559f5ef8310446170b90)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/>void<sp/>`[`setOccupied`](#class_station_1af3c6a6095fa84a46aa7549a82d1932ad)`(bool<sp/>v)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>struct<sp/>`Position`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`x`](#struct_position_1ab9dc827ef4eb6bc0baa0bf7fbb952216)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`y`](#struct_position_1a75d8f39a70a68518d5c8d0d8086fa100)<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`x`](#struct_position_1ab9dc827ef4eb6bc0baa0bf7fbb952216)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`y`](#struct_position_1a75d8f39a70a68518d5c8d0d8086fa100)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>struct<sp/>`RobotData`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/><sp/>explicit<sp/>`[`RobotData`](#struct_robot_data_1a0007f4b014a950d356d2d63156b572af)`()`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/><sp/>explicit<sp/>`[`RobotData`](#struct_robot_data_1a0007f4b014a950d356d2d63156b572af)`()`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>struct<sp/>`StationData`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Summary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Members<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Descriptions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">--------------------------------|---------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>`[`addr`](#struct_station_data_1a0a2865baaeb6b7e48d5cfd6f1ba78f58)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>bool<sp/>`[`free`](#struct_station_data_1ad7be5eb9da812dd11274f9a9a4f4cf5f)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`x`](#struct_station_data_1a578b66c3a3d771447a5553ba4ed7bfc6)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`y`](#struct_station_data_1a33a06bfb92e429730c71b4bc89299205)<sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal">`public<sp/>inline<sp/><sp/>explicit<sp/>`[`StationData`](#struct_station_data_1a07804cb95111bbbb828cc8964950f417)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/>|<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Members</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>`[`addr`](#struct_station_data_1a0a2865baaeb6b7e48d5cfd6f1ba78f58)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>bool<sp/>`[`free`](#struct_station_data_1ad7be5eb9da812dd11274f9a9a4f4cf5f)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`x`](#struct_station_data_1a578b66c3a3d771447a5553ba4ed7bfc6)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>`[`POSITION_UNIT_TYPEDEF`](#__common_8h_1affbae0dfdb59a8bb112e3b264b61e612)`<sp/>`[`y`](#struct_station_data_1a33a06bfb92e429730c71b4bc89299205)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>`public<sp/>inline<sp/><sp/>explicit<sp/>`[`StationData`](#struct_station_data_1a07804cb95111bbbb828cc8964950f417)`(`[`ADDR_TYPEDEF`](#__common_8h_1ace694e2135c52226445db7abe85136b5)`<sp/>addr)`<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Generated<sp/>by<sp/>[Moxygen](https://sourcey.com/moxygen)</highlight></codeline>
+    </programlisting>
+    <location file="doc/apii.md"/>
+  </compounddef>
+</doxygen>

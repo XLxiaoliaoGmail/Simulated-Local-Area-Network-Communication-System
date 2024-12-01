@@ -1,0 +1,682 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_a_p_i_8md" kind="file" language="Markdown">
+    <compoundname>API.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>API</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>simulates<sp/>a<sp/>local<sp/>network<sp/>communication<sp/>system,<sp/>divided<sp/>into<sp/>two<sp/>main<sp/>layers:<sp/>the<sp/>**Physical<sp/>Simulation<sp/>Layer**<sp/>and<sp/>the<sp/>**Protocol<sp/>Implementation<sp/>Layer**.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Environment<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Environment`<sp/>class<sp/>simulates<sp/>the<sp/>physical<sp/>environment<sp/>for<sp/>a<sp/>local<sp/>network<sp/>communication<sp/>system.<sp/>It<sp/>manages<sp/>devices,<sp/>channels,<sp/>and<sp/>simulation<sp/>events<sp/>while<sp/>keeping<sp/>track<sp/>of<sp/>the<sp/>simulation<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`running`**<sp/>(`bool`):<sp/>Indicates<sp/>whether<sp/>the<sp/>simulation<sp/>is<sp/>currently<sp/>running.<sp/>Default<sp/>is<sp/>`false`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`devices`**<sp/>(`std::vector&lt;Device*&gt;`):<sp/>A<sp/>collection<sp/>of<sp/>pointers<sp/>to<sp/>`Device`<sp/>objects<sp/>participating<sp/>in<sp/>the<sp/>simulation.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`time`**<sp/>(`TIME_TYPEDEF`):<sp/>Tracks<sp/>the<sp/>current<sp/>simulation<sp/>time<sp/>in<sp/>ticks.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`eventsAtCertainTick`**<sp/>(`std::unordered_map&lt;TIME_TYPEDEF,<sp/>std::vector&lt;SimEvent*&gt;&gt;`):<sp/>Maps<sp/>specific<sp/>simulation<sp/>ticks<sp/>to<sp/>lists<sp/>of<sp/>scheduled<sp/>events<sp/>(`SimEvent`).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`channels`**<sp/>(`Channel[CHANNEL_COUNTS]`):<sp/>An<sp/>array<sp/>of<sp/>`Channel`<sp/>objects,<sp/>representing<sp/>communication<sp/>channels<sp/>available<sp/>in<sp/>the<sp/>environment.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>Environment()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>an<sp/>`Environment`<sp/>object<sp/>with<sp/>`running`<sp/>set<sp/>to<sp/>`false`<sp/>and<sp/>`time`<sp/>set<sp/>to<sp/>`0`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>addDevice(Device*<sp/>d)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Adds<sp/>a<sp/>device<sp/>to<sp/>the<sp/>simulation<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`d`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Device`<sp/>object<sp/>to<sp/>be<sp/>added.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>broadcast(const<sp/>Message*<sp/>msg,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex,<sp/>TIME_TYPEDEF<sp/>sendingTime)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Broadcasts<sp/>a<sp/>message<sp/>to<sp/>all<sp/>devices<sp/>listening<sp/>to<sp/>the<sp/>specified<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`msg`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Message`<sp/>to<sp/>be<sp/>broadcasted.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>index<sp/>of<sp/>the<sp/>channel<sp/>through<sp/>which<sp/>the<sp/>message<sp/>is<sp/>broadcasted.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`sendingTime`:<sp/>The<sp/>time<sp/>at<sp/>which<sp/>the<sp/>message<sp/>is<sp/>sent.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>update()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Advances<sp/>the<sp/>simulation<sp/>by<sp/>processing<sp/>events<sp/>and<sp/>updating<sp/>the<sp/>environment&apos;s<sp/>state.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`SimEvent*<sp/>registerEvent(TIME_TYPEDEF<sp/>tick,<sp/>std::function&lt;void()&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Registers<sp/>a<sp/>new<sp/>event<sp/>to<sp/>be<sp/>executed<sp/>at<sp/>a<sp/>specific<sp/>simulation<sp/>tick.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`tick`:<sp/>The<sp/>simulation<sp/>time<sp/>(in<sp/>ticks)<sp/>when<sp/>the<sp/>event<sp/>will<sp/>occur.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>be<sp/>executed<sp/>when<sp/>the<sp/>event<sp/>triggers.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>registered<sp/>`SimEvent`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`SimEvent*<sp/>delayEvent(TIME_TYPEDEF<sp/>delayTick,<sp/>std::function&lt;void()&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Schedules<sp/>an<sp/>event<sp/>to<sp/>occur<sp/>after<sp/>a<sp/>specified<sp/>delay<sp/>from<sp/>the<sp/>current<sp/>simulation<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`delayTick`:<sp/>The<sp/>delay<sp/>(in<sp/>ticks)<sp/>from<sp/>the<sp/>current<sp/>simulation<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>be<sp/>executed<sp/>when<sp/>the<sp/>event<sp/>triggers.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>scheduled<sp/>`SimEvent`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>log(const<sp/>std::string&amp;<sp/>log)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>a<sp/>message<sp/>for<sp/>debugging<sp/>or<sp/>output<sp/>purposes.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`log`:<sp/>A<sp/>string<sp/>containing<sp/>the<sp/>message<sp/>to<sp/>log.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`TIME_TYPEDEF<sp/>getTime()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>the<sp/>current<sp/>simulation<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>current<sp/>time<sp/>as<sp/>a<sp/>`TIME_TYPEDEF`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>endAt(TIME_TYPEDEF<sp/>time)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>simulation<sp/>to<sp/>stop<sp/>at<sp/>a<sp/>specified<sp/>tick.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`time`:<sp/>The<sp/>tick<sp/>at<sp/>which<sp/>the<sp/>simulation<sp/>will<sp/>end.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>stopRun()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Immediately<sp/>stops<sp/>the<sp/>simulation<sp/>from<sp/>running.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>run()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Starts<sp/>the<sp/>simulation<sp/>and<sp/>processes<sp/>events<sp/>until<sp/>manually<sp/>stopped<sp/>or<sp/>the<sp/>end<sp/>time<sp/>is<sp/>reached.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`Channel*<sp/>getChannels()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>a<sp/>pointer<sp/>to<sp/>the<sp/>array<sp/>of<sp/>channels<sp/>in<sp/>the<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Channel`<sp/>array.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>error(std::string<sp/>s)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Throws<sp/>a<sp/>runtime<sp/>error<sp/>with<sp/>a<sp/>specified<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`s`:<sp/>A<sp/>string<sp/>containing<sp/>the<sp/>error<sp/>message.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>SimEvent<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`SimEvent`<sp/>class<sp/>represents<sp/>an<sp/>event<sp/>scheduled<sp/>to<sp/>occur<sp/>at<sp/>a<sp/>specific<sp/>time<sp/>during<sp/>the<sp/>simulation.<sp/>It<sp/>supports<sp/>chaining<sp/>events<sp/>and<sp/>executing<sp/>callback<sp/>functions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`emitTick`**<sp/>(`TIME_TYPEDEF`):<sp/>The<sp/>simulation<sp/>tick<sp/>at<sp/>which<sp/>the<sp/>event<sp/>will<sp/>be<sp/>triggered.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`callback`**<sp/>(`std::function&lt;void()&gt;`):<sp/>A<sp/>function<sp/>to<sp/>execute<sp/>when<sp/>the<sp/>event<sp/>is<sp/>triggered.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`en`**<sp/>(`Environment*`):<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Environment`<sp/>instance<sp/>where<sp/>the<sp/>event<sp/>is<sp/>scheduled.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>SimEvent(Environment*<sp/>en,<sp/>TIME_TYPEDEF<sp/>emitTick,<sp/>std::function&lt;void()&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Creates<sp/>a<sp/>new<sp/>`SimEvent`<sp/>object.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`en`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Environment`<sp/>instance<sp/>in<sp/>which<sp/>the<sp/>event<sp/>is<sp/>scheduled.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`emitTick`:<sp/>The<sp/>simulation<sp/>tick<sp/>at<sp/>which<sp/>the<sp/>event<sp/>will<sp/>be<sp/>triggered.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>execute<sp/>when<sp/>the<sp/>event<sp/>is<sp/>triggered.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`SimEvent*<sp/>then(TIME_TYPEDEF<sp/>delayTime,<sp/>std::function&lt;void()&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Schedules<sp/>a<sp/>new<sp/>event<sp/>to<sp/>occur<sp/>after<sp/>a<sp/>specified<sp/>delay<sp/>from<sp/>the<sp/>current<sp/>event&apos;s<sp/>trigger<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`delayTime`:<sp/>The<sp/>delay<sp/>(in<sp/>ticks)<sp/>after<sp/>the<sp/>current<sp/>event&apos;s<sp/>`emitTick`<sp/>when<sp/>the<sp/>new<sp/>event<sp/>should<sp/>occur.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>execute<sp/>for<sp/>the<sp/>new<sp/>event.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>newly<sp/>created<sp/>`SimEvent`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>emit()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Triggers<sp/>the<sp/>event<sp/>by<sp/>executing<sp/>its<sp/>callback<sp/>function.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`TIME_TYPEDEF<sp/>getEmitTick()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>the<sp/>simulation<sp/>tick<sp/>at<sp/>which<sp/>the<sp/>event<sp/>will<sp/>be<sp/>triggered.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>event&apos;s<sp/>`emitTick`<sp/>as<sp/>a<sp/>`TIME_TYPEDEF`.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Channel<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Channel`<sp/>class<sp/>simulates<sp/>a<sp/>communication<sp/>channel<sp/>in<sp/>the<sp/>local<sp/>network,<sp/>supporting<sp/>message<sp/>transmission<sp/>and<sp/>device<sp/>listening<sp/>mechanisms.<sp/>It<sp/>emulates<sp/>real-world<sp/>wireless<sp/>local<sp/>network<sp/>characteristics,<sp/>including:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Message<sp/>Broadcast**:<sp/>When<sp/>a<sp/>device<sp/>sends<sp/>a<sp/>message<sp/>to<sp/>the<sp/>channel,<sp/>all<sp/>devices<sp/>listening<sp/>to<sp/>the<sp/>channel<sp/>will<sp/>receive<sp/>the<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**Message<sp/>Collision**:<sp/>If<sp/>multiple<sp/>devices<sp/>send<sp/>messages<sp/>simultaneously,<sp/>the<sp/>messages<sp/>will<sp/>collide,<sp/>resulting<sp/>in<sp/>a<sp/>garbled<sp/>signal<sp/>that<sp/>cannot<sp/>be<sp/>interpreted.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`userNum`**<sp/>(`uint8_t`):<sp/>Tracks<sp/>the<sp/>number<sp/>of<sp/>devices<sp/>currently<sp/>sending<sp/>messages<sp/>to<sp/>the<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`mixed`**<sp/>(`bool`):<sp/>Indicates<sp/>whether<sp/>signal<sp/>interference<sp/>has<sp/>occurred<sp/>on<sp/>the<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`msg`**<sp/>(`const<sp/>Message*`):<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>message<sp/>currently<sp/>being<sp/>transmitted<sp/>on<sp/>the<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`listeners`**<sp/>(`std::list&lt;Device*&gt;`):<sp/>A<sp/>list<sp/>of<sp/>devices<sp/>currently<sp/>listening<sp/>to<sp/>the<sp/>channel.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>Channel()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>a<sp/>`Channel`<sp/>object<sp/>with<sp/>no<sp/>users<sp/>(`userNum<sp/>=<sp/>0`),<sp/>no<sp/>signal<sp/>interference<sp/>(`mixed<sp/>=<sp/>false`),<sp/>and<sp/>no<sp/>active<sp/>message.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>occupy(const<sp/>Message*<sp/>msg)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Occupies<sp/>the<sp/>channel<sp/>with<sp/>a<sp/>message<sp/>for<sp/>transmission.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`msg`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Message`<sp/>to<sp/>be<sp/>transmitted.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>release()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Releases<sp/>the<sp/>channel,<sp/>making<sp/>it<sp/>available<sp/>for<sp/>new<sp/>transmissions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>addListener(Device*<sp/>d)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Adds<sp/>a<sp/>device<sp/>to<sp/>the<sp/>channel&apos;s<sp/>list<sp/>of<sp/>listeners.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`d`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Device`<sp/>to<sp/>be<sp/>added<sp/>as<sp/>a<sp/>listener.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>removeListener(Device*<sp/>d)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Removes<sp/>a<sp/>device<sp/>from<sp/>the<sp/>channel&apos;s<sp/>list<sp/>of<sp/>listeners.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`d`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Device`<sp/>to<sp/>be<sp/>removed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`bool<sp/>isBusy()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Checks<sp/>if<sp/>the<sp/>channel<sp/>is<sp/>currently<sp/>occupied.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>`true`<sp/>if<sp/>the<sp/>channel<sp/>is<sp/>occupied,<sp/>`false`<sp/>otherwise.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`bool<sp/>isMixed()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Checks<sp/>if<sp/>signal<sp/>interference<sp/>has<sp/>occurred<sp/>on<sp/>the<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>`true`<sp/>if<sp/>interference<sp/>is<sp/>present,<sp/>`false`<sp/>otherwise.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`const<sp/>Message*<sp/>getMsg()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>the<sp/>message<sp/>currently<sp/>being<sp/>transmitted<sp/>on<sp/>the<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Message`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`std::list&lt;Device*&gt;<sp/>getListeners()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>the<sp/>list<sp/>of<sp/>devices<sp/>currently<sp/>listening<sp/>to<sp/>the<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>list<sp/>of<sp/>pointers<sp/>to<sp/>`Device`<sp/>objects.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>error(std::string<sp/>s)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Throws<sp/>a<sp/>runtime<sp/>error<sp/>with<sp/>a<sp/>specified<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`s`:<sp/>A<sp/>string<sp/>containing<sp/>the<sp/>error<sp/>message.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Device<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Device`<sp/>class<sp/>represents<sp/>a<sp/>physical<sp/>device<sp/>in<sp/>the<sp/>simulated<sp/>network.<sp/>It<sp/>can<sp/>send<sp/>and<sp/>receive<sp/>messages,<sp/>listen<sp/>to<sp/>channels,<sp/>and<sp/>manage<sp/>its<sp/>busy<sp/>or<sp/>waiting<sp/>states.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`addr`**<sp/>(`ADDR_TYPEDEF`):<sp/>The<sp/>address<sp/>of<sp/>the<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`en`**<sp/>(`Environment*`):<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>environment<sp/>where<sp/>the<sp/>device<sp/>operates.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`txDelay`**<sp/>(`TIME_TYPEDEF`):<sp/>The<sp/>time<sp/>delay<sp/>required<sp/>for<sp/>the<sp/>device<sp/>to<sp/>transmit<sp/>a<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`busy`**<sp/>(`bool`):<sp/>Indicates<sp/>whether<sp/>the<sp/>device<sp/>is<sp/>currently<sp/>busy<sp/>sending<sp/>messages.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`waiting`**<sp/>(`bool`):<sp/>Indicates<sp/>whether<sp/>the<sp/>device<sp/>is<sp/>in<sp/>a<sp/>waiting<sp/>state<sp/>to<sp/>access<sp/>a<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`onBusyChanged`**<sp/>(`std::function&lt;void(bool)&gt;`):<sp/>A<sp/>callback<sp/>function<sp/>triggered<sp/>when<sp/>the<sp/>device&apos;s<sp/>busy<sp/>state<sp/>changes.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`onWaitingChanged`**<sp/>(`std::function&lt;void(bool)&gt;`):<sp/>A<sp/>callback<sp/>function<sp/>triggered<sp/>when<sp/>the<sp/>device&apos;s<sp/>waiting<sp/>state<sp/>changes.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`listeningIndex`**<sp/>(`CHANNEL_INDEX_TYPEDEF`):<sp/>The<sp/>index<sp/>of<sp/>the<sp/>channel<sp/>the<sp/>device<sp/>is<sp/>currently<sp/>listening<sp/>to.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`logEnable`**<sp/>(`bool`):<sp/>Controls<sp/>whether<sp/>the<sp/>device&apos;s<sp/>actions<sp/>are<sp/>logged.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`msgQueue`**<sp/>(`std::queue&lt;std::tuple&lt;std::string,<sp/>CHANNEL_INDEX_TYPEDEF,<sp/>ADDR_TYPEDEF&gt;&gt;`):<sp/>A<sp/>queue<sp/>storing<sp/>messages<sp/>to<sp/>be<sp/>sent,<sp/>with<sp/>each<sp/>message<sp/>containing<sp/>a<sp/>payload,<sp/>target<sp/>channel,<sp/>and<sp/>target<sp/>address.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>Device(ADDR_TYPEDEF<sp/>addr,<sp/>Environment*<sp/>en)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>a<sp/>`Device`<sp/>object<sp/>with<sp/>a<sp/>specific<sp/>address<sp/>and<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>address<sp/>of<sp/>the<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`en`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Environment`<sp/>where<sp/>the<sp/>device<sp/>operates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Protected<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>send(const<sp/>std::string&amp;<sp/>payload,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex,<sp/>ADDR_TYPEDEF<sp/>target)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Enqueues<sp/>a<sp/>message<sp/>to<sp/>be<sp/>sent.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>content.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>target<sp/>channel<sp/>index.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`target`:<sp/>The<sp/>target<sp/>address.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>log(const<sp/>std::string&amp;<sp/>log)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>the<sp/>specified<sp/>message<sp/>if<sp/>logging<sp/>is<sp/>enabled.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`log`:<sp/>The<sp/>message<sp/>to<sp/>log.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>recieve(const<sp/>Message*<sp/>msg,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Handles<sp/>receiving<sp/>a<sp/>message<sp/>on<sp/>a<sp/>specific<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`msg`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>received<sp/>`Message`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>index<sp/>of<sp/>the<sp/>channel<sp/>where<sp/>the<sp/>message<sp/>was<sp/>received.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`ADDR_TYPEDEF<sp/>getAddr()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>the<sp/>device&apos;s<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>device&apos;s<sp/>`ADDR_TYPEDEF`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>listenTo(CHANNEL_INDEX_TYPEDEF<sp/>channelIndex)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>device<sp/>to<sp/>listen<sp/>to<sp/>a<sp/>specific<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>index<sp/>of<sp/>the<sp/>channel<sp/>to<sp/>listen<sp/>to.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setBusy(bool<sp/>v)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Updates<sp/>the<sp/>device&apos;s<sp/>busy<sp/>state<sp/>and<sp/>triggers<sp/>the<sp/>`onBusyChanged`<sp/>callback<sp/>if<sp/>defined.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`v`:<sp/>The<sp/>new<sp/>busy<sp/>state<sp/>(`true`<sp/>or<sp/>`false`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setWaiting(bool<sp/>v)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Updates<sp/>the<sp/>device&apos;s<sp/>waiting<sp/>state<sp/>and<sp/>triggers<sp/>the<sp/>`onWaitingChanged`<sp/>callback<sp/>if<sp/>defined.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`v`:<sp/>The<sp/>new<sp/>waiting<sp/>state<sp/>(`true`<sp/>or<sp/>`false`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setOnBusyChanged(std::function&lt;void(bool)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>callback<sp/>function<sp/>for<sp/>busy<sp/>state<sp/>changes.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>execute<sp/>when<sp/>the<sp/>busy<sp/>state<sp/>changes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setOnWaitingChanged(std::function&lt;void(bool)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>callback<sp/>function<sp/>for<sp/>waiting<sp/>state<sp/>changes.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>execute<sp/>when<sp/>the<sp/>waiting<sp/>state<sp/>changes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setLogEnable(bool<sp/>v)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Enables<sp/>or<sp/>disables<sp/>logging<sp/>for<sp/>the<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`v`:<sp/>`true`<sp/>to<sp/>enable<sp/>logging,<sp/>`false`<sp/>to<sp/>disable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>error(std::string<sp/>s)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Throws<sp/>a<sp/>runtime<sp/>error<sp/>with<sp/>the<sp/>specified<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`s`:<sp/>A<sp/>string<sp/>containing<sp/>the<sp/>error<sp/>message.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>ProtocolDevice<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`ProtocolDevice`<sp/>class<sp/>extends<sp/>the<sp/>`Device`<sp/>class<sp/>and<sp/>provides<sp/>functionality<sp/>for<sp/>handling<sp/>protocol-specific<sp/>communication<sp/>with<sp/>other<sp/>devices.<sp/>It<sp/>supports<sp/>message<sp/>sending,<sp/>receiving,<sp/>and<sp/>callback<sp/>management.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`callbacks`**<sp/>(`std::unordered_map&lt;MsgType,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;&gt;`):<sp/>A<sp/>map<sp/>of<sp/>registered<sp/>callbacks<sp/>for<sp/>specific<sp/>message<sp/>types.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`onceCallbacks`**<sp/>(`std::unordered_map&lt;MsgType,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;&gt;`):<sp/>A<sp/>map<sp/>of<sp/>one-time<sp/>callbacks<sp/>for<sp/>specific<sp/>message<sp/>types.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>ProtocolDevice(ADDR_TYPEDEF<sp/>addr,<sp/>Environment*<sp/>en)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>the<sp/>`ProtocolDevice`<sp/>object<sp/>with<sp/>the<sp/>provided<sp/>address<sp/>and<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>address<sp/>of<sp/>the<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`en`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>environment.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Utility<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`std::string<sp/>formatKeyStr(const<sp/>std::string&amp;<sp/>key)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Formats<sp/>the<sp/>given<sp/>key<sp/>string<sp/>to<sp/>a<sp/>specific<sp/>length,<sp/>adding<sp/>&apos;x&apos;<sp/>at<sp/>the<sp/>beginning<sp/>or<sp/>truncating<sp/>if<sp/>necessary.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`key`:<sp/>The<sp/>key<sp/>string<sp/>to<sp/>format.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>formatted<sp/>key<sp/>string.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`std::string<sp/>MsgTypeToHexString(MsgType<sp/>num)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Converts<sp/>a<sp/>`MsgType`<sp/>value<sp/>to<sp/>its<sp/>hexadecimal<sp/>string<sp/>representation.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`num`:<sp/>The<sp/>message<sp/>type<sp/>to<sp/>convert.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>hexadecimal<sp/>string<sp/>representing<sp/>the<sp/>message<sp/>type.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`MsgType<sp/>hexStringToMsgType(const<sp/>std::string&amp;<sp/>hexStr)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Converts<sp/>a<sp/>hexadecimal<sp/>string<sp/>to<sp/>a<sp/>`MsgType`<sp/>value.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`hexStr`:<sp/>The<sp/>hexadecimal<sp/>string<sp/>to<sp/>convert.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>corresponding<sp/>`MsgType`<sp/>value.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Sending<sp/>Messages</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>send(MsgType<sp/>type,<sp/>const<sp/>std::string<sp/>payload,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex,<sp/>ADDR_TYPEDEF<sp/>target)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>`MsgType`<sp/>and<sp/>payload<sp/>to<sp/>a<sp/>specific<sp/>target.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>content.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>target<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`target`:<sp/>The<sp/>target<sp/>address.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>send(MsgType<sp/>type,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex,<sp/>ADDR_TYPEDEF<sp/>target)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>`MsgType`<sp/>to<sp/>a<sp/>specific<sp/>target<sp/>without<sp/>a<sp/>payload.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>target<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`target`:<sp/>The<sp/>target<sp/>address.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>send(MsgType<sp/>type,<sp/>const<sp/>std::string<sp/>payload,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex,<sp/>ADDR_TYPEDEF<sp/>target,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>`MsgType`<sp/>and<sp/>payload<sp/>to<sp/>a<sp/>specific<sp/>target<sp/>and<sp/>registers<sp/>a<sp/>one-time<sp/>callback<sp/>for<sp/>the<sp/>response.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>content.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>target<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`target`:<sp/>The<sp/>target<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>callback<sp/>function<sp/>to<sp/>execute<sp/>when<sp/>a<sp/>response<sp/>is<sp/>received.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>send(MsgType<sp/>type,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex,<sp/>ADDR_TYPEDEF<sp/>target,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>`MsgType`<sp/>to<sp/>a<sp/>specific<sp/>target<sp/>and<sp/>registers<sp/>a<sp/>one-time<sp/>callback<sp/>for<sp/>the<sp/>response.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>target<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`target`:<sp/>The<sp/>target<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>callback<sp/>function<sp/>to<sp/>execute<sp/>when<sp/>a<sp/>response<sp/>is<sp/>received.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Callback<sp/>Management</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>on(MsgType<sp/>type,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Registers<sp/>a<sp/>callback<sp/>function<sp/>to<sp/>be<sp/>executed<sp/>when<sp/>a<sp/>message<sp/>of<sp/>the<sp/>specified<sp/>type<sp/>is<sp/>received.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>The<sp/>callback<sp/>function<sp/>to<sp/>execute.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>once(MsgType<sp/>type,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Registers<sp/>a<sp/>one-time<sp/>callback<sp/>function<sp/>to<sp/>be<sp/>executed<sp/>once<sp/>when<sp/>a<sp/>message<sp/>of<sp/>the<sp/>specified<sp/>type<sp/>is<sp/>received.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>The<sp/>callback<sp/>function<sp/>to<sp/>execute.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>msgHandler(ADDR_TYPEDEF<sp/>senderAddr,<sp/>MsgType<sp/>type,<sp/>const<sp/>std::string&amp;<sp/>payload)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Handles<sp/>the<sp/>received<sp/>message<sp/>by<sp/>executing<sp/>the<sp/>appropriate<sp/>callback.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>If<sp/>the<sp/>message<sp/>has<sp/>a<sp/>one-time<sp/>callback,<sp/>it<sp/>is<sp/>executed<sp/>and<sp/>removed<sp/>from<sp/>the<sp/>`onceCallbacks`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`senderAddr`:<sp/>The<sp/>address<sp/>of<sp/>the<sp/>sender.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>content.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Receiving<sp/>Messages</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>recieve(const<sp/>Message*<sp/>msg,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex)<sp/>override`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Receives<sp/>a<sp/>message<sp/>and<sp/>processes<sp/>it<sp/>if<sp/>the<sp/>message&apos;s<sp/>target<sp/>is<sp/>the<sp/>current<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`msg`:<sp/>The<sp/>message<sp/>to<sp/>receive.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>channel<sp/>index<sp/>the<sp/>message<sp/>was<sp/>received<sp/>on.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Logging</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>log(const<sp/>std::string&amp;<sp/>who,<sp/>const<sp/>std::string&amp;<sp/>log)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>a<sp/>message<sp/>with<sp/>a<sp/>specific<sp/>prefix<sp/>indicating<sp/>the<sp/>origin<sp/>of<sp/>the<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`who`:<sp/>The<sp/>source<sp/>of<sp/>the<sp/>log<sp/>(e.g.,<sp/>&quot;ProtocolDevice&quot;).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`log`:<sp/>The<sp/>message<sp/>content<sp/>to<sp/>log.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Server<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Server`<sp/>class<sp/>extends<sp/>the<sp/>`ProtocolDevice`<sp/>class<sp/>to<sp/>manage<sp/>and<sp/>coordinate<sp/>`RobotData`<sp/>and<sp/>`StationData`.<sp/>It<sp/>provides<sp/>functionalities<sp/>to<sp/>handle<sp/>robot<sp/>and<sp/>station<sp/>information,<sp/>login<sp/>key<sp/>management,<sp/>and<sp/>channel<sp/>listening.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`robotsInfo`**<sp/>(`std::unordered_map&lt;ADDR_TYPEDEF,<sp/>RobotData*&gt;`):<sp/>A<sp/>mapping<sp/>of<sp/>robot<sp/>addresses<sp/>to<sp/>their<sp/>corresponding<sp/>`RobotData`<sp/>objects.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`stationsInfo`**<sp/>(`std::unordered_map&lt;ADDR_TYPEDEF,<sp/>StationData*&gt;`):<sp/>A<sp/>mapping<sp/>of<sp/>station<sp/>addresses<sp/>to<sp/>their<sp/>corresponding<sp/>`StationData`<sp/>objects.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`robotLoginKey`**<sp/>(`std::string`):<sp/>The<sp/>formatted<sp/>key<sp/>for<sp/>robot<sp/>login.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`stationLoginKey`**<sp/>(`std::string`):<sp/>The<sp/>formatted<sp/>key<sp/>for<sp/>station<sp/>login.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>Server(ADDR_TYPEDEF<sp/>addr,<sp/>Environment*<sp/>en)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>the<sp/>`Server`<sp/>object<sp/>with<sp/>a<sp/>specific<sp/>address<sp/>and<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>server&apos;s<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`en`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Environment`.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`bool<sp/>isRobot(ADDR_TYPEDEF<sp/>addr)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Checks<sp/>if<sp/>a<sp/>given<sp/>address<sp/>belongs<sp/>to<sp/>a<sp/>robot.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>address<sp/>to<sp/>check.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>`true`<sp/>if<sp/>the<sp/>address<sp/>belongs<sp/>to<sp/>a<sp/>robot,<sp/>`false`<sp/>otherwise.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`bool<sp/>isStation(ADDR_TYPEDEF<sp/>addr)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Checks<sp/>if<sp/>a<sp/>given<sp/>address<sp/>belongs<sp/>to<sp/>a<sp/>station.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>address<sp/>to<sp/>check.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>`true`<sp/>if<sp/>the<sp/>address<sp/>belongs<sp/>to<sp/>a<sp/>station,<sp/>`false`<sp/>otherwise.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`StationData*<sp/>getFreeStation()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>a<sp/>pointer<sp/>to<sp/>a<sp/>free<sp/>station.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>A<sp/>pointer<sp/>to<sp/>a<sp/>`StationData`<sp/>object,<sp/>or<sp/>`nullptr`<sp/>if<sp/>no<sp/>free<sp/>station<sp/>is<sp/>available.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setStationStatus(ADDR_TYPEDEF<sp/>addr,<sp/>bool<sp/>free)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Updates<sp/>the<sp/>status<sp/>of<sp/>a<sp/>station<sp/>(free<sp/>or<sp/>busy).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>station<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`free`:<sp/>The<sp/>new<sp/>status<sp/>(`true`<sp/>for<sp/>free,<sp/>`false`<sp/>for<sp/>busy).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setRobotLoginKey(const<sp/>std::string&amp;<sp/>key)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>robot<sp/>login<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`key`:<sp/>The<sp/>login<sp/>key<sp/>string.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setStationLoginKey(const<sp/>std::string&amp;<sp/>key)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>station<sp/>login<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`key`:<sp/>The<sp/>login<sp/>key<sp/>string.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>addRobotAddr(ADDR_TYPEDEF<sp/>addr)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Adds<sp/>a<sp/>robot<sp/>address<sp/>to<sp/>the<sp/>`robotsInfo`<sp/>map.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>robot<sp/>address.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>addStationAddr(ADDR_TYPEDEF<sp/>addr)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Adds<sp/>a<sp/>station<sp/>address<sp/>to<sp/>the<sp/>`stationsInfo`<sp/>map.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>station<sp/>address.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>listenTo(CHANNEL_INDEX_TYPEDEF<sp/>channelIndex)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Listens<sp/>to<sp/>a<sp/>specific<sp/>channel<sp/>and<sp/>logs<sp/>the<sp/>action.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>index<sp/>of<sp/>the<sp/>channel<sp/>to<sp/>listen<sp/>to.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>log(const<sp/>std::string&amp;<sp/>log)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>a<sp/>message<sp/>with<sp/>the<sp/>prefix<sp/>&quot;Server.&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`log`:<sp/>The<sp/>message<sp/>to<sp/>log.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Robot<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Robot`<sp/>class<sp/>extends<sp/>the<sp/>`ProtocolDevice`<sp/>class<sp/>and<sp/>represents<sp/>a<sp/>robotic<sp/>device<sp/>that<sp/>can<sp/>interact<sp/>with<sp/>a<sp/>server<sp/>and<sp/>charging<sp/>stations.<sp/>It<sp/>handles<sp/>communication,<sp/>navigation,<sp/>charging,<sp/>and<sp/>login<sp/>operations.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`needCharging`**<sp/>(`bool`):<sp/>Indicates<sp/>if<sp/>the<sp/>robot<sp/>requires<sp/>charging.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`loginSuccess`**<sp/>(`bool`):<sp/>Indicates<sp/>if<sp/>the<sp/>robot<sp/>has<sp/>successfully<sp/>logged<sp/>in.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`power`**<sp/>(`POWER_TYPEDEF`):<sp/>The<sp/>robot&apos;s<sp/>current<sp/>power<sp/>level.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`chargingStationAddr`**<sp/>(`ADDR_TYPEDEF`):<sp/>The<sp/>address<sp/>of<sp/>the<sp/>charging<sp/>station<sp/>the<sp/>robot<sp/>is<sp/>associated<sp/>with.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>Robot(ADDR_TYPEDEF<sp/>addr,<sp/>Environment*<sp/>en)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>the<sp/>`Robot`<sp/>object<sp/>with<sp/>a<sp/>specific<sp/>address<sp/>and<sp/>environment.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>robot&apos;s<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`en`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Environment`.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>listenTo(CHANNEL_INDEX_TYPEDEF<sp/>channelIndex)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Listens<sp/>to<sp/>a<sp/>specific<sp/>channel<sp/>and<sp/>logs<sp/>the<sp/>action.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>index<sp/>of<sp/>the<sp/>channel<sp/>to<sp/>listen<sp/>to.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>log(const<sp/>std::string&amp;<sp/>log)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>a<sp/>message<sp/>with<sp/>the<sp/>prefix<sp/>&quot;Robot.&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`log`:<sp/>The<sp/>message<sp/>to<sp/>log.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>gotoPosition(Position<sp/>pos)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>the<sp/>action<sp/>of<sp/>moving<sp/>to<sp/>a<sp/>specific<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`pos`:<sp/>The<sp/>target<sp/>position,<sp/>with<sp/>`x`<sp/>and<sp/>`y`<sp/>coordinates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>chagingUp()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Increases<sp/>the<sp/>robot&apos;s<sp/>power<sp/>level<sp/>by<sp/>20<sp/>units.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`POWER_TYPEDEF<sp/>getPower()<sp/>const`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Retrieves<sp/>the<sp/>robot&apos;s<sp/>current<sp/>power<sp/>level.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>power<sp/>level<sp/>as<sp/>a<sp/>`POWER_TYPEDEF`.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Communication<sp/>with<sp/>Server</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>login(std::string<sp/>loginKey)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>in<sp/>to<sp/>the<sp/>server<sp/>using<sp/>a<sp/>specific<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`loginKey`:<sp/>The<sp/>login<sp/>key<sp/>as<sp/>a<sp/>string.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>needCharge()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>request<sp/>to<sp/>the<sp/>server<sp/>indicating<sp/>the<sp/>need<sp/>for<sp/>charging.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type,<sp/>const<sp/>std::string<sp/>payload)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>payload<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>payload.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>to<sp/>the<sp/>server<sp/>without<sp/>a<sp/>payload.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type,<sp/>const<sp/>std::string<sp/>payload,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>payload<sp/>to<sp/>the<sp/>server<sp/>and<sp/>registers<sp/>a<sp/>callback<sp/>for<sp/>the<sp/>response.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>payload.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>handle<sp/>the<sp/>server&apos;s<sp/>response.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>to<sp/>the<sp/>server<sp/>without<sp/>a<sp/>payload<sp/>and<sp/>registers<sp/>a<sp/>callback<sp/>for<sp/>the<sp/>response.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>message<sp/>type.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>A<sp/>function<sp/>to<sp/>handle<sp/>the<sp/>server&apos;s<sp/>response.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Communication<sp/>with<sp/>Station</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendHandshakeToStation(std::string<sp/>handShakey,<sp/>ADDR_TYPEDEF<sp/>stationAddr,<sp/>CHANNEL_INDEX_TYPEDEF<sp/>channelIndex)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>handshake<sp/>message<sp/>to<sp/>a<sp/>charging<sp/>station.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`handShakey`:<sp/>The<sp/>handshake<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`stationAddr`:<sp/>The<sp/>address<sp/>of<sp/>the<sp/>station.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`channelIndex`:<sp/>The<sp/>channel<sp/>index<sp/>for<sp/>communication.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>keepAliveWhenCharging()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>periodic<sp/>signals<sp/>to<sp/>indicate<sp/>the<sp/>robot<sp/>is<sp/>active<sp/>while<sp/>charging.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendPowerFinish(ADDR_TYPEDEF<sp/>stationAddr)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>to<sp/>the<sp/>station<sp/>indicating<sp/>the<sp/>charging<sp/>process<sp/>is<sp/>complete.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`stationAddr`:<sp/>The<sp/>address<sp/>of<sp/>the<sp/>charging<sp/>station.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Station<sp/>Class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`Station`<sp/>class<sp/>extends<sp/>the<sp/>`ProtocolDevice`<sp/>class<sp/>and<sp/>represents<sp/>a<sp/>station<sp/>that<sp/>can<sp/>be<sp/>used<sp/>by<sp/>robots<sp/>for<sp/>various<sp/>operations,<sp/>such<sp/>as<sp/>charging.<sp/>It<sp/>handles<sp/>communication<sp/>with<sp/>the<sp/>server,<sp/>state<sp/>management,<sp/>and<sp/>position<sp/>updates.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Attributes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`occupied`**<sp/>(`bool`):<sp/>Indicates<sp/>whether<sp/>the<sp/>station<sp/>is<sp/>occupied<sp/>by<sp/>a<sp/>robot.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`loginSuccess`**<sp/>(`bool`):<sp/>A<sp/>flag<sp/>indicating<sp/>whether<sp/>the<sp/>login<sp/>process<sp/>was<sp/>successful.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`x`**<sp/>(`POSITION_UNIT_TYPEDEF`):<sp/>The<sp/>x-coordinate<sp/>of<sp/>the<sp/>station&apos;s<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`y`**<sp/>(`POSITION_UNIT_TYPEDEF`):<sp/>The<sp/>y-coordinate<sp/>of<sp/>the<sp/>station&apos;s<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**`chargingBotAddr`**<sp/>(`ADDR_TYPEDEF`):<sp/>The<sp/>address<sp/>of<sp/>the<sp/>robot<sp/>that<sp/>is<sp/>currently<sp/>charging<sp/>at<sp/>the<sp/>station.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`explicit<sp/>Station(ADDR_TYPEDEF<sp/>addr,<sp/>Environment*<sp/>en,<sp/>POSITION_UNIT_TYPEDEF<sp/>x,<sp/>POSITION_UNIT_TYPEDEF<sp/>y)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Initializes<sp/>the<sp/>`Station`<sp/>object<sp/>with<sp/>the<sp/>provided<sp/>address,<sp/>environment,<sp/>and<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`addr`:<sp/>The<sp/>station&apos;s<sp/>address.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`en`:<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>`Environment`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`x`:<sp/>The<sp/>x-coordinate<sp/>of<sp/>the<sp/>station&apos;s<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`y`:<sp/>The<sp/>y-coordinate<sp/>of<sp/>the<sp/>station&apos;s<sp/>position.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Public<sp/>Methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>log(const<sp/>std::string&amp;<sp/>log)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>a<sp/>message<sp/>with<sp/>the<sp/>prefix<sp/>&quot;Station.&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`log`:<sp/>The<sp/>message<sp/>to<sp/>log.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type,<sp/>const<sp/>std::string<sp/>payload)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>payload<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>type<sp/>of<sp/>the<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>content.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>to<sp/>the<sp/>server<sp/>without<sp/>a<sp/>payload.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>type<sp/>of<sp/>the<sp/>message.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type,<sp/>const<sp/>std::string<sp/>payload,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>with<sp/>a<sp/>payload<sp/>to<sp/>the<sp/>server<sp/>and<sp/>provides<sp/>a<sp/>callback<sp/>for<sp/>a<sp/>response.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>type<sp/>of<sp/>the<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`payload`:<sp/>The<sp/>message<sp/>content.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>The<sp/>callback<sp/>function<sp/>to<sp/>handle<sp/>the<sp/>response.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>sendToServer(MsgType<sp/>type,<sp/>std::function&lt;void(ADDR_TYPEDEF,<sp/>const<sp/>std::string&amp;)&gt;<sp/>callback)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sends<sp/>a<sp/>message<sp/>to<sp/>the<sp/>server<sp/>and<sp/>provides<sp/>a<sp/>callback<sp/>for<sp/>a<sp/>response.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`type`:<sp/>The<sp/>type<sp/>of<sp/>the<sp/>message.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`callback`:<sp/>The<sp/>callback<sp/>function<sp/>to<sp/>handle<sp/>the<sp/>response.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>login(std::string<sp/>loginKey)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Logs<sp/>the<sp/>station<sp/>into<sp/>the<sp/>server<sp/>using<sp/>the<sp/>provided<sp/>login<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`loginKey`:<sp/>The<sp/>login<sp/>key<sp/>for<sp/>authentication.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>updateFreeToServer(bool<sp/>free)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Updates<sp/>the<sp/>station&apos;s<sp/>status<sp/>(free<sp/>or<sp/>occupied)<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`free`:<sp/>`true`<sp/>if<sp/>the<sp/>station<sp/>is<sp/>free,<sp/>`false`<sp/>if<sp/>occupied.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>updatePositionToServer()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Updates<sp/>the<sp/>station&apos;s<sp/>position<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`POSITION_UNIT_TYPEDEF<sp/>getX()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Returns<sp/>the<sp/>x-coordinate<sp/>of<sp/>the<sp/>station&apos;s<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>x-coordinate<sp/>of<sp/>the<sp/>station.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`POSITION_UNIT_TYPEDEF<sp/>getY()`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Returns<sp/>the<sp/>y-coordinate<sp/>of<sp/>the<sp/>station&apos;s<sp/>position.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Returns:**<sp/>The<sp/>y-coordinate<sp/>of<sp/>the<sp/>station.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**`void<sp/>setOccupied(bool<sp/>v)`**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Sets<sp/>the<sp/>station&apos;s<sp/>occupancy<sp/>status<sp/>and<sp/>updates<sp/>its<sp/>status<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>**Parameters:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`v`:<sp/>`true`<sp/>to<sp/>mark<sp/>the<sp/>station<sp/>as<sp/>occupied,<sp/>`false`<sp/>to<sp/>mark<sp/>it<sp/>as<sp/>free.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="doc/API.md"/>
+  </compounddef>
+</doxygen>

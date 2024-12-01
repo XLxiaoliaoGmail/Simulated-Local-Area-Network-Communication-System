@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Local<sp/>Network<sp/>Communication<sp/>Simulation<sp/>System</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>is<sp/>divided<sp/>into<sp/>`physical<sp/>simulation<sp/>layer`<sp/>and<sp/>`protocol<sp/>layer`.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>detailed<sp/>information,<sp/>please<sp/>refer<sp/>to<sp/>the<sp/>[API<sp/>documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>physical<sp/>simulation<sp/>layer</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>physical<sp/>simulation<sp/>layer<sp/>simulates<sp/>the<sp/>key<sp/>behaviors<sp/>of<sp/>lower-layer<sp/>firmware<sp/>of<sp/>the<sp/>802.15.4,<sp/>which<sp/>is<sp/>a<sp/>widely<sp/>used<sp/>protocol<sp/>for<sp/>low-rate<sp/>wireless<sp/>personal<sp/>area<sp/>networks<sp/>(LR-WPANs)<sp/>,<sp/>including<sp/>message<sp/>sending<sp/>and<sp/>listening,<sp/>channel<sp/>occupancy<sp/>and<sp/>waiting,<sp/>and<sp/>communication<sp/>interference.<sp/>It<sp/>also<sp/>creates<sp/>a<sp/>virtual<sp/>experimental<sp/>environment<sp/>that<sp/>allows<sp/>these<sp/>devices<sp/>to<sp/>operate<sp/>in<sp/>the<sp/>time<sp/>dimension.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>diagram<sp/>shows<sp/>how<sp/>the<sp/>simulation<sp/>environment<sp/>operates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/user-attachments/assets/054032d2-3df9-44ad-b0d3-0c4a3676767f&quot;<sp/>width=&quot;70%&quot;&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>protocol<sp/>layer</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>protocol<sp/>layer<sp/>simulates<sp/>the<sp/>behavior<sp/>of<sp/>real<sp/>devices.<sp/>Users<sp/>can<sp/>easily<sp/>use<sp/>the<sp/>protocol<sp/>layer&apos;s<sp/>API<sp/>directly<sp/>without<sp/>needing<sp/>to<sp/>worry<sp/>about<sp/>the<sp/>underlying<sp/>implementation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>diagram<sp/>demonstrates<sp/>the<sp/>class<sp/>relationship<sp/>between<sp/>the<sp/>&quot;communication<sp/>protocol<sp/>specialized<sp/>device&quot;<sp/>and<sp/>the<sp/>&quot;underlying<sp/>physical<sp/>device&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/user-attachments/assets/dc4a513e-795a-40a1-a022-533d12ee1d00&quot;<sp/>width=&quot;70%&quot;&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>demo<sp/>(main<sp/>function)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>main<sp/>function<sp/>demonstrates<sp/>an<sp/>instance<sp/>of<sp/>this<sp/>system.<sp/>In<sp/>this<sp/>experiment,<sp/>a<sp/>server,<sp/>10<sp/>robots,<sp/>and<sp/>10<sp/>charging<sp/>stations<sp/>are<sp/>started<sp/>at<sp/>the<sp/>10th<sp/>tick.<sp/>Robots<sp/>and<sp/>charging<sp/>stations<sp/>log<sp/>in<sp/>to<sp/>the<sp/>server<sp/>using<sp/>keys<sp/>after<sp/>startup.<sp/>At<sp/>the<sp/>5000th<sp/>tick,<sp/>a<sp/>&quot;robot<sp/>requests<sp/>charging&quot;<sp/>event<sp/>occurs.<sp/>Each<sp/>device&apos;s<sp/>behavior<sp/>is<sp/>logged<sp/>in<sp/>detail<sp/>to<sp/>the<sp/>console,<sp/>allowing<sp/>the<sp/>operator<sp/>to<sp/>see<sp/>what<sp/>happens<sp/>and<sp/>make<sp/>further<sp/>optimizations<sp/>and<sp/>adjustments.<sp/>The<sp/>output\main.exe<sp/>is<sp/>the<sp/>compiled<sp/>file.<sp/>You<sp/>can<sp/>open<sp/>it<sp/>if<sp/>you<sp/>trust<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>simulated<sp/>the<sp/>following<sp/>events:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Due<sp/>to<sp/>some<sp/>reasons,<sp/>the<sp/>robot<sp/>needs<sp/>to<sp/>charge<sp/>and<sp/>sends<sp/>a<sp/>request<sp/>to<sp/>the<sp/>server.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>The<sp/>server<sp/>finds<sp/>an<sp/>available<sp/>charging<sp/>station<sp/>and<sp/>sends<sp/>the<sp/>communication<sp/>address,<sp/>location,<sp/>and<sp/>handshake<sp/>key<sp/>to<sp/>the<sp/>robot,<sp/>then<sp/>sends<sp/>the<sp/>handshake<sp/>key<sp/>to<sp/>the<sp/>charging<sp/>station.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>The<sp/>robot<sp/>uses<sp/>the<sp/>key<sp/>to<sp/>handshake<sp/>with<sp/>the<sp/>charging<sp/>station.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>The<sp/>robot<sp/>starts<sp/>charging.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>During<sp/>charging,<sp/>the<sp/>robot<sp/>and<sp/>the<sp/>charging<sp/>station<sp/>maintain<sp/>a<sp/>keep-alive<sp/>connection.</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>Charging<sp/>is<sp/>completed,<sp/>and<sp/>the<sp/>keep-alive<sp/>connection<sp/>is<sp/>canceled.</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>The<sp/>charging<sp/>station<sp/>returns<sp/>to<sp/>idle<sp/>status.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>diagram<sp/>delays<sp/>the<sp/>process<sp/>of<sp/>this<sp/>experiment.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6&quot;<sp/>width=&quot;70%&quot;&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview<sp/>-<sp/>Physical<sp/>Simulation<sp/>Layer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Environment</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`Environment`<sp/>class<sp/>simulates<sp/>the<sp/>physical<sp/>environment<sp/>and<sp/>basic<sp/>simulation<sp/>functions.<sp/>Time<sp/>in<sp/>the<sp/>simulation<sp/>is<sp/>measured<sp/>in<sp/>ticks,<sp/>and<sp/>certain<sp/>events<sp/>may<sp/>be<sp/>triggered<sp/>at<sp/>specific<sp/>ticks<sp/>to<sp/>achieve<sp/>the<sp/>simulation<sp/>effect.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>SimEvent</highlight></codeline>
+<codeline><highlight class="normal">`SimEvent`<sp/>is<sp/>an<sp/>auxiliary<sp/>class<sp/>for<sp/>`Environment`,<sp/>recording<sp/>events<sp/>that<sp/>occur<sp/>at<sp/>specific<sp/>times<sp/>and<sp/>triggering<sp/>them<sp/>when<sp/>the<sp/>simulation<sp/>reaches<sp/>that<sp/>moment.<sp/>This<sp/>class<sp/>facilitates<sp/>setting<sp/>up<sp/>events<sp/>in<sp/>the<sp/>simulation<sp/>environment.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Channel</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`Channel`<sp/>class<sp/>simulates<sp/>the<sp/>behavior<sp/>of<sp/>various<sp/>channels<sp/>in<sp/>the<sp/>environment,<sp/>including<sp/>channel<sp/>occupation<sp/>and<sp/>signal<sp/>interference.<sp/>An<sp/>`Environment`<sp/>instance<sp/>may<sp/>contain<sp/>multiple<sp/>`Channels`.<sp/>When<sp/>a<sp/>`Device`<sp/>sends<sp/>a<sp/>message<sp/>to<sp/>a<sp/>`Channel`<sp/>and<sp/>the<sp/>message<sp/>is<sp/>not<sp/>interfered<sp/>with,<sp/>it<sp/>will<sp/>be<sp/>broadcast<sp/>to<sp/>all<sp/>`Devices`<sp/>listening<sp/>to<sp/>that<sp/>`Channel`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Device</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`Device`<sp/>class<sp/>simulates<sp/>the<sp/>physical<sp/>implementation<sp/>of<sp/>devices,<sp/>each<sp/>with<sp/>its<sp/>own<sp/>address.<sp/>Devices<sp/>can<sp/>send<sp/>messages<sp/>to<sp/>a<sp/>`Channel`<sp/>(sending<sp/>messages<sp/>consumes<sp/>ticks,<sp/>during<sp/>which<sp/>the<sp/>device<sp/>is<sp/>busy<sp/>and<sp/>the<sp/>channel<sp/>is<sp/>occupied).<sp/>Devices<sp/>also<sp/>implement<sp/>basic<sp/>channel<sp/>occupation-waiting<sp/>mechanisms<sp/>and<sp/>message<sp/>queue<sp/>mechanisms<sp/>(if<sp/>multiple<sp/>message<sp/>sending<sp/>requests<sp/>occur<sp/>in<sp/>a<sp/>short<sp/>time,<sp/>messages<sp/>are<sp/>stored<sp/>in<sp/>a<sp/>queue<sp/>and<sp/>sent<sp/>sequentially).<sp/>Devices<sp/>can<sp/>listen<sp/>to<sp/>messages<sp/>on<sp/>a<sp/>`Channel`<sp/>(each<sp/>device<sp/>can<sp/>only<sp/>listen<sp/>to<sp/>one<sp/>channel<sp/>at<sp/>a<sp/>time).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>diagram<sp/>demonstrates<sp/>how<sp/>a<sp/>device<sp/>sends<sp/>data<sp/>to<sp/>the<sp/>channel,<sp/>which<sp/>is<sp/>then<sp/>broadcast<sp/>to<sp/>each<sp/>device<sp/>listening<sp/>to<sp/>the<sp/>channel.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/user-attachments/assets/e6367711-5d83-47f0-8371-5ba8fea9627c&quot;<sp/>width=&quot;70%&quot;&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview<sp/>-<sp/>Protocol<sp/>Implementation<sp/>Layer</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>ProtocolDevice</highlight></codeline>
+<codeline><highlight class="normal">`ProtocolDevice`<sp/>extends<sp/>`Device`<sp/>by<sp/>adding<sp/>basic<sp/>protocol<sp/>functionalities.<sp/>Each<sp/>message<sp/>includes<sp/>a<sp/>type<sp/>and<sp/>payload,<sp/>and<sp/>received<sp/>broadcast<sp/>messages<sp/>can<sp/>be<sp/>processed,<sp/>such<sp/>as<sp/>filtering<sp/>out<sp/>messages<sp/>not<sp/>intended<sp/>for<sp/>the<sp/>device,<sp/>registering<sp/>message<sp/>handlers,<sp/>sending<sp/>messages,<sp/>and<sp/>listening<sp/>for<sp/>callbacks.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Server</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`Server`<sp/>class<sp/>is<sp/>a<sp/>specific<sp/>implementation<sp/>of<sp/>`ProtocolDevice`,<sp/>representing<sp/>a<sp/>central<sp/>server<sp/>device.<sp/>It<sp/>handles<sp/>server-related<sp/>behaviors,<sp/>such<sp/>as<sp/>listening<sp/>for<sp/>login<sp/>requests<sp/>and<sp/>handling<sp/>robot<sp/>charging<sp/>requests.<sp/>The<sp/>server<sp/>can<sp/>manage<sp/>all<sp/>devices,<sp/>which<sp/>prioritize<sp/>communication<sp/>with<sp/>the<sp/>server<sp/>unless<sp/>authorized<sp/>otherwise.<sp/>The<sp/>server<sp/>does<sp/>not<sp/>manage<sp/>any<sp/>devices<sp/>at<sp/>startup;<sp/>devices<sp/>must<sp/>log<sp/>in<sp/>to<sp/>the<sp/>server<sp/>to<sp/>be<sp/>managed.<sp/>Each<sp/>device<sp/>has<sp/>a<sp/>login<sp/>key,<sp/>and<sp/>only<sp/>devices<sp/>with<sp/>valid<sp/>keys<sp/>are<sp/>added<sp/>to<sp/>the<sp/>specific<sp/>device<sp/>pool.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Robot</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`Robot`<sp/>class<sp/>is<sp/>a<sp/>specific<sp/>implementation<sp/>of<sp/>`ProtocolDevice`,<sp/>representing<sp/>a<sp/>robot<sp/>device.<sp/>It<sp/>implements<sp/>behaviors<sp/>related<sp/>to<sp/>robots,<sp/>such<sp/>as<sp/>logging<sp/>in<sp/>and<sp/>requesting<sp/>charging.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Station</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`Station`<sp/>class<sp/>is<sp/>a<sp/>specific<sp/>implementation<sp/>of<sp/>`ProtocolDevice`,<sp/>representing<sp/>a<sp/>charging<sp/>station<sp/>device.<sp/>It<sp/>implements<sp/>behaviors<sp/>related<sp/>to<sp/>charging<sp/>stations,<sp/>such<sp/>as<sp/>logging<sp/>in<sp/>and<sp/>handling<sp/>charging<sp/>requests.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>detailed<sp/>information,<sp/>please<sp/>refer<sp/>to<sp/>the<sp/>[API<sp/>documentation](https://github.com/XLxiaoliaoGmail/Simulated-Local-Area-Network-Communication-System/blob/master/doc/API.md).</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

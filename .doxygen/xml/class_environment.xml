@@ -1,0 +1,332 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="class_environment" kind="class" language="C++" prot="public">
+    <compoundname>Environment</compoundname>
+    <includes refid="_environment_8h" local="no">Environment.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_environment_1ac54f7a2b980bb5a199443a1ffac43140" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Environment::running</definition>
+        <argsstring></argsstring>
+        <name>running</name>
+        <qualifiedname>Environment::running</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="8" column="10" bodyfile="include/Environment.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_environment_1aca6643f79cf08e4574821971a20be099" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_device" kindref="compound">Device</ref> * &gt;</type>
+        <definition>std::vector&lt;Device*&gt; Environment::devices</definition>
+        <argsstring></argsstring>
+        <name>devices</name>
+        <qualifiedname>Environment::devices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="9" column="17" bodyfile="include/Environment.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_environment_1a9c99252d2af83e7b495fe65370f0283e" prot="private" static="no" mutable="no">
+        <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+        <definition>TIME_TYPEDEF Environment::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <qualifiedname>Environment::time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="10" column="18" bodyfile="include/Environment.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_environment_1abaad3beb3250382819f27bd5bfeb1443" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; <ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref>, std::vector&lt; <ref refid="class_sim_event" kindref="compound">SimEvent</ref> * &gt; &gt;</type>
+        <definition>std::unordered_map&lt;TIME_TYPEDEF, std::vector&lt;SimEvent*&gt; &gt; Environment::eventsAtCertainTick</definition>
+        <argsstring></argsstring>
+        <name>eventsAtCertainTick</name>
+        <qualifiedname>Environment::eventsAtCertainTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="11" column="24" bodyfile="include/Environment.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_environment_1a49345a91797f7dfdf341097fe9127e93" prot="private" static="no" mutable="no">
+        <type><ref refid="class_channel" kindref="compound">Channel</ref></type>
+        <definition>Channel Environment::channels[CHANNEL_COUNTS]</definition>
+        <argsstring>[CHANNEL_COUNTS]</argsstring>
+        <name>channels</name>
+        <qualifiedname>Environment::channels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="12" column="13" bodyfile="include/Environment.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_environment_1a8b427c4448d8b7536666837521b9e83d" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Environment::Environment</definition>
+        <argsstring>()</argsstring>
+        <name>Environment</name>
+        <qualifiedname>Environment::Environment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="15" column="14" bodyfile="include/Environment.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1ac1a4674ff36b23837ff896ff444acaed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::addDevice</definition>
+        <argsstring>(Device *d)</argsstring>
+        <name>addDevice</name>
+        <qualifiedname>Environment::addDevice</qualifiedname>
+        <param>
+          <type><ref refid="class_device" kindref="compound">Device</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="17" column="17" bodyfile="include/Environment.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1ab2ffb01d897494de982ba47995664a66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::broadcast</definition>
+        <argsstring>(const Message *msg, CHANNEL_INDEX_TYPEDEF channelIndex, TIME_TYPEDEF sendingTime)</argsstring>
+        <name>broadcast</name>
+        <qualifiedname>Environment::broadcast</qualifiedname>
+        <param>
+          <type>const <ref refid="class_message" kindref="compound">Message</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref></type>
+          <declname>channelIndex</declname>
+        </param>
+        <param>
+          <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+          <declname>sendingTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="18" column="10" bodyfile="src/Environment.cpp" bodystart="3" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a879586e4021854ef00fd17cb0fd9d15b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <qualifiedname>Environment::update</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="19" column="10" bodyfile="src/Environment.cpp" bodystart="25" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1abbe8d27b056f87ee58682f24debbbe7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_sim_event" kindref="compound">SimEvent</ref> *</type>
+        <definition>SimEvent * Environment::registerEvent</definition>
+        <argsstring>(TIME_TYPEDEF tick, std::function&lt; void()&gt; callback)</argsstring>
+        <name>registerEvent</name>
+        <qualifiedname>Environment::registerEvent</qualifiedname>
+        <param>
+          <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+          <declname>tick</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="20" column="14" bodyfile="src/Environment.cpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a3cbe818a3649fe4f67fff09eda16acdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_sim_event" kindref="compound">SimEvent</ref> *</type>
+        <definition>SimEvent * Environment::delayEvent</definition>
+        <argsstring>(TIME_TYPEDEF delayTick, std::function&lt; void()&gt; callback)</argsstring>
+        <name>delayEvent</name>
+        <qualifiedname>Environment::delayEvent</qualifiedname>
+        <param>
+          <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+          <declname>delayTick</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="21" column="21" bodyfile="include/Environment.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a556221f2bc3959f05e43b366456ad8fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::log</definition>
+        <argsstring>(const std::string &amp;log)</argsstring>
+        <name>log</name>
+        <qualifiedname>Environment::log</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>log</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="22" column="10" bodyfile="src/Environment.cpp" bodystart="46" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a27723957d844c1823b3582f106fcd47e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+        <definition>TIME_TYPEDEF Environment::getTime</definition>
+        <argsstring>() const</argsstring>
+        <name>getTime</name>
+        <qualifiedname>Environment::getTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="23" column="25" bodyfile="include/Environment.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a36e11b20457079823571426f49467083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::endAt</definition>
+        <argsstring>(TIME_TYPEDEF time)</argsstring>
+        <name>endAt</name>
+        <qualifiedname>Environment::endAt</qualifiedname>
+        <param>
+          <type><ref refid="__common_8h_1a3aace27b10c3e64c3fdccbe040b919f2" kindref="member">TIME_TYPEDEF</ref></type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="24" column="10" bodyfile="src/Environment.cpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1ad78876e4438b3943eeb04229c03ff412" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::stopRun</definition>
+        <argsstring>()</argsstring>
+        <name>stopRun</name>
+        <qualifiedname>Environment::stopRun</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="25" column="10" bodyfile="src/Environment.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a41a43b88702fff5df95e98d10e49f541" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>Environment::run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="26" column="10" bodyfile="src/Environment.cpp" bodystart="58" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a1f14697142a2a1997451806c42b6c91b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_channel" kindref="compound">Channel</ref> *</type>
+        <definition>Channel * Environment::getChannels</definition>
+        <argsstring>()</argsstring>
+        <name>getChannels</name>
+        <qualifiedname>Environment::getChannels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="27" column="20" bodyfile="include/Environment.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_environment_1a8c2f99c71bcdee586346c2a61efbb884" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Environment::error</definition>
+        <argsstring>(std::string s)</argsstring>
+        <name>error</name>
+        <qualifiedname>Environment::error</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Environment.h" line="28" column="17" bodyfile="include/Environment.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Environment.h" line="6" column="1" bodyfile="include/Environment.h" bodystart="6" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_environment_1ac1a4674ff36b23837ff896ff444acaed" prot="public" virt="non-virtual"><scope>Environment</scope><name>addDevice</name></member>
+      <member refid="class_environment_1ab2ffb01d897494de982ba47995664a66" prot="public" virt="non-virtual"><scope>Environment</scope><name>broadcast</name></member>
+      <member refid="class_environment_1a49345a91797f7dfdf341097fe9127e93" prot="private" virt="non-virtual"><scope>Environment</scope><name>channels</name></member>
+      <member refid="class_environment_1a3cbe818a3649fe4f67fff09eda16acdc" prot="public" virt="non-virtual"><scope>Environment</scope><name>delayEvent</name></member>
+      <member refid="class_environment_1aca6643f79cf08e4574821971a20be099" prot="private" virt="non-virtual"><scope>Environment</scope><name>devices</name></member>
+      <member refid="class_environment_1a36e11b20457079823571426f49467083" prot="public" virt="non-virtual"><scope>Environment</scope><name>endAt</name></member>
+      <member refid="class_environment_1a8b427c4448d8b7536666837521b9e83d" prot="public" virt="non-virtual"><scope>Environment</scope><name>Environment</name></member>
+      <member refid="class_environment_1a8c2f99c71bcdee586346c2a61efbb884" prot="public" virt="non-virtual"><scope>Environment</scope><name>error</name></member>
+      <member refid="class_environment_1abaad3beb3250382819f27bd5bfeb1443" prot="private" virt="non-virtual"><scope>Environment</scope><name>eventsAtCertainTick</name></member>
+      <member refid="class_environment_1a1f14697142a2a1997451806c42b6c91b" prot="public" virt="non-virtual"><scope>Environment</scope><name>getChannels</name></member>
+      <member refid="class_environment_1a27723957d844c1823b3582f106fcd47e" prot="public" virt="non-virtual"><scope>Environment</scope><name>getTime</name></member>
+      <member refid="class_environment_1a556221f2bc3959f05e43b366456ad8fa" prot="public" virt="non-virtual"><scope>Environment</scope><name>log</name></member>
+      <member refid="class_environment_1abbe8d27b056f87ee58682f24debbbe7f" prot="public" virt="non-virtual"><scope>Environment</scope><name>registerEvent</name></member>
+      <member refid="class_environment_1a41a43b88702fff5df95e98d10e49f541" prot="public" virt="non-virtual"><scope>Environment</scope><name>run</name></member>
+      <member refid="class_environment_1ac54f7a2b980bb5a199443a1ffac43140" prot="private" virt="non-virtual"><scope>Environment</scope><name>running</name></member>
+      <member refid="class_environment_1ad78876e4438b3943eeb04229c03ff412" prot="public" virt="non-virtual"><scope>Environment</scope><name>stopRun</name></member>
+      <member refid="class_environment_1a9c99252d2af83e7b495fe65370f0283e" prot="private" virt="non-virtual"><scope>Environment</scope><name>time</name></member>
+      <member refid="class_environment_1a879586e4021854ef00fd17cb0fd9d15b" prot="public" virt="non-virtual"><scope>Environment</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

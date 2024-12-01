@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="struct_robot_data" kind="struct" language="C++" prot="public">
+    <compoundname>RobotData</compoundname>
+    <includes refid="_server_8h" local="no">Server.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_robot_data_1a0007f4b014a950d356d2d63156b572af" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RobotData::RobotData</definition>
+        <argsstring>()</argsstring>
+        <name>RobotData</name>
+        <qualifiedname>RobotData::RobotData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Server.h" line="8" column="14" bodyfile="include/Server.h" bodystart="8" bodyend="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Server.h" line="6" column="1" bodyfile="include/Server.h" bodystart="6" bodyend="9"/>
+    <listofallmembers>
+      <member refid="struct_robot_data_1a0007f4b014a950d356d2d63156b572af" prot="public" virt="non-virtual"><scope>RobotData</scope><name>RobotData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

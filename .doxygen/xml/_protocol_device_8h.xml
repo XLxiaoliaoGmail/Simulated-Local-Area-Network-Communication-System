@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="_protocol_device_8h" kind="file" language="C++">
+    <compoundname>ProtocolDevice.h</compoundname>
+    <includes refid="__common_8h" local="yes">_common.h</includes>
+    <includedby refid="__common_8h" local="yes">include/_common.h</includedby>
+    <incdepgraph>
+      <node id="17">
+        <label>Channel.h</label>
+        <link refid="_channel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Device.h</label>
+        <link refid="_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Environment.h</label>
+        <link refid="_environment_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Message.h</label>
+        <link refid="_message_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/ProtocolDevice.h</label>
+        <link refid="_protocol_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Robot.h</label>
+        <link refid="_robot_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Server.h</label>
+        <link refid="_server_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>SimEvent.h</label>
+        <link refid="_sim_event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Station.h</label>
+        <link refid="_station_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>_common.h</label>
+        <link refid="__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="12">
+        <label>format</label>
+      </node>
+      <node id="6">
+        <label>functional</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>list</label>
+      </node>
+      <node id="5">
+        <label>queue</label>
+      </node>
+      <node id="3">
+        <label>random</label>
+      </node>
+      <node id="14">
+        <label>sstream</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>unordered_map</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/Channel.h</label>
+        <link refid="_channel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/Device.h</label>
+        <link refid="_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>include/Environment.h</label>
+        <link refid="_environment_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/Message.h</label>
+        <link refid="_message_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/ProtocolDevice.h</label>
+        <link refid="_protocol_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/Robot.h</label>
+        <link refid="_robot_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>include/Server.h</label>
+        <link refid="_server_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>include/SimEvent.h</label>
+        <link refid="_sim_event_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/Station.h</label>
+        <link refid="_station_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/_common.h</label>
+        <link refid="__common_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/Channel.cpp</label>
+        <link refid="_channel_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/Device.cpp</label>
+        <link refid="_device_8cpp"/>
+      </node>
+      <node id="13">
+        <label>src/Environment.cpp</label>
+        <link refid="_environment_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/Robot.cpp</label>
+        <link refid="_robot_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/Server.cpp</label>
+        <link refid="_server_8cpp"/>
+      </node>
+      <node id="16">
+        <label>src/SimEvent.cpp</label>
+        <link refid="_sim_event_8cpp"/>
+      </node>
+      <node id="17">
+        <label>src/Station.cpp</label>
+        <link refid="_station_8cpp"/>
+      </node>
+      <node id="18">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_protocol_device" prot="public">ProtocolDevice</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#if<sp/>!defined(__ProtocolDevice_H)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__ProtocolDevice_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="__common_8h" kindref="compound">_common.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_protocol_device" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_protocol_device" kindref="compound">ProtocolDevice</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_device" kindref="compound">Device</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref>,<sp/>std::function&lt;void(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;&gt;<sp/>callbacks;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref>,<sp/>std::function&lt;void(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;&gt;<sp/>onceCallbacks;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11" refid="class_protocol_device_1a86fe6dd895e9d31cb02f25aedeec4517" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1a86fe6dd895e9d31cb02f25aedeec4517" kindref="member">ProtocolDevice</ref>(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>addr,<sp/><ref refid="class_environment" kindref="compound">Environment</ref>*<sp/>en)<sp/>:<sp/><ref refid="class_device" kindref="compound">Device</ref>(addr,<sp/>en)<sp/>{}</highlight></codeline>
+<codeline lineno="12" refid="class_protocol_device_1ad4878a8e00eb38999144ea75b28b5015" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_protocol_device_1ad4878a8e00eb38999144ea75b28b5015" kindref="member">formatKeyStr</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>format<sp/>=<sp/>key;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(format.length()<sp/>&lt;<sp/><ref refid="__common_8h_1a3531730f37f00b8e472dd4db217a7f6c" kindref="member">KEY_FORMAT_LENGTH</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>format.insert(0,<sp/><ref refid="__common_8h_1a3531730f37f00b8e472dd4db217a7f6c" kindref="member">KEY_FORMAT_LENGTH</ref><sp/>-<sp/>format.length(),<sp/></highlight><highlight class="charliteral">&apos;x&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(format.length()<sp/>&gt;<sp/><ref refid="__common_8h_1a3531730f37f00b8e472dd4db217a7f6c" kindref="member">KEY_FORMAT_LENGTH</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>format<sp/>=<sp/>format.substr(0,<sp/><ref refid="__common_8h_1a3531730f37f00b8e472dd4db217a7f6c" kindref="member">KEY_FORMAT_LENGTH</ref>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>format;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21" refid="class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93" kindref="member">MsgTypeToHexString</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>num)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>ss;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>&lt;&lt;<sp/>std::hex<sp/>&lt;&lt;<sp/>std::setw(MSGTYPE_LENGTH_IN_STR)<sp/>&lt;&lt;<sp/>std::setfill(&apos;0&apos;)<sp/>&lt;&lt;<sp/>static_cast&lt;int&gt;(num);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ss.str();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_protocol_device_1a7716806817011df76d855f30cf3f2b23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/><ref refid="class_protocol_device_1a7716806817011df76d855f30cf3f2b23" kindref="member">hexStringToMsgType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>hexStr)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(std::stoi(hexStr));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30" refid="class_protocol_device_1ac8e76689b597199de9732533a9e18f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1ac8e76689b597199de9732533a9e18f0d" kindref="member">send</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>payload,<sp/><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref><sp/>channelIndex,<sp/><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>target)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_device_1a00e1d363811ad74a7267211440045246" kindref="member">Device::send</ref>(<ref refid="class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93" kindref="member">MsgTypeToHexString</ref>(type)<sp/>+<sp/>payload,<sp/>channelIndex,<sp/>target);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33" refid="class_protocol_device_1af611022232cd75f5a381a3249680c073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1af611022232cd75f5a381a3249680c073" kindref="member">send</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref><sp/>channelIndex,<sp/><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>target){</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_device_1a00e1d363811ad74a7267211440045246" kindref="member">Device::send</ref>(<ref refid="class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93" kindref="member">MsgTypeToHexString</ref>(type),<sp/>channelIndex,<sp/>target);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36" refid="class_protocol_device_1ae7a3396842456d09c8d99adcbbb8b33f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1ae7a3396842456d09c8d99adcbbb8b33f" kindref="member">send</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>payload,<sp/><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref><sp/>channelIndex,<sp/><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>target,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;<sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_device_1a00e1d363811ad74a7267211440045246" kindref="member">Device::send</ref>(<ref refid="class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93" kindref="member">MsgTypeToHexString</ref>(type)<sp/>+<sp/>payload,<sp/>channelIndex,<sp/>target);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_protocol_device_1a201e9643176a39facc54e6e00bc8cd44" kindref="member">once</ref>(type,<sp/>callback);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40" refid="class_protocol_device_1a6b00e2e8334f0184b9930a388de9ce0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1a6b00e2e8334f0184b9930a388de9ce0e" kindref="member">send</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref><sp/>channelIndex,<sp/><ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>target,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;<sp/>callback){</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_device_1a00e1d363811ad74a7267211440045246" kindref="member">Device::send</ref>(<ref refid="class_protocol_device_1aa0da4767b6297edc518c84b9cc296e93" kindref="member">MsgTypeToHexString</ref>(type),<sp/>channelIndex,<sp/>target);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_protocol_device_1a201e9643176a39facc54e6e00bc8cd44" kindref="member">once</ref>(type,<sp/>callback);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44" refid="class_protocol_device_1a1ac42bba860be61ca6867ff7f9978b1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1a1ac42bba860be61ca6867ff7f9978b1a" kindref="member">on</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;<sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;callbacks[type]<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47" refid="class_protocol_device_1a201e9643176a39facc54e6e00bc8cd44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1a201e9643176a39facc54e6e00bc8cd44" kindref="member">once</ref>(<ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/>std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;)&gt;<sp/>callback)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;onceCallbacks[type]<sp/>=<sp/>callback;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50" refid="class_protocol_device_1ab499901dbec84769ab86d6eb99d418ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1ab499901dbec84769ab86d6eb99d418ea" kindref="member">msgHandler</ref>(<ref refid="__common_8h_1ace694e2135c52226445db7abe85136b5" kindref="member">ADDR_TYPEDEF</ref><sp/>senderAddr,<sp/><ref refid="__common_8h_1a4d47dc9870566f2f294eaab1426094a2" kindref="member">MsgType</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>payload)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;onceCallbacks.count(type)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;onceCallbacks.at(type)(senderAddr,<sp/>payload);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;onceCallbacks.erase(type);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;callbacks.count(type)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;callbacks.at(type)(senderAddr,<sp/>payload);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59" refid="class_protocol_device_1a1f54fd7c5d99d865446e670080838fba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1a1f54fd7c5d99d865446e670080838fba" kindref="member">recieve</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_message" kindref="compound">Message</ref>*<sp/>msg,<sp/><ref refid="__common_8h_1a9635220f023976d87c59d9234b98f11f" kindref="member">CHANNEL_INDEX_TYPEDEF</ref><sp/>channelIndex)</highlight><highlight class="keyword"><sp/>override<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>just<sp/>handle<sp/>msg<sp/>that<sp/>target<sp/>is<sp/>self</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_message_1a6ff3145d2b7cbd589f34afc1400d7789" kindref="member">Message::hexStringToUint</ref>(msg-&gt;<ref refid="class_message_1ad0489c1c0b8cecca393cd22f38757f0e" kindref="member">target</ref>)<sp/>!=<sp/>this-&gt;getAddr())<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_protocol_device_1ab499901dbec84769ab86d6eb99d418ea" kindref="member">msgHandler</ref>(<ref refid="class_message_1a6ff3145d2b7cbd589f34afc1400d7789" kindref="member">Message::hexStringToUint</ref>(msg-&gt;<ref refid="class_message_1ab5549d9090edf543845ee21135c65bab" kindref="member">sender</ref>),<sp/><ref refid="class_protocol_device_1a7716806817011df76d855f30cf3f2b23" kindref="member">hexStringToMsgType</ref>(msg-&gt;<ref refid="class_message_1a3c356102b83f3a77406a8d39bdeb0b18" kindref="member">payload</ref>.substr(0,<ref refid="__common_8h_1a9413e78fff8e04bcedceab04fee2c59d" kindref="member">MSGTYPE_LENGTH_IN_STR</ref>)),<sp/>msg-&gt;<ref refid="class_message_1a3c356102b83f3a77406a8d39bdeb0b18" kindref="member">payload</ref>.substr(<ref refid="__common_8h_1a9413e78fff8e04bcedceab04fee2c59d" kindref="member">MSGTYPE_LENGTH_IN_STR</ref>));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66" refid="class_protocol_device_1a54848a94b7290bc42b846be899758e41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_device_1a54848a94b7290bc42b846be899758e41" kindref="member">log</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>who,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="class_protocol_device_1a54848a94b7290bc42b846be899758e41" kindref="member">log</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_device_1a02a4dcfb2be69394026033da9c0e0614" kindref="member">Device::log</ref>(</highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal"><sp/>+<sp/>who<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_protocol_device_1a54848a94b7290bc42b846be899758e41" kindref="member">log</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__ProtocolDevice_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/ProtocolDevice.h"/>
+  </compounddef>
+</doxygen>

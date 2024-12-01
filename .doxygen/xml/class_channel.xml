@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="en-US">
+  <compounddef id="class_channel" kind="class" language="C++" prot="public">
+    <compoundname>Channel</compoundname>
+    <includes refid="_channel_8h" local="no">Channel.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_channel_1ad45ab57f5922acc24ec6d65a8fa549ab" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Channel::userNum</definition>
+        <argsstring></argsstring>
+        <name>userNum</name>
+        <qualifiedname>Channel::userNum</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="8" column="13" bodyfile="include/Channel.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_channel_1ad31b5155bc31f0d40dc92e71034ddd27" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Channel::mixed</definition>
+        <argsstring></argsstring>
+        <name>mixed</name>
+        <qualifiedname>Channel::mixed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="9" column="10" bodyfile="include/Channel.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_channel_1a91487554b8bc6317264f637e79886709" prot="private" static="no" mutable="no">
+        <type>const <ref refid="class_message" kindref="compound">Message</ref> *</type>
+        <definition>const Message* Channel::msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <qualifiedname>Channel::msg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="10" column="19" bodyfile="include/Channel.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_channel_1a866f907610f1dec00afd39d31de88771" prot="private" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="class_device" kindref="compound">Device</ref> * &gt;</type>
+        <definition>std::list&lt;Device*&gt; Channel::listeners</definition>
+        <argsstring></argsstring>
+        <name>listeners</name>
+        <qualifiedname>Channel::listeners</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="11" column="15" bodyfile="include/Channel.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_channel_1af2b4b16288cbb2c592b1e0f6486c2430" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Channel::Channel</definition>
+        <argsstring>()</argsstring>
+        <name>Channel</name>
+        <qualifiedname>Channel::Channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="14" column="14" bodyfile="include/Channel.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1a733b7b41797a067390f6872131c3448a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Channel::occupy</definition>
+        <argsstring>(const Message *msg)</argsstring>
+        <name>occupy</name>
+        <qualifiedname>Channel::occupy</qualifiedname>
+        <param>
+          <type>const <ref refid="class_message" kindref="compound">Message</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="15" column="10" bodyfile="src/Channel.cpp" bodystart="3" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1a5c59db70405be66123e0b22fb35cddb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Channel::release</definition>
+        <argsstring>()</argsstring>
+        <name>release</name>
+        <qualifiedname>Channel::release</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="16" column="10" bodyfile="src/Channel.cpp" bodystart="11" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1ab57ee24162df76536876d508c2c4e552" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Channel::addListener</definition>
+        <argsstring>(Device *d)</argsstring>
+        <name>addListener</name>
+        <qualifiedname>Channel::addListener</qualifiedname>
+        <param>
+          <type><ref refid="class_device" kindref="compound">Device</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="17" column="17" bodyfile="include/Channel.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1ac80e93a8ed9f15eda394225d4510c61d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Channel::removeListener</definition>
+        <argsstring>(Device *d)</argsstring>
+        <name>removeListener</name>
+        <qualifiedname>Channel::removeListener</qualifiedname>
+        <param>
+          <type><ref refid="class_device" kindref="compound">Device</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="18" column="17" bodyfile="include/Channel.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1a5a1f020188da7b6abc82a588a16802fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Channel::isBusy</definition>
+        <argsstring>() const</argsstring>
+        <name>isBusy</name>
+        <qualifiedname>Channel::isBusy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="19" column="17" bodyfile="include/Channel.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1a1a105f4b40be364d318beea3957f49b6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Channel::isMixed</definition>
+        <argsstring>() const</argsstring>
+        <name>isMixed</name>
+        <qualifiedname>Channel::isMixed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="20" column="17" bodyfile="include/Channel.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1afe08fe719287ea3677c445199bd0c13a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_message" kindref="compound">Message</ref> *</type>
+        <definition>const Message * Channel::getMsg</definition>
+        <argsstring>() const</argsstring>
+        <name>getMsg</name>
+        <qualifiedname>Channel::getMsg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="21" column="26" bodyfile="include/Channel.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1a926a93a5aa40892cf763c7589ff840fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::list&lt; <ref refid="class_device" kindref="compound">Device</ref> * &gt;</type>
+        <definition>std::list&lt; Device * &gt; Channel::getListeners</definition>
+        <argsstring>() const</argsstring>
+        <name>getListeners</name>
+        <qualifiedname>Channel::getListeners</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="22" column="22" bodyfile="include/Channel.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_channel_1adeb1a392a6f4756c02eb3eb32e3567f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Channel::error</definition>
+        <argsstring>(std::string s)</argsstring>
+        <name>error</name>
+        <qualifiedname>Channel::error</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Channel.h" line="23" column="17" bodyfile="include/Channel.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Channel.h" line="6" column="1" bodyfile="include/Channel.h" bodystart="6" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_channel_1ab57ee24162df76536876d508c2c4e552" prot="public" virt="non-virtual"><scope>Channel</scope><name>addListener</name></member>
+      <member refid="class_channel_1af2b4b16288cbb2c592b1e0f6486c2430" prot="public" virt="non-virtual"><scope>Channel</scope><name>Channel</name></member>
+      <member refid="class_channel_1adeb1a392a6f4756c02eb3eb32e3567f3" prot="public" virt="non-virtual"><scope>Channel</scope><name>error</name></member>
+      <member refid="class_channel_1a926a93a5aa40892cf763c7589ff840fc" prot="public" virt="non-virtual"><scope>Channel</scope><name>getListeners</name></member>
+      <member refid="class_channel_1afe08fe719287ea3677c445199bd0c13a" prot="public" virt="non-virtual"><scope>Channel</scope><name>getMsg</name></member>
+      <member refid="class_channel_1a5a1f020188da7b6abc82a588a16802fc" prot="public" virt="non-virtual"><scope>Channel</scope><name>isBusy</name></member>
+      <member refid="class_channel_1a1a105f4b40be364d318beea3957f49b6" prot="public" virt="non-virtual"><scope>Channel</scope><name>isMixed</name></member>
+      <member refid="class_channel_1a866f907610f1dec00afd39d31de88771" prot="private" virt="non-virtual"><scope>Channel</scope><name>listeners</name></member>
+      <member refid="class_channel_1ad31b5155bc31f0d40dc92e71034ddd27" prot="private" virt="non-virtual"><scope>Channel</scope><name>mixed</name></member>
+      <member refid="class_channel_1a91487554b8bc6317264f637e79886709" prot="private" virt="non-virtual"><scope>Channel</scope><name>msg</name></member>
+      <member refid="class_channel_1a733b7b41797a067390f6872131c3448a" prot="public" virt="non-virtual"><scope>Channel</scope><name>occupy</name></member>
+      <member refid="class_channel_1a5c59db70405be66123e0b22fb35cddb5" prot="public" virt="non-virtual"><scope>Channel</scope><name>release</name></member>
+      <member refid="class_channel_1ac80e93a8ed9f15eda394225d4510c61d" prot="public" virt="non-virtual"><scope>Channel</scope><name>removeListener</name></member>
+      <member refid="class_channel_1ad45ab57f5922acc24ec6d65a8fa549ab" prot="private" virt="non-virtual"><scope>Channel</scope><name>userNum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
