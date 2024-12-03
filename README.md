@@ -52,7 +52,7 @@ The `Device` class simulates the physical implementation of devices, each with i
 
 The following diagram demonstrates how a device sends data to the channel, which is then broadcast to each device listening to the channel.
 
-<img src="https://github.com/user-attachments/assets/b7969871-1b95-48f9-a388-333767f2f0a6" width="70%">
+<img src="https://github.com/user-attachments/assets/e3ef473f-39c5-49c2-9c34-9a0de21793d9" width="70%">
 
 ## Overview - Protocol Implementation Layer
 
