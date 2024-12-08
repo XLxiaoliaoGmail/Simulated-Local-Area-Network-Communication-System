@@ -74,6 +74,15 @@
         "_common.h": "c",
         "message.h": "c",
         "server.h": "c",
-        "protocoldevice.h": "c"
+        "protocoldevice.h": "c",
+        "*.tcc": "c",
+        "cstdarg": "c",
+        "cwctype": "c",
+        "memory_resource": "c",
+        "numeric": "c",
+        "string_view": "c",
+        "numbers": "c",
+        "text_encoding": "c",
+        "variant": "c"
     }
 }
